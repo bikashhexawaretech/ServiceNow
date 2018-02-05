@@ -1,0 +1,24 @@
+{
+  "name": "servicenow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "require": "^2.4.20",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikashhexawaretech/ServiceNow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bikashhexawaretech/ServiceNow/issues"
+  },
+  "homepage": "https://github.com/bikashhexawaretech/ServiceNow#readme"
+}
