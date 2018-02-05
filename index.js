@@ -21,14 +21,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
    app.post('/',function(req,res){
-    inc.logIncident('Incident 56310','',function(err,res)
-    {
-    console.log(res["result"]["number"]);
-    succ=res["result"]["number"];
-    });
+  
       console.log('Received the request & it is:::'+JSON.stringify(req.body));
       if(req.body.result.action=='BookFlight'){
-    
+        inc.logIncident('Incident 56310','',function(err,res)
+        {
+        console.log(res["result"]["number"]);
+        succ=res["result"]["number"];
+        });
       var resagent='Your Ticket has been booked successfully '+succ;
      console.log('request are'+resagent);
       return res.json({
