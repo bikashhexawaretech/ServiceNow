@@ -1,6 +1,11 @@
 var inc=require('./app.js');
 
-
+var succ="";
+inc.logIncident('Bikash Panigrahi','',function(err,res)
+{
+console.log(res["result"]["number"]);
+succ=res["result"]["number"];
+});
 
 /*inc.statusIncident('INC0010873',function(err,res){
     
@@ -22,13 +27,8 @@ app.use(bodyParser.json());
    app.post('/',function(req,res){
       console.log('Received the request & it is:::'+JSON.stringify(req.body));
       if(req.body.result.action=='BookFlight'){
-       
-        inc.logIncident('Bikash Panigrahi','',function(err,res)
-        {
-        console.log(res["result"]["number"]);
-      
-        });
-      var resagent='Your Ticket has been booked successfully '+res["result"]["number"];
+    
+      var resagent='Your Ticket has been booked successfully '+succ;
      console.log('request are'+resagent);
       return res.json({
         speech:resagent,
