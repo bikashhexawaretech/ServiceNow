@@ -22,13 +22,13 @@ app.use(bodyParser.json());
    app.post('/',function(req,res){
       console.log('Received the request & it is:::'+JSON.stringify(req.body));
       if(req.body.result.action=='BookFlight'){
-        var succ="";
+       
         inc.logIncident('Bikash Panigrahi','',function(err,res)
         {
         console.log(res["result"]["number"]);
-        succ=res["result"]["number"];
+      
         });
-      var resagent='Your Ticket has been booked successfully '+succ;
+      var resagent='Your Ticket has been booked successfully '+res["result"]["number"];
      console.log('request are'+resagent);
       return res.json({
         speech:resagent,
