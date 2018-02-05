@@ -1,15 +1,17 @@
 var inc=require('./app.js');
 
+var succ="";
 inc.logIncident('Bikash Panigrahi','',function(err,res)
 {
-console.log(res["result"]);
+console.log(res["result"]["number"]);
+succ=res["result"]["number"];
 });
 
-inc.statusIncident('INC0010873',function(err,res){
+/*inc.statusIncident('INC0010873',function(err,res){
     
     console.log(res);
     
-});
+});*/
 
 
 var request = require('http');
@@ -26,7 +28,7 @@ app.use(bodyParser.json());
       console.log('Received the request & it is:::'+JSON.stringify(req.body));
       if(req.body.result.action=='BookFlight'){
     
-      var resagent='Your Ticket has been booked successfully ';
+      var resagent='Your Ticket has been booked successfully '+succ;
      console.log('request are'+resagent);
       return res.json({
         speech:resagent,
