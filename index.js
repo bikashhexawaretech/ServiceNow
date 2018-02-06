@@ -121,7 +121,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
   var incID='';
    inc.logIncident("Test Description","",function(err,res){
    //incID=res["result"];
-   var resagent=res["result"]+" Incident logged Successfully";
+   var resagent=res;
    console.log('request are'+resagent);
     return res.json({
       speech:resagent,
