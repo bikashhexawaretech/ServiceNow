@@ -55,7 +55,8 @@ return res.json(facebookResponse);
  
     } */
 
-let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
+    if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+        let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
 let resObj = {"speech": "Please select SubCategory from the following",
 "messages": [
 {
@@ -66,6 +67,9 @@ let resObj = {"speech": "Please select SubCategory from the following",
 }]
 };
 return res.json(resObj);
+     
+        } 
+
 });
 
 // Current running code Begin
