@@ -22,8 +22,8 @@ app.post('/',function(req,res){
             "platform": "facebook",
             "title": "Select Sub Categories",
             "replies": [
-              "1",
-              "2",
+              "Bikash",
+              "jjj",
               "3",
               "4",
               "5",
