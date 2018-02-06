@@ -16,25 +16,33 @@ app.post('/',function(req,res){
  //if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
      var facebookResponse={
         "speech": "",
-        "messages": [
-          {
-            "type": 2,
-            "platform": "facebook",
-            "title": "Select Sub Categories",
-            "replies": [
-              "Bikash",
-              "jjj",
-              "3",
-              "4",
-              "5",
-              "7"
-            ]
-          },
-          {
-            "type": 0,
-            "speech": ""
-          }
-        ]
+      "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "title": "Enter Subcategory",
+          "subtitle": "Subtitle",
+          "imageUrl": "https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+          "buttons": [
+            {
+              "text": "Button1",
+              "postback": "Button1"
+            },
+            {
+              "text": "Button2",
+              "postback": "Button2"
+            },
+            {
+              "text": "Button3",
+              "postback": "Button3"
+            }
+          ]
+        },
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
      }
      return res.json(facebookResponse);
 //}
