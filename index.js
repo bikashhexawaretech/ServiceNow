@@ -82,7 +82,7 @@ else{
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
-//if(req.body.result.action=='Incident_Request.Incident_Request-custom'){
+if(req.body.result.action=="Incident_Request.Incident_Request-custom"){
     var resagent=req.body.result.action;
     console.log('request are'+resagent);
      return res.json({
