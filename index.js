@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 
 
-app.post('/',function(req,res){
+/*app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
  if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
@@ -54,11 +54,13 @@ app.post('/',function(req,res){
 return res.json(facebookResponse);
  
     } 
-});
+});*/
 
     //Not working
+    app.post('/',function(req,res){
+        console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
-   /* if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+   if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
         let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
 let resObj = {"speech": "Please select SubCategory from the following",
 "messages": [
@@ -73,7 +75,7 @@ return res.json(resObj);
      
         } 
 
-*/
+    });
 
 
 //Not working
