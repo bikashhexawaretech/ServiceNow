@@ -116,20 +116,20 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
     return res.json(facebookResponse);
 }
 
-
+var x='';
   if( req.body.result.action=== "WebCallAction"){
  
    inc.logIncident("Test Description","",function(err,res){
   
-     var resagent=res["result"]+" Incident logged Successfully";
-    console.log('request are'+resagent);
-     return res.json({
-       speech:resagent,
-       displayText: resagent,
-       source:''
-     }); 
+     x=res;
   })
- 
+  var resagent=x["result"]+" Incident logged Successfully";
+  console.log('request are'+resagent);
+   return res.json({
+     speech:resagent,
+     displayText: resagent,
+     source:''
+   }); 
 }
 });
 
