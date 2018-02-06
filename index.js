@@ -5,7 +5,7 @@ var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var portC = process.env.PORT || 3000;
-var data = require('./data.json');
+var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -116,30 +116,18 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
     return res.json(facebookResponse);
 }
 
-/*
-else  if( req.body.result.action=== "UrgencyAction"){
-    var facebookResponse={
-        "speech": "",
-        "messages": [
-          {
-            "type": 2,
-            "platform": "facebook",
-            "title": "Select Urgency",
-            "replies": [
-              "Low",
-              "High",
-              "Medium"
-            
-            ]
-          },
-          {
-            "type": 0,
-            "speech": ""
-          }
-        ]
-     }
-     return res.json(facebookResponse);
-}*/
+
+  if( req.body.result.action=== "WebCallAction"){
+  inc.logIncident("Test Description","",function(err,res){
+    var resagent="Incident logged Successfully";
+    console.log(resagent);
+     return res.json({
+       speech:resagent,
+       displayText: resagent,
+       source:'Flight Booking'
+     }); 
+  })
+}
 });
 
 
