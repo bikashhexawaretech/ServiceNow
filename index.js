@@ -35,7 +35,11 @@ app.post('/',function(req,res){
             {
               "text": "Button3",
               "postback": "Button3"
-            }
+            },
+            {
+                "text": "Button4",
+                "postback": "Button4"
+              }
           ]
         },
         {
