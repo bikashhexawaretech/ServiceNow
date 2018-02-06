@@ -15,6 +15,10 @@ app.post('/',function(req,res){
 
  if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
      var facebookResponse={
+        "speech": "",
+        "displayText": " Your Incident has been raised",
+        "data": {
+          "facebook":{
         "message": {
             "attachment": {
               "type": "template",
@@ -82,6 +86,8 @@ app.post('/',function(req,res){
           }
         }
      }
+    }
+}
  
 });
 
