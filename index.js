@@ -39,7 +39,12 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
                           "type": "postback",
                           "title": "Disk",
                           "payload": "Disk"
-                        }
+                        },
+                        {
+                            "type": "postback",
+                            "title": "Keyboard",
+                            "payload": "Keyboard"
+                          }
                       ]
                     }
                   ]
