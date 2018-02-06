@@ -56,8 +56,10 @@ app.post('/',function(req,res){
                "platform": "facebook",
                "title": "Select Sub Categories",
                "replies": [
-                 "Bikash",
-                 "jjj"
+                 "CPU",
+                 "DISK",
+                 "Keyboard",
+                 "Mouse"
                ]
              },
              {
@@ -68,7 +70,51 @@ app.post('/',function(req,res){
         }
         return res.json(facebookResponse);
 }
- 
+else
+if(req.body.result.parameters.entityCategory==='Software'){
+    var facebookResponse={
+       "speech": "",
+       "messages": [
+         {
+           "type": 2,
+           "platform": "facebook",
+           "title": "Select Sub Categories",
+           "replies": [
+             "Email",
+             "OS" 
+           ]
+         },
+         {
+           "type": 0,
+           "speech": ""
+         }
+       ]
+    }
+    return res.json(facebookResponse);
+}
+ else
+ if(req.body.result.parameters.entityCategory==='Network'){
+    var facebookResponse={
+       "speech": "",
+       "messages": [
+         {
+           "type": 2,
+           "platform": "facebook",
+           "title": "Select Sub Categories",
+           "replies": [
+             "DHCP",
+             "DNS",
+             "VPN" 
+           ]
+         },
+         {
+           "type": 0,
+           "speech": ""
+         }
+       ]
+    }
+    return res.json(facebookResponse);
+}
 });
 
 
