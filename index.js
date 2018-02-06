@@ -116,6 +116,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
     return res.json(facebookResponse);
 }
 
+/*
 else  if( req.body.result.action=== "UrgencyAction"){
     var facebookResponse={
         "speech": "",
@@ -138,7 +139,7 @@ else  if( req.body.result.action=== "UrgencyAction"){
         ]
      }
      return res.json(facebookResponse);
-}
+}*/
 });
 
 
