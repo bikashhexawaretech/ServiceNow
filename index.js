@@ -86,7 +86,7 @@ app.post('/',function(req,res){
           }
         }
      }
-    
+     return res.json(facebookResponse);
 }
  
 });
