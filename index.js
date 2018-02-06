@@ -21,7 +21,7 @@ app.post('/',function(req,res){
         {
           "type": 1,
           "platform": "facebook",
-          "title": "Enter Subcategory",
+          "title": "Select Category",
           "subtitle": "",
           "imageUrl": "https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
           "buttons": [
