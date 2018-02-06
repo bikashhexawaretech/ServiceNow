@@ -21,20 +21,20 @@ app.post('/',function(req,res){
           "type": 1,
           "platform": "facebook",
           "title": "Enter Subcategory",
-          "subtitle": "Subtitle",
+          "subtitle": "",
           "imageUrl": "https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
           "buttons": [
             {
-              "text": "Button1",
-              "postback": "Button1"
+              "text": "Hardware",
+              "postback": "Hardware"
             },
             {
-              "text": "Button2",
-              "postback": "Button2"
+              "text": "Software",
+              "postback": "Software"
             },
             {
-              "text": "Button3",
-              "postback": "Button3"
+              "text": "Network",
+              "postback": "Network"
             }
           ]
         },
