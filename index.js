@@ -121,15 +121,15 @@ var x='';
  
    inc.logIncident("Test Description","",function(err,res){
   
-     x=res;
-  })
-  var resagent=x["result"]+" Incident logged Successfully";
+    var resagent=res["result"]+" Incident logged Successfully";
   console.log('request are'+resagent);
    return res.json({
      speech:resagent,
      displayText: resagent,
      source:''
-   }); 
+   });
+  })
+   
 }
 });
 
