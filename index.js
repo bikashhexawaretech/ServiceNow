@@ -62,14 +62,24 @@ return res.json(facebookResponse);
 
    if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
         let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
-let resObj = {"speech": "Please select SubCategory from the following",
-"messages": [
-{
-"type": 2,
-"platform": "facebook",
-"title": "Enter Sub Category",
-"replies": subCategories
-}]
+let resObj = {
+    "speech": "Please select SubCategory from the following",
+    "displayText": "Please select SubCategory from the following",
+    "messages": {
+        "text": "Here is a quick reply!",
+        "quick_replies":[
+          {
+            "content_type":"text",
+            "title":"Search",
+            "payload":"<POSTBACK_PAYLOAD>"
+          },
+          {
+            "content_type":"text",
+            "title":"Something Else",
+            "payload":"<POSTBACK_PAYLOAD>"
+          }
+        ]
+      }
 };
 return res.json(resObj);
      
