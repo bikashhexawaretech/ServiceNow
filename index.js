@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 
 
-/*app.post('/',function(req,res){
-    console.log('Received the request & it is:::'+JSON.stringify(req.body));*/
+app.post('/',function(req,res){
+    console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
-/* if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
     var facebookResponse={
         "speech": "",
         "displayText": " Your Incident has been raised",
@@ -53,8 +53,8 @@ app.use(bodyParser.json());
 
 return res.json(facebookResponse);
  
-    } */
-
+    } 
+});
 
     //Not working
 
@@ -73,18 +73,18 @@ return res.json(resObj);
      
         } 
 
-});*/
+*/
 
 
 //Not working
 
 // Current running code Begin
 
-app.post('/',function(req,res){
+/*app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
 if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
-    var resagent="Bikash";
+    var resagent="Success";
     console.log('request are'+resagent);
      return res.json({
        speech:resagent,
@@ -92,7 +92,7 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
        source:'Flight Booking'
      }); 
 }
-}) 
+}) */
 
 // Current running code End
 
