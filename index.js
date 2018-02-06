@@ -118,10 +118,10 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 
   if( req.body.result.action=== "WebCallAction"){
-  var incID='';
+ 
    inc.logIncident("Test Description","",function(err,res){
-   incID=res["result"];
-     var resagent=incID+" Incident logged Successfully";
+  
+     var resagent=res["result"]+" Incident logged Successfully";
     console.log('request are'+resagent);
      return res.json({
        speech:resagent,
