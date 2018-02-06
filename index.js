@@ -118,16 +118,11 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 
   if( req.body.result.action=== "WebCallAction"){
- /* inc.logIncident("Test Description","",function(err,res){
-    var resagent="Incident logged Successfully";
-    console.log(resagent);
-     return res.json({
-       speech:resagent,
-       displayText: resagent,
-       source:'Flight Booking'
-     }); 
-  })*/
-  var resagent="Success";
+  var incID= inc.logIncident("Test Description","",function(err,res){
+   
+    
+  })
+  var resagent=incID.number+" Incident logged Successfully";
     console.log('request are'+resagent);
      return res.json({
        speech:resagent,
