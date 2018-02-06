@@ -9,7 +9,7 @@ var data = require('./data.json');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-/*
+
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
@@ -19,7 +19,7 @@ app.post('/',function(req,res){
         "displayText": " Your Incident has been raised",
         "data": {
           "facebook":{
-        "message": {
+        
             "attachment": {
               "type": "template",
               "payload": {
@@ -86,11 +86,13 @@ app.post('/',function(req,res){
           }
         }
      }
-    }
+    
 }
  
-});*/
+});
 
+
+/*
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
@@ -133,7 +135,7 @@ app.post('/',function(req,res){
 return res.json(facebookResponse);
  
     } 
-});
+});*/
 
 
 
