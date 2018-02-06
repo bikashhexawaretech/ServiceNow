@@ -47,7 +47,7 @@ app.post('/',function(req,res){
      }
      return res.json(facebookResponse);
     }
-    if(req.body.result.parameters.entityCategory==='Hardware'){
+    if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Hardware'){
         var facebookResponse={
            "speech": "",
            "messages": [
