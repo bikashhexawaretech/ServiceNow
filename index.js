@@ -27,19 +27,39 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
                   "template_type": "generic",
                   "elements": [
                     {
-                      "title": "Booking Successful",
-                      "subtitle": 'Your Incident has been raised',
+                      "title": "Select SubCategory",
+                      "subtitle": '',
                       "buttons": [
                         {
                           "type": "postback",
-                          "title": "Book Another Ticket",
-                          "payload": "book_ticket"
+                          "title": "CPU",
+                          "payload": "CPU"
                         },
                         {
-                          "type": "postback",
-                          "title": "Contact Us",
-                          "payload": "contact_us"
-                        }
+                            "type": "postback",
+                            "title": "DISK",
+                            "payload": "DISK"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Keyboard",
+                            "payload": "Keyboard"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Memory",
+                            "payload": "Memory"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Monitor",
+                            "payload": "Monitor"
+                          },
+                          {
+                            "type": "postback",
+                            "title": "Mouse",
+                            "payload": "Mouse"
+                          }
                       ]
                     }
                   ]
