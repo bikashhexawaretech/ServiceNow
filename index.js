@@ -9,7 +9,7 @@ var data = require('./data.json');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-
+/*
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
@@ -89,9 +89,9 @@ app.post('/',function(req,res){
     }
 }
  
-});
+});*/
 
-/*app.post('/',function(req,res){
+app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
  if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
@@ -135,7 +135,7 @@ return res.json(facebookResponse);
     } 
 });
 
-*/
+
 
     //Not working
  /*   app.post('/',function(req,res){
