@@ -118,7 +118,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 
   if( req.body.result.action=== "WebCallAction"){
-  inc.logIncident("Test Description","",function(err,res){
+ /* inc.logIncident("Test Description","",function(err,res){
     var resagent="Incident logged Successfully";
     console.log(resagent);
      return res.json({
@@ -126,7 +126,14 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
        displayText: resagent,
        source:'Flight Booking'
      }); 
-  })
+  })*/
+  var resagent="Success";
+    console.log('request are'+resagent);
+     return res.json({
+       speech:resagent,
+       displayText: resagent,
+       source:''
+     }); 
 }
 });
 
