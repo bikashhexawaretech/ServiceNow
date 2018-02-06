@@ -23,7 +23,7 @@ app.post('/',function(req,res){
           "platform": "facebook",
           "title": "Select Category",
           "subtitle": "",
-          "imageUrl": "https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+          "imageUrl": "https://assets.kpmg.com/content/dam/kpmg/images/2015/07/US-strategic-alliance-servicenow.jpg/jcr:content/renditions/cq5dam.web.1200.630.jpg",
           "buttons": [
             {
               "text": "Hardware",
