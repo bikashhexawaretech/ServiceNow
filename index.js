@@ -5,6 +5,7 @@ var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var portC = process.env.PORT || 3000;
+var data = require('./data.json');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
-if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+/* if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
     var facebookResponse={
         "speech": "",
         "displayText": " Your Incident has been raised",
@@ -52,7 +53,19 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
 
 return res.json(facebookResponse);
  
-    }
+    } */
+
+let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
+let resObj = {"speech": "Please select SubCategory from the following",
+"messages": [
+{
+"type": 2,
+"platform": "facebook",
+"title": "Enter Sub Category",
+"replies": subCategories
+}]
+};
+return res.json(resObj);
 });
 
 // Current running code Begin
