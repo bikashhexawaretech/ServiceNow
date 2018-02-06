@@ -61,26 +61,30 @@ return res.json(facebookResponse);
         console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
    if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
-        let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
+        
 let resObj = {
-    "speech": "Please select SubCategory from the following",
-    "displayText": "Please select SubCategory from the following",
-    "messages": {
-        "text": "Here is a quick reply!",
-        "quick_replies":[
-          {
-            "content_type":"text",
-            "title":"Search",
-            "payload":"<POSTBACK_PAYLOAD>"
-          },
-          {
-            "content_type":"text",
-            "title":"Something Else",
-            "payload":"<POSTBACK_PAYLOAD>"
-          }
-        ]
-      }
-};
+    speech: '',
+    displayText: "",
+    data: {
+        "facebook": {
+            "text": "",
+            "quick_replies": [
+                {
+                    "content_type": "text",
+                    "title": "title",
+                    "payload": "payload"
+                },
+                {
+                    "content_type": "text",
+                    "title": "title",
+                    "payload": "payload"
+                }
+            ]
+        }
+    },
+    source: 'Servicenow'
+}
+;
 return res.json(resObj);
      
         } 
