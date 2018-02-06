@@ -11,20 +11,11 @@ app.use(bodyParser.json());
 
 
 
-  /* app.post('/',function(req,res){
-      console.log('Received the request & it is:::'+JSON.stringify(req.body));
-      if(req.body.result.action=='input.personaldetails'){
-    
-     var resagent='Your Ticket has been booked today ';
-     console.log('request are'+resagent);
-      return res.json({
-        speech:resagent,
-        displayText: resagent,
-        source:'Flight Booking'
-      }); */
+app.post('/',function(req,res){
+    console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
-
-     /* var facebookResponse={
+if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+    var facebookResponse={
         "speech": "",
         "displayText": " Your Incident has been raised",
         "data": {
@@ -56,30 +47,17 @@ app.use(bodyParser.json());
               }
             }
           },
-        "source": "DuckDuckGo"
-      };
+      
+        };
 
 return res.json(facebookResponse);
+ 
+    }
+});
 
-}else if (req.body.result.action=='DebitCard'){
+// Current running code Begin
 
-  var resagent='Your Debit card request has been placed';
-  console.log('request are'+resagent);
-  return res.json({
-    speech:resagent,
-    displayText: resagent,
-    source:'Test Cards'
-  });
-
-}
-else{
-  return res.json({
-    speech:'HEY Sorry, cannot determine',
-    displayText:'HEY Sorry, we cant get you'
-  })
-}*/
-
-app.post('/',function(req,res){
+/*app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
 if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
@@ -91,9 +69,9 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
        source:'Flight Booking'
      }); 
 }
-})
+}) */
 
-
+// Current running code End
 
 app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
