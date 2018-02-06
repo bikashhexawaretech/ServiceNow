@@ -36,30 +36,10 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
                           "payload": "CPU"
                         },
                         {
-                            "type": "postback",
-                            "title": "DISK",
-                            "payload": "DISK"
-                          },
-                          {
-                            "type": "postback",
-                            "title": "Keyboard",
-                            "payload": "Keyboard"
-                          },
-                          {
-                            "type": "postback",
-                            "title": "Memory",
-                            "payload": "Memory"
-                          },
-                          {
-                            "type": "postback",
-                            "title": "Monitor",
-                            "payload": "Monitor"
-                          },
-                          {
-                            "type": "postback",
-                            "title": "Mouse",
-                            "payload": "Mouse"
-                          }
+                          "type": "postback",
+                          "title": "Disk",
+                          "payload": "Disk"
+                        }
                       ]
                     }
                   ]
