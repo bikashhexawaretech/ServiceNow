@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 
 
 
-app.post('/',function(req,res){
-    console.log('Received the request & it is:::'+JSON.stringify(req.body));
+/*app.post('/',function(req,res){
+    console.log('Received the request & it is:::'+JSON.stringify(req.body));*/
 
 /* if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
     var facebookResponse={
@@ -55,7 +55,10 @@ return res.json(facebookResponse);
  
     } */
 
-    if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
+
+    //Not working
+
+   /* if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
         let subCategories = data.subCategories[req.body.result.parameters.entityCategory];
 let resObj = {"speech": "Please select SubCategory from the following",
 "messages": [
@@ -70,15 +73,18 @@ return res.json(resObj);
      
         } 
 
-});
+});*/
+
+
+//Not working
 
 // Current running code Begin
 
-/*app.post('/',function(req,res){
+app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
 
 if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
-    var resagent="success";
+    var resagent=req.body.result.parameters.entityCategory;
     console.log('request are'+resagent);
      return res.json({
        speech:resagent,
@@ -86,7 +92,7 @@ if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
        source:'Flight Booking'
      }); 
 }
-}) */
+}) 
 
 // Current running code End
 
