@@ -71,7 +71,7 @@ app.post('/',function(req,res){
         return res.json(facebookResponse);
 }
 else
-if(req.body.result.parameters.entityCategory==='Software'){
+if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Software'){
     var facebookResponse={
        "speech": "",
        "messages": [
@@ -93,7 +93,7 @@ if(req.body.result.parameters.entityCategory==='Software'){
     return res.json(facebookResponse);
 }
  else
- if(req.body.result.parameters.entityCategory==='Network'){
+ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Network'){
     var facebookResponse={
        "speech": "",
        "messages": [
@@ -114,6 +114,30 @@ if(req.body.result.parameters.entityCategory==='Software'){
        ]
     }
     return res.json(facebookResponse);
+}
+
+else  if( req.body.result.action=== "UrgencyAction"){
+    var facebookResponse={
+        "speech": "",
+        "messages": [
+          {
+            "type": 2,
+            "platform": "facebook",
+            "title": "Select Urgency",
+            "replies": [
+              "Low",
+              "High",
+              "Medium"
+            
+            ]
+          },
+          {
+            "type": 0,
+            "speech": ""
+          }
+        ]
+     }
+     return res.json(facebookResponse);
 }
 });
 
