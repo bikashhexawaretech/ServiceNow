@@ -116,7 +116,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
     return res.json(facebookResponse);
 }*/
 
-var x='';
+
   if( req.body.result.action=== "WebCallAction"){
  console.log(req.body.result.parameters.desc);
       inc.logIncident(req.body.result.parameters.desc,"",function(err,resu){
