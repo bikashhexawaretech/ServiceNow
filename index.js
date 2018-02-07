@@ -23,7 +23,7 @@ app.post('/',function(req,res){
           "platform": "facebook",
           "title": "Select Category",
           "subtitle": "",
-          "imageUrl": "https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+          "imageUrl": "https://advizex.com/wp-content/uploads/2016/04/servicenow-logo.jpg",
           "buttons": [
             {
               "text": "Hardware",
