@@ -119,7 +119,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 }*/
 
 
-  if( req.body.result.action=== "WebCallAction"){
+  if( req.body.result.action=== "IncidentWebCall"){
     
  
       inc.logIncident("","",function(err,resu){
