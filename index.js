@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
-
+    var facebookResponse='';
  if(req.body.result.action==='IncidentRequestAction'){
 
-     var facebookResponse={
+      facebookResponse={
         "speech": "",
       "messages": [
         {
@@ -48,7 +48,7 @@ app.post('/',function(req,res){
      return res.json(facebookResponse);
     }
     if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Hardware'){
-        var facebookResponse={
+         facebookResponse={
            "speech": "",
            "messages": [
              {
@@ -72,7 +72,7 @@ app.post('/',function(req,res){
 }
 else
 if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Software'){
-    var facebookResponse={
+     facebookResponse={
        "speech": "",
        "messages": [
          {
@@ -94,7 +94,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 }
  else
  if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Network'){
-    var facebookResponse={
+     facebookResponse={
        "speech": "",
        "messages": [
          {
