@@ -121,7 +121,7 @@ var x='';
  
       inc.logIncident("Test Description","",function(err,resu){
         console.log(resu["result"].number);
-          var resagent=resu["result"].number+" Incident logged Successfully";
+          var resagent=resu["result"].number+" Incident logged Successfully. Is there anything I can help you with?";
           console.log('request are'+resagent);
           return res.json({
             speech:resagent,
