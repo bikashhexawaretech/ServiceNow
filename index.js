@@ -47,9 +47,9 @@ app.post('/',function(req,res){
      }
      return res.json(facebookResponse);
     }
-    var desc='';
-    if( req.body.result.action=== "Incident_Request.Incident_Request-custom" ){
-      desc=req.body.result.parameters.desc;
+    
+   /* if( req.body.result.action=== "Incident_Request.Incident_Request-custom" ){
+     
          facebookResponse={
            "speech": "",
            "messages": [
@@ -71,7 +71,7 @@ app.post('/',function(req,res){
            ]
         }
         return res.json(facebookResponse);
-}
+}*/
 /*else
 if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Software'){
      facebookResponse={
@@ -120,7 +120,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 
   if( req.body.result.action=== "WebCallAction"){
-    console.log("Desc is "+desc);
+    
  
       inc.logIncident("","",function(err,resu){
        // console.log(resu["result"].parameters.Description);
