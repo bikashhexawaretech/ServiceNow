@@ -23,7 +23,7 @@ app.post('/',function(req,res){
           "platform": "facebook",
           "title": "Select Category",
           "subtitle": "",
-          "imageUrl": "https://advizex.com/wp-content/uploads/2016/04/servicenow-logo.jpg",
+          "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
           "buttons": [
             {
               "text": "Hardware",
