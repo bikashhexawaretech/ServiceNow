@@ -47,7 +47,9 @@ app.post('/',function(req,res){
      }
      return res.json(facebookResponse);
     }
+    var desc='';
     if( req.body.result.action=== "Incident_Request.Incident_Request-custom" ){
+      desc=req.body.result.parameters.desc;
          facebookResponse={
            "speech": "",
            "messages": [
@@ -118,6 +120,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 
   if( req.body.result.action=== "WebCallAction"){
+    console.log(desc);
  console.log(req.body.result.contexts["parameters"]);
       inc.logIncident("","",function(err,resu){
        // console.log(resu["result"].parameters.Description);
