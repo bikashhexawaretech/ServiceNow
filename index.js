@@ -118,8 +118,8 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 var x='';
   if( req.body.result.action=== "WebCallAction"){
- 
-      inc.logIncident("Test Description","",function(err,resu){
+ console.log(req.body.result.parameters.desc);
+      inc.logIncident(req.body.result.parameters.desc,"",function(err,resu){
        // console.log(resu["result"].parameters.Description);
           var resagent=resu["result"].number+" Incident logged Successfully. Is there anything I can help you with?";
           console.log('request are'+resagent);
