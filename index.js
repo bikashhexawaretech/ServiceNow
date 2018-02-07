@@ -124,7 +124,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
  
       inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,function(err,resu){
         console.log(req.body.result.parameters.desc);
-          var resagent=resu["result"].number+" With Description"+req.body.result.parameters.desc+"  logged Successfully. Is there anything I can help you with?";
+          var resagent=resu["result"].number+" With Description "+req.body.result.parameters.desc+"  logged Successfully. Is there anything I can help you with?";
           
           return res.json({
             speech:resagent,
