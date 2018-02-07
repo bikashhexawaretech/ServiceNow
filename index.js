@@ -122,7 +122,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
   if( req.body.result.action=== "IncidentWebCall"){
     
  
-      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,function(err,resu){
+      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
         console.log(req.body.result.parameters.desc);
           var resagent=resu["result"].number+" With Description "+req.body.result.parameters.desc+"  logged Successfully. Is there anything I can help you with?";
           
