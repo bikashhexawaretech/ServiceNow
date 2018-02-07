@@ -47,19 +47,19 @@ app.post('/',function(req,res){
      }
      return res.json(facebookResponse);
     }
-    if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Hardware'){
+    if( req.body.result.action=== "Incident_Request.Incident_Request-custom" ){
          facebookResponse={
            "speech": "",
            "messages": [
              {
                "type": 2,
                "platform": "facebook",
-               "title": "Select Sub Categories",
+               "title": "Select Urgency",
                "replies": [
-                 "CPU",
-                 "DISK",
-                 "Keyboard",
-                 "Mouse"
+                 "High",
+                 "Low",
+                 "Medium"
+               
                ]
              },
              {
@@ -70,7 +70,7 @@ app.post('/',function(req,res){
         }
         return res.json(facebookResponse);
 }
-else
+/*else
 if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.body.result.parameters.entityCategory==='Software'){
      facebookResponse={
        "speech": "",
@@ -114,7 +114,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
        ]
     }
     return res.json(facebookResponse);
-}
+}*/
 
 var x='';
   if( req.body.result.action=== "WebCallAction"){
