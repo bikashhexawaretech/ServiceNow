@@ -134,6 +134,26 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
   })
    
 }
+
+if( req.body.result.action=== "Incident_Status_Check"){
+    var IncidentNumber=req.body.result.parameters.IncidentNumber;
+ 
+    if(IncidentNumber.indexOf(substring) == -1)
+    {
+      var str='INC';
+      IncidentNumber=str.concat(IncidentNumber);
+    }
+    console.log(IncidentNumber);
+     
+      
+      return res.json({
+        speech:IncidentNumber,
+        displayText: IncidentNumber,
+        source:''
+      });
+})
+
+}
 });
 
 
