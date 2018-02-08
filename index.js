@@ -144,7 +144,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
     }
     inc.statusIncident(IncidentNumber,function(err,resu){
       console.log("result : "+resu);
-      const hasValue = Object.values(resu["result"]).includes("number");
+      const hasValue = Object.values(resu).includes("number");
       console.log(hasValue);
       return res.json({
         speech:'',
