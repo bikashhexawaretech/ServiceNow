@@ -137,6 +137,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 if( req.body.result.action=== "Incident_Status_Check"){
     var IncidentNumber=req.body.result.parameters.IncidentNumber;
+    console.log("Entry");
  console.log(IncidentNumber.indexOf('INC'));
     if(IncidentNumber.indexOf('INC') == -1)
     {
