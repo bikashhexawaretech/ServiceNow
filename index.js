@@ -137,21 +137,22 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 if( req.body.result.action=== "Incident_Status_Check"){
     var IncidentNumber=req.body.result.parameters.IncidentNumber;
-    console.log("Entry");
- console.log(IncidentNumber.indexOf('INC'));
     if(IncidentNumber.indexOf('INC') == -1)
     {
       var str='INC';
       IncidentNumber=str.concat(IncidentNumber);
     }
-    console.log(IncidentNumber);
-     
-      
+    inc.statusIncident(IncidentNumber,function(err,resu){
+      console.log(resu);
       return res.json({
-        speech:IncidentNumber,
-        displayText: IncidentNumber,
+        speech:'',
+        displayText: '',
         source:''
       });
+    })
+     
+      
+     
 
 
 }
