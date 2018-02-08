@@ -143,7 +143,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
       IncidentNumber=str.concat(IncidentNumber);
     }
     inc.statusIncident(IncidentNumber,function(err,resu){
-      //console.log("result : "+resu);
+      console.log("result : "+resu);
       const hasValue = Object.values(resu).includes("number");
       console.log(hasValue);
       return res.json({
