@@ -143,6 +143,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
       IncidentNumber=str.concat(IncidentNumber);
     }
     inc.statusIncident(IncidentNumber,function(err,resu){
+      console.log(resu);
       console.log("Result Check "+resu.hasOwnProperty("result"));
      
       var flag=false;
