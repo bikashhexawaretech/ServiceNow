@@ -152,9 +152,10 @@ if( req.body.result.action=== "Incident_Status_Check"){
         var output='Incorrect Incident number: '+IncidentNumber;
         if(JSONOBJ.hasOwnProperty("result"))
         {
-            output+="Incident number"+IncidentNumber+" has been found";
-            output+="Created under: "+JSONOBJ.result[0].category;
-            output+="Urgency: "+JSONOBJ.result[0].urgency;
+            output='';
+            output+="Incident number"+IncidentNumber+" has been found ";
+            output+="Created under: "+JSONOBJ.result[0].category+" ";
+            output+="Urgency: "+JSONOBJ.result[0].urgency+" ";
         }
         
       return res.json({
