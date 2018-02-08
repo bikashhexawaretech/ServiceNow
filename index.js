@@ -153,7 +153,8 @@ if( req.body.result.action=== "Incident_Status_Check"){
         if(JSONOBJ.hasOwnProperty("result"))
         {
             output='';
-            output+="Incident number"+IncidentNumber+" has been found ";
+            output+="Incident number "+IncidentNumber+" has been found ";
+            output+="Description: "+JSONOBJ.result[0].short_description+" ";
             output+="Created under: "+JSONOBJ.result[0].category+" ";
             output+="Urgency: "+JSONOBJ.result[0].urgency+" ";
         }
