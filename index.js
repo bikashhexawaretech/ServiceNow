@@ -149,7 +149,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
       'result' in resu ? flag=true : flag=false;
         console.log(flag);
         var output='Incorrect Incident number';
-        if(flag==true)
+        if(flag===true)
         {
             output="Incident number has been found";
         }
