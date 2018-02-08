@@ -146,10 +146,9 @@ if( req.body.result.action=== "Incident_Status_Check"){
       console.log("result : "+resu);
      
       var flag=false;
-      'result' in resu ? flag=true : flag=false;
-        console.log(flag);
+      
         var output='Incorrect Incident number';
-        if(flag===true)
+        if(resu.hasOwnProperty("result"))
         {
             output="Incident number has been found";
         }

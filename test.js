@@ -4,6 +4,9 @@ var json={"result":[{"parent":"",
 var json2= {"error":{"message":"No Record found","detail":"Records matching query not found. Check query parameter or offset parameter"},"status":"failure"};
 
 
-var flag=false;
-'result' in json2 ? flag=true : flag=false;
-console.log(flag);
+
+var x = Object.keys(json2);
+
+
+var y = json.hasOwnProperty("result");
+console.log(y);
