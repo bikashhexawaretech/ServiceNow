@@ -143,15 +143,18 @@ if( req.body.result.action=== "Incident_Status_Check"){
       IncidentNumber=str.concat(IncidentNumber);
     }
     inc.statusIncident(IncidentNumber,function(err,resu){
-      console.log(JSON.parse(resu));
-      console.log("Result Check "+JSON.parse(resu).hasOwnProperty("result"));
+      var JSONOBJ=JSON.parse(resu);
+     
+      console.log("Result Check "+JSONOBJ.hasOwnProperty("result"));
      
       var flag=false;
       
         var output='Incorrect Incident number: '+IncidentNumber;
-        if(JSON.parse(resu).hasOwnProperty("result"))
+        if(JSONOBJ.hasOwnProperty("result"))
         {
-            output="Incident number has been found";
+            output+="Incident number"+IncidentNumber+" has been found";
+            output+="Created under: "+JSONOBJ.result[0].category;
+            output+="Urgency: "+JSONOBJ.result[0].urgency;
         }
         
       return res.json({
