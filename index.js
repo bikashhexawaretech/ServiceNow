@@ -232,21 +232,9 @@ if( req.body.result.action=== "Incident_Status_Check"){
                   ],
                   "elements": [
                     {
-                      "title": "Classic White T-Shirt",
-                      "subtitle": "100% Soft and Luxurious Cotton",
-                      "quantity": 2,
-                      "price": 50,
-                      "currency": "USD",
-                      "image_url": "http://petersapparel.parseapp.com/img/whiteshirt.png"
-                    },
-                    {
-                      "title": "Classic Gray T-Shirt",
-                      "subtitle": "100% Soft and Luxurious Cotton",
-                      "quantity": 1,
-                      "price": 25,
-                      "currency": "USD",
-                      "image_url": "http://petersapparel.parseapp.com/img/grayshirt.png"
-                    }
+                      "title": IncidentNumber,
+                      "subtitle": JSONOBJ.result[0].short_description
+                    } 
                   ]
                 }
               }
