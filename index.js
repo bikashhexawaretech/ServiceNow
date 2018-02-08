@@ -135,7 +135,6 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
    
 }
 
-
 // Simple text sent to FB
 /*
 if( req.body.result.action=== "Incident_Status_Check"){
@@ -189,70 +188,43 @@ if( req.body.result.action=== "Incident_Status_Check"){
    
     console.log("Result Check "+JSONOBJ.hasOwnProperty("result"));
    
-   facebookResponse={
-    "message":{
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"receipt",
-          "recipient_name":"Stephane Crozatier",
-          "order_number":"12345678902",
-          "currency":"USD",
-          "payment_method":"Visa 2345",        
-          "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
-          "timestamp":"1428444852",         
-          "address":{
-            "street_1":"1 Hacker Way",
-            "street_2":"",
-            "city":"Menlo Park",
-            "postal_code":"94025",
-            "state":"CA",
-            "country":"US"
+    facebookResponse={
+      "speech": "",
+    "messages": [
+      {
+        "type": 1,
+        "platform": "facebook",
+        "title": "Select Category",
+        "subtitle": "",
+        "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
+        "buttons": [
+          {
+            "text": "Hardware",
+            "postback": "Hardware"
           },
-          "summary":{
-            "subtotal":75.00,
-            "shipping_cost":4.95,
-            "total_tax":6.19,
-            "total_cost":56.14
+          {
+            "text": "Software",
+            "postback": "Software"
           },
-          "adjustments":[
-            {
-              "name":"New Customer Discount",
-              "amount":20
-            },
-            {
-              "name":"$10 Off Coupon",
-              "amount":10
-            }
-          ],
-          "elements":[
-            {
-              "title":"Classic White T-Shirt",
-              "subtitle":"100% Soft and Luxurious Cotton",
-              "quantity":2,
-              "price":50,
-              "currency":"USD",
-              "image_url":"http://petersapparel.parseapp.com/img/whiteshirt.png"
-            },
-            {
-              "title":"Classic Gray T-Shirt",
-              "subtitle":"100% Soft and Luxurious Cotton",
-              "quantity":1,
-              "price":25,
-              "currency":"USD",
-              "image_url":"http://petersapparel.parseapp.com/img/grayshirt.png"
-            }
-          ]
-        }
+          {
+            "text": "Network",
+            "postback": "Network"
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "speech": ""
       }
-    }
-  }
-  return res.json(facebookResponse);
+    ]
+   }
+   return res.json(facebookResponse);
+
+  
   })
    
     
-   
-
+ 
 
 }
 });
@@ -304,63 +276,9 @@ return res.json(facebookResponse);
 
 
 
-    //Not working
- /*   app.post('/',function(req,res){
-        console.log('Received the request & it is:::'+JSON.stringify(req.body));
-
-   
-        
-let resObj = {
-    speech: '',
-    displayText: "",
-    data: {
-        "facebook": {
-            "text": "",
-            "quick_replies": [
-                {
-                    "content_type": "text",
-                    "title": "title",
-                    "payload": "payload"
-                },
-                {
-                    "content_type": "text",
-                    "title": "title",
-                    "payload": "payload"
-                }
-            ]
-        }
-    },
-    source: 'Servicenow'
-}
-;
-return res.json(resObj);
-     
-        
-
-    });
-
-    */
+  
 
 
-//Not working
-
-// Current running code Begin
-
-/*app.post('/',function(req,res){
-    console.log('Received the request & it is:::'+JSON.stringify(req.body));
-
-if(req.body.result.action==='Incident_Request.Incident_Request-custom'){
-    var resagent="Success";
-    console.log('request are'+resagent);
-     return res.json({
-       speech:resagent,
-       displayText: resagent,
-       source:'Flight Booking'
-     }); 
-}
-}) */
-
-// Current running code End
 
 app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
