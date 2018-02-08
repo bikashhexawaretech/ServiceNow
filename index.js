@@ -136,7 +136,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 }
 
 // Simple text sent to FB
-/*
+
 if( req.body.result.action=== "Incident_Status_Check"){
     var IncidentNumber=req.body.result.parameters.IncidentNumber;
     if(IncidentNumber.indexOf('INC') == -1)
@@ -174,7 +174,9 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 }
 });
-*/
+
+
+/*
 
 if( req.body.result.action=== "Incident_Status_Check"){
   var IncidentNumber=req.body.result.parameters.IncidentNumber;
@@ -263,6 +265,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
 }
 });
 
+*/
 /*
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
