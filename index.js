@@ -144,11 +144,19 @@ if( req.body.result.action=== "Incident_Status_Check"){
     }
     inc.statusIncident(IncidentNumber,function(err,resu){
       console.log("result : "+resu);
-      const hasValue = Object.values(resu).includes("number");
-      console.log(hasValue);
+     
+      var flag=false;
+      'number' in resu.result[0] ? flag=true : flag=false;
+        console.log(flag);
+        var output='Incorrect Incident number';
+        if(flag==true)
+        {
+            output="Incident number has been found";
+        }
+        
       return res.json({
-        speech:'',
-        displayText: '',
+        speech:output,
+        displayText: output,
         source:''
       });
     })
