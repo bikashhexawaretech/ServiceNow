@@ -164,7 +164,13 @@ if( req.body.result.action=== "Incident_Status_Check"){
       return res.json({
         speech:output,
         displayText: output,
-        source:''
+        source:'',
+        "followupEvent": {
+          "name": "eventDefault",
+          "data": {
+             
+          }
+       }
       });
     })
      
