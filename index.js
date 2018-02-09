@@ -124,12 +124,21 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
  
       inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
         console.log(req.body.result.parameters.desc);
-          var resagent=resu["result"].number+" With Description "+req.body.result.parameters.desc+"  logged Successfully. Is there anything I can help you with?";
+          var resagent=resu["result"].number+" logged Successfully.";
           
           return res.json({
             speech:resagent,
             displayText: resagent,
-            source:''
+            source:'',
+            followupEvent: {
+              "name": "eventSuccessProceed",
+              "data": {
+                  "Incident":resu["result"].number,
+                  "Description":req.body.result.parameters.desc,
+                  "Category":req.body.result.parameters.category,
+                  "Urgency":req.body.result.parameters.urgency
+              }
+           }
           });
   })
    
