@@ -148,8 +148,7 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 if( req.body.result.action=== "Incident_Status_Check"){
     var IncidentNumber=req.body.result.parameters.IncidentNumber;
-    console.log(IncidentNumber.match(/^[0-9a-z]+$/));
-    if(IncidentNumber.match(/^[0-9a-z]+$/))
+    if( /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/.test( IncidentNumber ))
     {
 
     
