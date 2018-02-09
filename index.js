@@ -152,7 +152,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
     {
 
     
-    if(IncidentNumber.indexOf('INC') == -1)
+    if(IncidentNumber.indexOf('INC') == -1 || IncidentNumber.indexOf('inc') == -1)
     {
       var str='INC';
       IncidentNumber=str.concat(IncidentNumber);
