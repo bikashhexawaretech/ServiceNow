@@ -168,7 +168,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
           followupEvent: {
              "name": "eventProceed",
              "data": {
-                 
+                 "Incident":IncidentNumber
              }
           }
        
