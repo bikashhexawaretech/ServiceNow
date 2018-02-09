@@ -159,20 +159,39 @@ if( req.body.result.action=== "Incident_Status_Check"){
             output+="Description: "+JSONOBJ.result[0].short_description+" ";
             output+="Created under: "+JSONOBJ.result[0].category+" ";
             output+="Urgency: "+JSONOBJ.result[0].urgency+" ";
+            return res.json({
+              speech:output,
+              displayText: output,
+              source:'',
+                followupEvent: {
+                   "name": "eventSuccessProceed",
+                   "data": {
+                       "Incident":IncidentNumber,
+                       "Description":JSONOBJ.result[0].short_description,
+                       "Category":JSONOBJ.result[0].category,
+                       "Urgency":JSONOBJ.result[0].urgency
+                   }
+                }
+             
+            });
+        }
+        else
+        {
+          return res.json({
+            speech:output,
+            displayText: output,
+            source:'',
+              followupEvent: {
+                 "name": "eventFailProceed",
+                 "data": {
+                     "Incident":IncidentNumber
+                 }
+              }
+           
+          });
         }
         
-      return res.json({
-        speech:output,
-        displayText: output,
-        source:'',
-          followupEvent: {
-             "name": "eventProceed",
-             "data": {
-                 "Incident":IncidentNumber
-             }
-          }
-       
-      });
+      
     })
      
       
