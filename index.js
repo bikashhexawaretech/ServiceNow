@@ -152,7 +152,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
     {
 
     console.log("Index "+ IncidentNumber.indexOf('inc'));
-
+    console.log("Index "+ IncidentNumber.indexOf('INC'));
     if(IncidentNumber.indexOf('INC') == -1 || IncidentNumber.indexOf('inc') == -1)
     {
       var str='INC';
