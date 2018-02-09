@@ -201,7 +201,21 @@ if( req.body.result.action=== "Incident_Status_Check"){
 }
 });
 
+if(req.body.result.action==="ActionSuccessProceed"){
 
+  return res.json({
+    speech:output,
+    displayText: output,
+    source:'',
+      followupEvent: {
+         "name": "WELCOME",
+         "data": {
+             
+         }
+      }
+   
+  });
+}
 /*
 
 if( req.body.result.action=== "Incident_Status_Check"){
