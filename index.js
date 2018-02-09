@@ -151,7 +151,8 @@ if( req.body.result.action=== "Incident_Status_Check"){
     if( /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/.test( IncidentNumber ) || /[0-9]|\./.test(IncidentNumber))
     {
 
-    
+    console.log("Index "+ IncidentNumber.indexOf('inc'));
+
     if(IncidentNumber.indexOf('INC') == -1 || IncidentNumber.indexOf('inc') == -1)
     {
       var str='INC';
@@ -160,10 +161,6 @@ if( req.body.result.action=== "Incident_Status_Check"){
     inc.statusIncident(IncidentNumber,function(err,resu){
       var JSONOBJ=JSON.parse(resu);
      
-      console.log("Result Check "+JSONOBJ.hasOwnProperty("result"));
-     
-      var flag=false;
-      
         var output='Incorrect Incident number: '+IncidentNumber;
         if(JSONOBJ.hasOwnProperty("result"))
         {
