@@ -148,6 +148,10 @@ if( req.body.result.action=== "Incident_Request.Incident_Request-custom" && req.
 
 if( req.body.result.action=== "Incident_Status_Check"){
     var IncidentNumber=req.body.result.parameters.IncidentNumber;
+    if(IncidentNumber.match(/^[0-9a-z]+$/))
+    {
+
+    
     if(IncidentNumber.indexOf('INC') == -1)
     {
       var str='INC';
@@ -202,6 +206,22 @@ if( req.body.result.action=== "Incident_Status_Check"){
         
       
     })
+  }
+  else
+  {
+    return res.json({
+      speech:"",
+      displayText: "",
+      source:'',
+        followupEvent: {
+           "name": "eventValidIncident",
+           "data": {
+                
+           }
+        }
+     
+    });
+  }
      
       
      
