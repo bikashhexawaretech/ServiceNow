@@ -151,10 +151,10 @@ if( req.body.result.action=== "Incident_Status_Check"){
     if( /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/.test( IncidentNumber ) || /[0-9]|\./.test(IncidentNumber))
     {
 
-    console.log("Index "+ IncidentNumber.indexOf('inc'));
-    console.log("Index "+ IncidentNumber.indexOf('INC'));
+   
     if(IncidentNumber.indexOf('INC') == -1 || IncidentNumber.indexOf('inc') == -1)
     {
+      IncidentNumber= IncidentNumber.replace("inc","INC");
       var str='INC';
       IncidentNumber=str.concat(IncidentNumber);
     }
