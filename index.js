@@ -40,6 +40,11 @@ app.post('/',function(req,res){
           ]
         },
         {
+          "type": "simple_response",
+          "platform": "google",
+          "textToSpeech": "Please select one of the following"
+        },
+        {
           "type": "suggestion_chips",
           "platform": "google",
           "suggestions": [
