@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.post('/',function(req,res){
     var facebookResponse='';
-    console.log(req.body);
+    console.log("Body: "+req.body);
  if(req.body.result.action==='IncidentRequestAction'){
   
       facebookResponse={
