@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 
 app.post('/',function(req,res){
     var facebookResponse='';
-   
+    console.log(req.body.result.fulfillment.messages);
  if(req.body.result.action==='IncidentRequestAction'){
-  console.log(req.body.result.fulfillment.messages);
+  
       facebookResponse={
         "speech": "",
       "messages": [
@@ -40,9 +40,17 @@ app.post('/',function(req,res){
           ]
         },
         {
-          "type": 0,
-          "speech": ""
-        }
+          "type": "suggestion_chips",
+          "platform": "google",
+          "suggestions": [
+            {
+              "title": "A1t"
+            },
+            {
+              "title": "B2"
+            }
+          ]
+        },
       ]
      }
      return res.json(facebookResponse);
