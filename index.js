@@ -49,7 +49,30 @@ app.post('/',function(req,res){
        return res.json(facebookResponse);
       }
       
+      if( req.body.result.action=== "IncidentWebCall"){
+      
+        console.log("Entry : "+req.body.originalRequest.source);
+        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+          console.log(req.body.result.parameters.desc);
+            var resagent=resu["result"].number+" logged Successfully.";
+            
+            return res.json({
+              speech:resagent,
+              displayText: resagent,
+              source:'',
+              followupEvent: {
+                "name": "eventSuccessProceed",
+                "data": {
+                    "Incident":resu["result"].number,
+                    "Description":req.body.result.parameters.desc,
+                    "Category":req.body.result.parameters.category,
+                    "Urgency":req.body.result.parameters.urgency
+                }
+             }
+            });
+    })
      
+  }
   
   
    
@@ -85,31 +108,25 @@ app.post('/',function(req,res){
        }
        return res.json(googleResponse);
       }
-    }
-    if( req.body.result.action=== "IncidentWebCall"){
+
+      if( req.body.result.action=== "IncidentWebCall"){
       
-      console.log("Entry : "+req.body.originalRequest.source);
-      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-        console.log(req.body.result.parameters.desc);
-          var resagent=resu["result"].number+" logged Successfully.";
-          
-          return res.json({
-            speech:resagent,
-            displayText: resagent,
-            source:'',
-            followupEvent: {
-              "name": "eventSuccessProceed",
-              "data": {
-                  "Incident":resu["result"].number,
-                  "Description":req.body.result.parameters.desc,
-                  "Category":req.body.result.parameters.category,
-                  "Urgency":req.body.result.parameters.urgency
-              }
-           }
-          });
-  })
+        console.log("Entry : "+req.body.originalRequest.source);
+        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+          console.log(req.body.result.parameters.desc);
+            var resagent=resu["result"].number+" logged Successfully.";
+            
+            return res.json({
+              speech:resagent,
+              displayText: resagent,
+              source:''
+             
+            });
+    })
+     
+  }
+    }
    
-}
 
 // Simple text sent to FB
 
