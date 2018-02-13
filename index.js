@@ -12,85 +12,104 @@ app.use(bodyParser.json());
 
 app.post('/',function(req,res){
     var facebookResponse='';
+    var googleResponse='';
     console.log("Body : "+req.body.originalRequest.source);
- if(req.body.result.action==='IncidentRequestAction'){
+    if(req.body.originalRequest.source=='facebook')
+    {
+      if(req.body.result.action==='IncidentRequestAction'){
   
-      facebookResponse={
-        "speech": "",
-      "messages": [
-        {
-          "type": 1,
-          "platform": "facebook",
-          "title": "Select Category",
-          "subtitle": "",
-          "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
-          "buttons": [
-            {
-              "text": "Hardware",
-              "postback": "Hardware"
-            },
-            {
-              "text": "Software",
-              "postback": "Software"
-            },
-            {
-              "text": "Network",
-              "postback": "Network"
-            }
-          ]
-        },
-        {
-          "type": "simple_response",
-          "platform": "google",
-          "textToSpeech": "Please select one of the following"
-        },
-        {
-          "type": "suggestion_chips",
-          "platform": "google",
-          "suggestions": [
-            {
-              "title": "Hardware"
-            },
-            {
-              "title": "Software"
-            },
-            {
-              "title": "Network"
-            }
-          ]
-        },
-      ]
-     }
-     return res.json(facebookResponse);
-    }
-    
-   
-
-
-  if( req.body.result.action=== "IncidentWebCall"){
-    
- 
-      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-        console.log(req.body.result.parameters.desc);
-          var resagent=resu["result"].number+" logged Successfully.";
-          
-          return res.json({
-            speech:resagent,
-            displayText: resagent,
-            source:'',
-            followupEvent: {
-              "name": "eventSuccessProceed",
-              "data": {
-                  "Incident":resu["result"].number,
-                  "Description":req.body.result.parameters.desc,
-                  "Category":req.body.result.parameters.category,
-                  "Urgency":req.body.result.parameters.urgency
+        facebookResponse={
+          "speech": "",
+        "messages": [
+          {
+            "type": 1,
+            "platform": "facebook",
+            "title": "Select Category",
+            "subtitle": "",
+            "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
+            "buttons": [
+              {
+                "text": "Hardware",
+                "postback": "Hardware"
+              },
+              {
+                "text": "Software",
+                "postback": "Software"
+              },
+              {
+                "text": "Network",
+                "postback": "Network"
               }
-           }
-          });
-  })
+            ]
+          }
+          
+          
+        ]
+       }
+       return res.json(facebookResponse);
+      }
+      
+     
+  
+  
+    if( req.body.result.action=== "IncidentWebCall"){
+      
    
-}
+        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+          console.log(req.body.result.parameters.desc);
+            var resagent=resu["result"].number+" logged Successfully.";
+            
+            return res.json({
+              speech:resagent,
+              displayText: resagent,
+              source:'',
+              followupEvent: {
+                "name": "eventSuccessProceed",
+                "data": {
+                    "Incident":resu["result"].number,
+                    "Description":req.body.result.parameters.desc,
+                    "Category":req.body.result.parameters.category,
+                    "Urgency":req.body.result.parameters.urgency
+                }
+             }
+            });
+    })
+     
+  }
+    }
+    else  if(req.body.originalRequest.source=='google'){
+      if(req.body.result.action==='IncidentRequestAction'){
+  
+        googleResponse={
+          "speech": "",
+        "messages": [
+          
+          {
+            "type": "simple_response",
+            "platform": "google",
+            "textToSpeech": "Please select one of the following options"
+          },
+          {
+            "type": "suggestion_chips",
+            "platform": "google",
+            "suggestions": [
+              {
+                "title": "Hardware"
+              },
+              {
+                "title": "Software"
+              },
+              {
+                "title": "Network"
+              }
+            ]
+          },
+        ]
+       }
+       return res.json(googleResponse);
+      }
+    }
+ 
 
 // Simple text sent to FB
 
