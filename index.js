@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-    console.log("Body : "+req.body.originalRequest.source);
+    
     if(req.body.originalRequest.source=='facebook')
     {
       if(req.body.result.action==='IncidentRequestAction'){
@@ -52,30 +52,7 @@ app.post('/',function(req,res){
      
   
   
-    if( req.body.result.action=== "IncidentWebCall"){
-      
    
-        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log(req.body.result.parameters.desc);
-            var resagent=resu["result"].number+" logged Successfully.";
-            
-            return res.json({
-              speech:resagent,
-              displayText: resagent,
-              source:'',
-              followupEvent: {
-                "name": "eventSuccessProceed",
-                "data": {
-                    "Incident":resu["result"].number,
-                    "Description":req.body.result.parameters.desc,
-                    "Category":req.body.result.parameters.category,
-                    "Urgency":req.body.result.parameters.urgency
-                }
-             }
-            });
-    })
-     
-  }
     }
     else  if(req.body.originalRequest.source=='google'){
       if(req.body.result.action==='IncidentRequestAction'){
@@ -109,7 +86,30 @@ app.post('/',function(req,res){
        return res.json(googleResponse);
       }
     }
- 
+    if( req.body.result.action=== "IncidentWebCall"){
+      
+      console.log("Entry : "+req.body.originalRequest.source);
+      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+        console.log(req.body.result.parameters.desc);
+          var resagent=resu["result"].number+" logged Successfully.";
+          
+          return res.json({
+            speech:resagent,
+            displayText: resagent,
+            source:'',
+            followupEvent: {
+              "name": "eventSuccessProceed",
+              "data": {
+                  "Incident":resu["result"].number,
+                  "Description":req.body.result.parameters.desc,
+                  "Category":req.body.result.parameters.category,
+                  "Urgency":req.body.result.parameters.urgency
+              }
+           }
+          });
+  })
+   
+}
 
 // Simple text sent to FB
 
