@@ -110,7 +110,7 @@ app.post('/',function(req,res){
 
       if( req.body.result.action=== "IncidentWebCall"){
       
-        console.log("Entry : "+req.body.originalRequest.source);
+        console.log(req.body.result.parameters.severity);
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
           console.log(req.body.result.parameters.desc);
             var resagent=resu["result"].number+" logged Successfully.";
