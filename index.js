@@ -44,10 +44,13 @@ app.post('/',function(req,res){
           "platform": "google",
           "suggestions": [
             {
-              "title": "A1t"
+              "title": "Hardware"
             },
             {
-              "title": "B2"
+              "title": "Software"
+            },
+            {
+              "title": "Network"
             }
           ]
         },
