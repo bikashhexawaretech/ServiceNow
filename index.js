@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.post('/',function(req,res){
     console.log('Received the request & it is:::'+JSON.stringify(req.body));
     var facebookResponse='';
-    console.log(req.body.result.fulfillment.messages);
+    console.log(req.body.result);
  if(req.body.result.action==='IncidentRequestAction'){
 
       facebookResponse={
