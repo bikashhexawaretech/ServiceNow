@@ -14,7 +14,7 @@ app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
     
-    if(req.body.originalRequest.source=='facebook')
+    if(req.body.originalRequest.source==='facebook')
     {
       if(req.body.result.action==='IncidentRequestAction'){
   
