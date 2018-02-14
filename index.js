@@ -18,8 +18,8 @@ function buildRichResponse(req, res) {
   const assistant = new DialogflowApp({request: req, response: res});
 
   var googleAssistant = assistant.buildRichResponse()
-  .addSimpleResponse({speech: 'Please select option from '+contentType,
-    displayText: 'Please select option from '+contentType})
+  .addSimpleResponse({speech: 'Please select option from ',
+    displayText: 'Please select option from '})
   .addSuggestions(content) ;
   
   assistant.ask(googleAssistant);
