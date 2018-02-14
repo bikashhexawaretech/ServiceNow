@@ -1,23 +1,17 @@
-/*
-const DialogflowApp = require('actions-on-google').DialogflowApp;
-appHandler = new DialogflowApp({request: req, response: res});
-var googleAssistant = appHandler.buildRichResponse()
- .addSimpleResponse({speech: 'Please select option from '+contentType,
-   displayText: 'Please select option from '+contentType})
- .addSuggestions(content) ;
-
-
- 
- 
-appHandler.ask( googleAssistant );
-*/
-
 
 'use strict';
-var express = require('express');
-var app = express();
+var request = require('http');
+var express=require('express');
 var bodyParser = require('body-parser');
+var app = express();
+var portC = process.env.PORT || 3000;
+var inc = require('./app.js');
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
+
+
+
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
 function buildRichResponse(req, res) {
