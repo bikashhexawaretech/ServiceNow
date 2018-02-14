@@ -76,7 +76,7 @@ app.post('/',function(req,res){
   
    
     }
-    else  if(req.body.originalRequest.source=='google'){
+    else  if(req.body.originalRequest.source==='google'){
       if(req.body.result.action==='IncidentRequestAction'){
   
         googleResponse={
@@ -112,7 +112,7 @@ app.post('/',function(req,res){
       
         
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log(req.body.result.parameters.desc);
+          console.log("Category: "+req.body.result.parameters.category);
             var resagent=resu["result"].number+" logged Successfully.";
             
             return res.json({
