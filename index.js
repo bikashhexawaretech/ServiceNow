@@ -20,7 +20,7 @@ function buildRichResponse(req, res) {
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Please select option from ',
     displayText: 'Please select option from '})
-  .addSuggestions(content) ;
+  .addSuggestions('bikash') ;
   
   assistant.ask(googleAssistant);
 
