@@ -16,6 +16,8 @@ appHandler.ask( googleAssistant );
 'use strict';
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
 function buildRichResponse(req, res) {
@@ -68,7 +70,7 @@ function buildRichResponse(req, res) {
 }
 
 
-app.post('/google', function (req, res) {
+app.post('/', function (req, res) {
   console.log(req.body);
   buildRichResponse(req, res);
 })
