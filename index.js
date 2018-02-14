@@ -49,29 +49,7 @@ app.post('/',function(req,res){
        return res.json(facebookResponse);
       }
       
-      if( req.body.result.action=== "IncidentWebCall"){
       
-        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log("Severity :"+req.body.result.parameters.severity);
-            var resagent=resu["result"].number+" logged Successfully.";
-            
-            return res.json({
-              speech:resagent,
-              displayText: resagent,
-              source:'',
-              followupEvent: {
-                "name": "eventSuccessProceed",
-                "data": {
-                    "Incident":resu["result"].number,
-                    "Description":req.body.result.parameters.desc,
-                    "Category":req.body.result.parameters.category,
-                    "Urgency":req.body.result.parameters.urgency
-                }
-             }
-            });
-    })
-     
-  }
   
   
    
@@ -108,34 +86,32 @@ app.post('/',function(req,res){
        return res.json(googleResponse);
       }
 
-      if( req.body.result.action=== "IncidentWebCall"){
-      
-        
-        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log("Category: "+req.body.result);
-            var resagent=resu["result"].number+" logged Successfully." ;
-            
-            return res.json({
-              speech:resagent,
-              displayText: resagent,
-              source:'',
-              followupEvent: {
-                "name": "eventSuccessProceed",
-                "data": {
-                    "Incident":resu["result"].number,
-                    "Description":req.body.result.parameters.desc,
-                    "Category":req.body.result.parameters.category,
-                    "Urgency":req.body.result.parameters.urgency
-                }
-             }
-             
-            });
-    })
-     
-  }
+  
     }
    
-
+    if( req.body.result.action=== "IncidentWebCall"){
+      
+      inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+        console.log("Severity :"+req.body.result.parameters.severity);
+          var resagent=resu["result"].number+" logged Successfully.";
+          
+          return res.json({
+            speech:resagent,
+            displayText: resagent,
+            source:'',
+            followupEvent: {
+              "name": "eventSuccessProceed",
+              "data": {
+                  "Incident":resu["result"].number,
+                  "Description":req.body.result.parameters.desc,
+                  "Category":req.body.result.parameters.entityCategory,
+                  "Urgency":req.body.result.parameters.severity
+              }
+           }
+          });
+  })
+   
+}
 // Simple text sent to FB
 
 if( req.body.result.action=== "Incident_Status_Check"){
