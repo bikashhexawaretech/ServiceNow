@@ -9,16 +9,6 @@ var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-'use strict';
-var request = require('http');
-var express=require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var portC = process.env.PORT || 3000;
-var inc = require('./app.js');
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
-
 
 
 
