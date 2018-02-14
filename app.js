@@ -1,7 +1,7 @@
 var request = require("request");
 
 module.exports = {
-    'logIncident' : function(desc, severity,category, callback){
+    'logIncident' : function(desc, severity,category,contact_type, callback){
 
         console.log("Post");
         var options = { method: 'POST',
@@ -16,7 +16,8 @@ module.exports = {
              caller_id: 'Pourab Karchaudhuri',
              urgency: severity ,
              comments: 'Chatbot Testing',
-            category:category },
+            category:category,
+          contact_type:contact_type },
           json: true };
 
         request(options, function (error, response, body) {
