@@ -4,8 +4,8 @@ var funResponse= function buildRichResponse(req, res) {
   const assistant = new DialogflowApp({request: req, response: res});
 
   var googleAssistant = assistant.buildRichResponse()
-  .addSimpleResponse({speech: 'My name is khan and I am not a terrorist ',
-    displayText: 'Please select option from '});
+  .addSimpleResponse({speech: 'Simple Text Speech',
+    displayText: 'Simple Text Display'});
   //.addSuggestions('Option-1') ;
   
   assistant.ask(googleAssistant);
