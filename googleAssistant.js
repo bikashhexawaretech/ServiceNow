@@ -1,4 +1,4 @@
- 
+ /*
 
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
@@ -8,11 +8,10 @@ var funResponse= function buildRichResponse(req, res) {
 
 //Simple Text
 
-/*
 var googleAssistant = assistant.buildRichResponse()
 .addSimpleResponse({speech: 'Simple Text Speech Testing By Bikash',
   displayText: 'Simple Text Display'});
-  */
+  
 
 
   //Suggestion Chips
@@ -48,36 +47,50 @@ var googleAssistant = assistant.buildRichResponse()
           .setImage('https://3c2ba678857e073c9506-9b92ffc51ccdc874f7e956dfcfbdbfba.ssl.cf5.rackcdn.com/spark/images/servicenow/servicenow.png', 'Image alternate text')
         );
 
-*/
 
-        var googleAssistant = assistant.buildRichResponse()
-        .addItems(assistant.buildOptionItem('MATH_AND_PRIME',
-   ['math', 'math and prime', 'prime numbers', 'prime'])
-   .setTitle('Math & prime numbers')
-   .setDescription('42 is an abundant number because the sum of its ' +
-     'proper divisors 54 is greater…')
-   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Math & prime numbers'))
-
-   .addItems(assistant.buildOptionItem('EGYPT',
-   ['religion', 'egpyt', 'ancient egyptian'])
-   .setTitle('Ancient Egyptian religion')
-   .setDescription('42 gods who ruled on the fate of the dead in the ' +
-     'afterworld. Throughout the under…')
-   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Egypt')
- )
-
- .addItems(assistant.buildOptionItem('RECIPES',
-   ['recipes', 'recipe', '42 recipes'])
-   .setTitle('42 recipes with 42 ingredients')
-   .setDescription('Here\'s a beautifully simple recipe that\'s full ' +
-     'of flavor! All you need is some ginger and…')
-   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Recipe')
- );
+  
      
   assistant.ask(googleAssistant);
 
-  
-} 
+  const WELCOME_INTENT = 'input.welcome';  
+  const NUMBER_INTENT = 'input.number';  
+  const NUMBER_ARGUMENT = 'input.mynum'; 
 
+} */  
+
+ 
+ let DialogflowApp = require('actions-on-google').DialogflowApp;
+
+ var funResponse = function buildRichResponse(req, res) {
+   const app = new DialogflowApp({request: req, response: res});
+ console.log(req.body);
+ 
+ app.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?',
+ // Build a carousel
+ app.buildCarousel()
+ // Add the first item to the carousel
+ .addItems(app.buildOptionItem('MATH_AND_PRIME',
+   ['math', 'math and prime', 'prime numbers', 'prime'])
+   .setTitle('Math & prime numbers')
+   .setDescription(' Test')
+   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Math & prime numbers'))
+ // Add the second item to the carousel
+ .addItems(app.buildOptionItem('EGYPT',
+   ['religion', 'egpyt', 'ancient egyptian'])
+   .setTitle('Ancient Egyptian religion')
+   .setDescription('Test')
+   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Egypt')
+ )
+ // Add third item to the carousel
+ .addItems(app.buildOptionItem('RECIPES',
+   ['recipes', 'recipe', '42 recipes'])
+   .setTitle('42 recipes with 42 ingredients')
+   .setDescription('Test')
+   .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Recipe')
+ )
+
+ );
+ };
+ 
  
  module.exports.BuildRichResponse=funResponse;
