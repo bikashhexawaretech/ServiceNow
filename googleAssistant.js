@@ -41,12 +41,11 @@ var funResponse= function buildRichResponse(req, res) {
       //List
         
        var googleAssistant = assistant.buildRichResponse()
-       .addSimpleResponse({speech: 'Simple Text Speech',
-         displayText: 'Simple Text Display'})
+    
          .addSimpleResponse({
            speech: 'List',
            displayText: 'List'})
-           assistant.buildList('List Title')
+           .assistant.buildList('List Title')
            // Add the first item to the list
            .addItems(assistant.buildOptionItem('title',
              ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
