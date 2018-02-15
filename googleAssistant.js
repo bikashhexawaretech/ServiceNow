@@ -1,4 +1,4 @@
- /*
+ 
 
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
@@ -8,10 +8,11 @@ var funResponse= function buildRichResponse(req, res) {
 
 //Simple Text
 
+/*
 var googleAssistant = assistant.buildRichResponse()
 .addSimpleResponse({speech: 'Simple Text Speech Testing By Bikash',
   displayText: 'Simple Text Display'});
-  
+  */
 
 
   //Suggestion Chips
@@ -31,7 +32,7 @@ var googleAssistant = assistant.buildRichResponse()
 
   //Basic Card
   
-  /*
+  
  
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Simple Text Speech',
@@ -56,13 +57,13 @@ var googleAssistant = assistant.buildRichResponse()
   const NUMBER_INTENT = 'input.number';  
   const NUMBER_ARGUMENT = 'input.mynum'; 
 
-} */  
+} 
 
- 
- let ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
+ /*
+ let DialogflowApp = require('actions-on-google').DialogflowApp;
 
  var funResponse = function buildRichResponse(req, res) {
-   const app = new ActionsSdkApp({request: req, response: res});
+   const app = new DialogflowApp({request: req, response: res});
  console.log(req.body);
  
  app.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?',
@@ -94,6 +95,6 @@ var googleAssistant = assistant.buildRichResponse()
 
  );
  };
- 
+ */
  
  module.exports.BuildRichResponse=funResponse;
