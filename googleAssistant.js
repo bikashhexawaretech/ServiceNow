@@ -107,7 +107,7 @@ console.log(req.body);
 
 app.askWithList('Alright! Here are a few things you can learn. Which sounds interesting?',
 // Build a carousel
-app.buildCarousel()
+app.buildList()
 // Add the first item to the carousel
 .addItems(app.buildOptionItem('MATH_AND_PRIME',
   ['math', 'math and prime', 'prime numbers', 'prime'])
