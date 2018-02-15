@@ -6,7 +6,7 @@ var funResponse= function buildRichResponse(req, res) {
 
   //Suggestion Chips
 
-  
+  /*
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Simple Text Speech',
     displayText: 'Simple Text Display'})
@@ -17,26 +17,25 @@ var funResponse= function buildRichResponse(req, res) {
       ['Basic Card', 'List', 'Carousel', 'Suggestions']);
  
   
-
+*/
   //Basic Card
-  /*
+  
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Simple Text Speech',
     displayText: 'Simple Text Display'})
     .addSimpleResponse({
       speech: 'Basic Cards',
       displayText: 'Basic Cards'})
-        .addBasicCard(app.buildBasicCard(`This is a basic card.`) 
+        .addBasicCard(app.buildBasicCard('This is a basic card.') 
                               
           .setSubtitle('This is a subtitle')
           .setTitle('Title: this is a title')
           .addButton('This is a button', 'https://assistant.google.com/')
           .setImage(IMG_URL_AOG, 'Image alternate text')
-        )
-      .addSimpleResponse({ speech: 'This is the second simple response ',
-        displayText: 'This is the 2nd simple response' });
-
-        */
+        );
+      
+        
+        
 
   assistant.ask(googleAssistant);
 
