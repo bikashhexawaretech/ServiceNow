@@ -31,7 +31,7 @@ var funResponse= function buildRichResponse(req, res) {
           .setSubtitle('This is a subtitle')
           .setTitle('Title: this is a title')
           .addButton('This is a button', 'https://assistant.google.com/')
-          .setImage(IMG_URL_AOG, 'Image alternate text')
+          .setImage('https://3c2ba678857e073c9506-9b92ffc51ccdc874f7e956dfcfbdbfba.ssl.cf5.rackcdn.com/spark/images/servicenow/servicenow.png', 'Image alternate text')
         );
       
         
