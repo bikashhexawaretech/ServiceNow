@@ -55,7 +55,7 @@ var funResponse= function buildRichResponse(req, res) {
   const assistant = new ActionsSdkApp({request: req, response: res});
 
 
-  assistant.askWithCarousel(googleAssistant, app.buildCarousel()
+  assistant.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?', app.buildCarousel()
   // Add the first item to the carousel
   .addItems(app.buildOptionItem('MATH_AND_PRIME',
     ['math', 'math and prime', 'prime numbers', 'prime'])
