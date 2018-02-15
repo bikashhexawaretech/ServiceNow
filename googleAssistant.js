@@ -59,8 +59,9 @@ var googleAssistant = assistant.buildRichResponse()
 .addSimpleResponse('This is a simple response for a list')
 .addSuggestions(
   ['Basic Card', 'List', 'Carousel', 'Suggestions'])
-  .assistant.buildList('List Title')
-  
+  .addSuggestions(
+    ['Basic Card', 'List', 'Carousel', 'Suggestions'])
+  assistant.buildList('List Title')
   .addItems(assistant.buildOptionItem('title',
     ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
     .setTitle('Title of First List Item')
