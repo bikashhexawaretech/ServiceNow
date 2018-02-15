@@ -51,14 +51,14 @@ var googleAssistant = assistant.buildRichResponse()
 */
 
         var googleAssistant = assistant.buildRichResponse()
-        .addItems(app.buildOptionItem('MATH_AND_PRIME',
+        .addItems(assistant.buildOptionItem('MATH_AND_PRIME',
    ['math', 'math and prime', 'prime numbers', 'prime'])
    .setTitle('Math & prime numbers')
    .setDescription('42 is an abundant number because the sum of its ' +
      'proper divisors 54 is greater…')
    .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Math & prime numbers'))
 
-   .addItems(app.buildOptionItem('EGYPT',
+   .addItems(assistant.buildOptionItem('EGYPT',
    ['religion', 'egpyt', 'ancient egyptian'])
    .setTitle('Ancient Egyptian religion')
    .setDescription('42 gods who ruled on the fate of the dead in the ' +
@@ -66,7 +66,7 @@ var googleAssistant = assistant.buildRichResponse()
    .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Egypt')
  )
 
- .addItems(app.buildOptionItem('RECIPES',
+ .addItems(assistant.buildOptionItem('RECIPES',
    ['recipes', 'recipe', '42 recipes'])
    .setTitle('42 recipes with 42 ingredients')
    .setDescription('Here\'s a beautifully simple recipe that\'s full ' +
