@@ -3,18 +3,38 @@ const DialogflowApp = require('actions-on-google').DialogflowApp;
 var funResponse= function buildRichResponse(req, res) {
   const assistant = new DialogflowApp({request: req, response: res});
 
+
+  //Suggestion Chips
+
+  /*
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Simple Text Speech',
     displayText: 'Simple Text Display'})
     .addSimpleResponse({
-      speech: 'I can show you basic cards, lists and carousels as well as ' +
-        'suggestions on your phone',
-      displayText: 'I can show you basic cards, lists and carousels as ' +
-        'well as suggestions'})
+      speech: 'Suggestion Chips',
+      displayText: 'Suggestion Chips'})
     .addSuggestions(
       ['Basic Card', 'List', 'Carousel', 'Suggestions']);
  
-  
+  */
+
+  //Basic Card
+  var googleAssistant = assistant.buildRichResponse()
+  .addSimpleResponse({speech: 'Simple Text Speech',
+    displayText: 'Simple Text Display'})
+    .addSimpleResponse({
+      speech: 'Basic Cards',
+      displayText: 'Basic Cards'})
+        .addBasicCard(app.buildBasicCard(`This is a basic card.`) 
+                              
+          .setSubtitle('This is a subtitle')
+          .setTitle('Title: this is a title')
+          .addButton('This is a button', 'https://assistant.google.com/')
+          .setImage(IMG_URL_AOG, 'Image alternate text')
+        )
+      .addSimpleResponse({ speech: 'This is the second simple response ',
+        displayText: 'This is the 2nd simple response' });
+
   assistant.ask(googleAssistant);
 
   const WELCOME_INTENT = 'input.welcome';  
