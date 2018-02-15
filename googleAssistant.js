@@ -62,14 +62,14 @@ var funResponse= function buildRichResponse(req, res) {
     .setTitle('Math & prime numbers')
     .setDescription('42 is an abundant number because the sum of its ' +
       'proper divisors 54 is greater…')
-    .setImage('http://example.com/math_and_prime.jpg', 'Math & prime numbers'))
+    .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Math & prime numbers'))
 
     .addItems(assistant.buildOptionItem('EGYPT',
     ['religion', 'egpyt', 'ancient egyptian'])
     .setTitle('Ancient Egyptian religion')
     .setDescription('42 gods who ruled on the fate of the dead in the ' +
       'afterworld. Throughout the under…')
-    .setImage('http://example.com/egypt', 'Egypt')
+    .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Egypt')
   )
 
   .addItems(assistant.buildOptionItem('RECIPES',
@@ -77,7 +77,7 @@ var funResponse= function buildRichResponse(req, res) {
     .setTitle('42 recipes with 42 ingredients')
     .setDescription('Here\'s a beautifully simple recipe that\'s full ' +
       'of flavor! All you need is some ginger and…')
-    .setImage('http://example.com/recipe', 'Recipe')
+    .setImage('https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg', 'Recipe')
   )
 );
 };
