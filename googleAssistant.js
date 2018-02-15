@@ -49,7 +49,7 @@ var funResponse= function buildRichResponse(req, res) {
 }
         */
 
-let ActionsSdkApp = require('actions-on-google');
+let ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
 
 var funResponse= function buildRichResponse(req, res) {
   const assistant = new ActionsSdkApp({request: req, response: res});
@@ -59,8 +59,7 @@ var googleAssistant = assistant.buildRichResponse()
 .addSimpleResponse('This is a simple response for a list')
 .addSuggestions(
   ['Basic Card', 'List', 'Carousel', 'Suggestions'])
-
-.assistant.buildList('List Title')
+  .assistant.buildList('List Title')
   
   .addItems(assistant.buildOptionItem('title',
     ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
@@ -90,7 +89,7 @@ var googleAssistant = assistant.buildRichResponse()
     .setImage('https://allo.google.com/images/allo-logo.png', 'Google Allo Logo')
     .addSynonyms('Allo')
   )
-  assistant.ask(googleAssistant);
+  assistant.askWithList(googleAssistant);
 };
 
 module.exports.BuildRichResponse=funResponse;
