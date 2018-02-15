@@ -60,7 +60,7 @@ var googleAssistant = assistant.buildRichResponse()
 .addSuggestions(
   ['Basic Card', 'List', 'Carousel', 'Suggestions'])
 // Build a list
-.assistant.buildList('List Title')
+.buildList('List Title')
   // Add the first item to the list
   .addItems(assistant.buildOptionItem('title',
     ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
