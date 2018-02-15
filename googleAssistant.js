@@ -53,7 +53,7 @@ let ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
 
 var funResponse= function buildRichResponse(req, res) {
   const assistant = new ActionsSdkApp({request: req, response: res});
-
+console.log(req.body);
 
   assistant.askWithCarousel(assistant.buildRichResponse().addSimpleResponse({speech: 'Simple Text Speech',
   displayText: 'Simple Text Display'}), assistant.buildCarousel()

@@ -13,7 +13,7 @@ var googleAssistant = require('./googleAssistant.js');
 
 
 app.post('/', function (req, res) {
-  console.log(req.body);
+  
   googleAssistant.BuildRichResponse(req, res);
 })
 
