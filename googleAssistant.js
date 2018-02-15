@@ -47,7 +47,7 @@ var funResponse= function buildRichResponse(req, res) {
   const NUMBER_ARGUMENT = 'input.mynum'; 
 
 }
-        */
+  */
 
 let ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
 
@@ -55,7 +55,8 @@ var funResponse= function buildRichResponse(req, res) {
   const assistant = new ActionsSdkApp({request: req, response: res});
 
 
-  assistant.askWithCarousel('Testing With Carousal?', assistant.buildCarousel()
+  assistant.askWithCarousel(assistant.buildRichResponse().addSimpleResponse({speech: 'Simple Text Speech',
+  displayText: 'Simple Text Display'}), assistant.buildCarousel()
 
   .addItems(assistant.buildOptionItem('MATH_AND_PRIME',
     ['math', 'math and prime', 'prime numbers', 'prime'])
