@@ -45,8 +45,7 @@ var funResponse= function buildRichResponse(req, res) {
          .addSimpleResponse({
            speech: 'List',
            displayText: 'List'})
-           .addSuggestions(
-            ['Basic Card', 'List', 'Carousel', 'Suggestions'])
+            
            .assistant.buildList('List Title')
            // Add the first item to the list
            .addItems(assistant.buildOptionItem('title',
