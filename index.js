@@ -15,8 +15,8 @@ var googleAssistant = require('./googleAssistant.js');
 app.post('/', function (req, res) {
     console.log('Entry');
    // googleAssistant.buildRichResponseSimpleMessage(req, res);
-    googleAssistant.buildRichResponseCarousal(req, res);
-   // googleAssistant.buildRichResponseList(req, res);
+  //  googleAssistant.buildRichResponseCarousal(req, res);
+    googleAssistant.buildRichResponseList(req, res);
 })
 
 
