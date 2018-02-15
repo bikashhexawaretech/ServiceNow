@@ -26,7 +26,7 @@ var funResponse= function buildRichResponse(req, res) {
     .addSimpleResponse({
       speech: 'Basic Cards',
       displayText: 'Basic Cards'})
-        .addBasicCard(app.buildBasicCard('This is a basic card.') 
+        .addBasicCard(assistant.buildBasicCard('This is a basic card.') 
                               
           .setSubtitle('This is a subtitle')
           .setTitle('Title: this is a title')
