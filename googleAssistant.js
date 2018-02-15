@@ -57,39 +57,39 @@ var funResponse= function buildRichResponse(req, res) {
 var googleAssistant = assistant.buildRichResponse()
     
 .addSimpleResponse('This is a simple response for a list')
-.addSuggestions(
-  ['Basic Card', 'List', 'Carousel', 'Suggestions'])
-
-  assistant.buildList('List Title')
-  .addItems(assistant.buildOptionItem('title',
+addSuggestions(
+  ['Basic Card', 'List', 'Carousel', 'Suggestions']),
+assistant.buildCarousel()
+  
+  .addItems(app.buildOptionItem('4',
     ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
     .setTitle('Title of First List Item')
-    .setDescription('This is a description of a list item')
-    .setImage('https://www.synonyms.net/root/app_common/img/top_logo_syn.png', 'Image alternate text'))
-  
-  .addItems(assistant.buildOptionItem('googleHome',
+    .setDescription('This is a description of a carousel item')
+    .setImage(IMG_URL_AOG, 'Image alternate text'))
+  // Add the second item to the carousel
+  .addItems(app.buildOptionItem('3',
     ['Google Home Assistant', 'Assistant on the Google Home'])
     .setTitle('Google Home')
     .setDescription(`Google Home is a voice-activated speaker powered by
       the Google Assistant.`)
-    .setImage('https://multimedia.bbycastatic.ca/multimedia/products/500x500/107/10721/10721100.jpg', 'Google Home')
+    .setImage('', 'Google Home')
   )
-  
-  .addItems(assistant.buildOptionItem('googlePixel',
+  // Add third item to the carousel
+  .addItems(app.buildOptionItem('2',
     ['Google Pixel XL', 'Pixel', 'Pixel XL'])
     .setTitle('Google Pixel')
     .setDescription('Pixel. Phone by Google.')
-    .setImage('https://www.eglobaldigitalcameras.com.au/images/detailed/37/google-pixel-128gb-black.jpg', 'Google Pixel')
+    .setImage('', 'Google Pixel')
   )
-   
-  .addItems(assistant.buildOptionItem('googleAllo', [])
+  // Add last item of the carousel
+  .addItems(app.buildOptionItem('1', [])
     .setTitle('Google Allo')
     .setDescription('Introducing Google Allo, a smart messaging app' +
       'that helps you say more and do more.')
-    .setImage('https://allo.google.com/images/allo-logo.png', 'Google Allo Logo')
+    .setImage('', 'Google Allo Logo')
     .addSynonyms('Allo')
   )
-  assistant.askWithList(googleAssistant);
+  assistant.askWithCarousel(googleAssistant);
 };
 
 module.exports.BuildRichResponse=funResponse;
