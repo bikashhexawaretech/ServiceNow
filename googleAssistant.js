@@ -1,8 +1,8 @@
- /*
+ 
 
 const DialogflowApp = require('actions-on-google').DialogflowApp;
 
-var funResponse= function buildRichResponse(req, res) {
+var buildRichResponseSimpleMessage= function buildRichResponse(req, res) {
   const assistant = new DialogflowApp({request: req, response: res});
 
 
@@ -46,7 +46,7 @@ var googleAssistant = assistant.buildRichResponse()
           .addButton('This is a button', 'https://assistant.google.com/')
           .setImage('https://3c2ba678857e073c9506-9b92ffc51ccdc874f7e956dfcfbdbfba.ssl.cf5.rackcdn.com/spark/images/servicenow/servicenow.png', 'Image alternate text')
         );
-
+*/
 
   
      
@@ -56,15 +56,15 @@ var googleAssistant = assistant.buildRichResponse()
   const NUMBER_INTENT = 'input.number';  
   const NUMBER_ARGUMENT = 'input.mynum'; 
 
-} */  
+} 
 
 //Carousal
  
-/*
 
- let DialogflowApp = require('actions-on-google').DialogflowApp;
 
- var funResponse = function buildRichResponse(req, res) {
+
+
+ var buildRichResponseCarousal = function buildRichResponse(req, res) {
    const app = new DialogflowApp({request: req, response: res});
  console.log(req.body);
  
@@ -95,13 +95,13 @@ var googleAssistant = assistant.buildRichResponse()
  );
  };
  
- */
+ 
 
  //List
  
-let DialogflowApp = require('actions-on-google').DialogflowApp;
 
-var funResponse = function buildRichResponse(req, res) {
+
+var buildRichResponseList = function buildRichResponse(req, res) {
   const app = new DialogflowApp({request: req, response: res});
 console.log(req.body);
 
@@ -133,4 +133,6 @@ app.buildList()
 };
 
  
- module.exports.BuildRichResponse=funResponse;
+ module.exports.buildRichResponseSimpleMessage=buildRichResponseSimpleMessage;
+ module.exports.buildRichResponseList=buildRichResponseList;
+ module.exports.buildRichResponseCarousal=buildRichResponseCarousal
