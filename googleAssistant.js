@@ -55,16 +55,16 @@ var funResponse= function buildRichResponse(req, res) {
   const assistant = new ActionsSdkApp({request: req, response: res});
 
 
-  assistant.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?', app.buildCarousel()
+  assistant.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?', assistant.buildCarousel()
   // Add the first item to the carousel
-  .addItems(app.buildOptionItem('MATH_AND_PRIME',
+  .addItems(assistant.buildOptionItem('MATH_AND_PRIME',
     ['math', 'math and prime', 'prime numbers', 'prime'])
     .setTitle('Math & prime numbers')
     .setDescription('42 is an abundant number because the sum of its ' +
       'proper divisors 54 is greater…')
     .setImage('http://example.com/math_and_prime.jpg', 'Math & prime numbers'))
   // Add the second item to the carousel
-  .addItems(app.buildOptionItem('EGYPT',
+  .addItems(assistant.buildOptionItem('EGYPT',
     ['religion', 'egpyt', 'ancient egyptian'])
     .setTitle('Ancient Egyptian religion')
     .setDescription('42 gods who ruled on the fate of the dead in the ' +
@@ -72,7 +72,7 @@ var funResponse= function buildRichResponse(req, res) {
     .setImage('http://example.com/egypt', 'Egypt')
   )
   // Add third item to the carousel
-  .addItems(app.buildOptionItem('RECIPES',
+  .addItems(assistant.buildOptionItem('RECIPES',
     ['recipes', 'recipe', '42 recipes'])
     .setTitle('42 recipes with 42 ingredients')
     .setDescription('Here\'s a beautifully simple recipe that\'s full ' +
