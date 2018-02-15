@@ -69,7 +69,7 @@ var funResponse= function buildRichResponse(req, res) {
              .setImage('https://www.eglobaldigitalcameras.com.au/images/detailed/37/google-pixel-128gb-black.jpg', 'Google Pixel')
            )
            // Add last item of the list
-           .addItems(app.buildOptionItem('googleAllo', [])
+           .addItems(assistant.buildOptionItem('googleAllo', [])
              .setTitle('Google Allo')
              .setDescription('Introducing Google Allo, a smart messaging app' +
                'that helps you say more and do more.')
