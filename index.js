@@ -13,9 +13,9 @@ var googleAssistant = require('./googleAssistant.js');
 
 
 app.post('/', function (req, res) {
-  
-
-  googleAssistant.BuildRichResponse(req, res);
+  if(req.body.result.action === 'IncidentRequestAction'){
+    googleAssistant.BuildRichResponse(req, res);
+  }  
 })
 
 
