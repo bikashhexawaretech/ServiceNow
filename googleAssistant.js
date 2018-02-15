@@ -5,8 +5,15 @@ var funResponse= function buildRichResponse(req, res) {
 
   var googleAssistant = assistant.buildRichResponse()
   .addSimpleResponse({speech: 'Simple Text Speech',
-    displayText: 'Simple Text Display'});
-  //.addSuggestions('Option-1') ;
+    displayText: 'Simple Text Display'})
+    .addSimpleResponse({
+      speech: 'I can show you basic cards, lists and carousels as well as ' +
+        'suggestions on your phone',
+      displayText: 'I can show you basic cards, lists and carousels as ' +
+        'well as suggestions'})
+    .addSuggestions(
+      ['Basic Card', 'List', 'Carousel', 'Suggestions']);
+ 
   
   assistant.ask(googleAssistant);
 
