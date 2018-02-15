@@ -62,7 +62,7 @@ var googleAssistant = assistant.buildRichResponse()
  let ActionsSdkApp = require('actions-on-google').ActionsSdkApp;
 
  var funResponse= function buildRichResponse(req, res) {
-   const assistant = new ActionsSdkApp({request: req, response: res});
+   const app = new ActionsSdkApp({request: req, response: res});
  console.log(req.body);
  
  app.askWithCarousel('Alright! Here are a few things you can learn. Which sounds interesting?',
