@@ -46,7 +46,7 @@ var funResponse= function buildRichResponse(req, res) {
          .addSimpleResponse({
            speech: 'List',
            displayText: 'List'})
-           app.buildList('List Title')
+           assistant.buildList('List Title')
            // Add the first item to the list
            .addItems(assistant.buildOptionItem('title',
              ['synonym of title 1', 'synonym of title 2', 'synonym of title 3'])
