@@ -14,8 +14,7 @@ app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
     
-    if(req.body.originalRequest.source=='facebook')
-    {
+   
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -72,68 +71,10 @@ app.post('/',function(req,res){
             });
     })
      
-  }
+  
   
   
    
-    }
-    else  if(req.body.originalRequest.source=='google'){
-      if(req.body.result.action==='IncidentRequestAction'){
-  
-        googleResponse={
-          "speech": "",
-        "messages": [
-          
-          {
-            "type": "simple_response",
-            "platform": "google",
-            "textToSpeech": "Please select one of the following options"
-          },
-          {
-            "type": "suggestion_chips",
-            "platform": "google",
-            "suggestions": [
-              {
-                "title": "Hardware"
-              },
-              {
-                "title": "Software"
-              },
-              {
-                "title": "Network"
-              }
-            ]
-          },
-        ]
-       }
-       return res.json(googleResponse);
-      }
-
-      if( req.body.result.action=== "IncidentWebCall"){
-      
-        
-        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log(req.body.result.parameters.desc);
-            var resagent=resu["result"].number+" logged Successfully.";
-            
-            return res.json({
-              speech:resagent,
-              displayText: resagent,
-              source:'',
-              followupEvent: {
-                "name": "eventSuccessProceed",
-                "data": {
-                    "Incident":resu["result"].number,
-                    "Description":req.body.result.parameters.desc,
-                    "Category":req.body.result.parameters.category,
-                    "Urgency":req.body.result.parameters.urgency
-                }
-             }
-             
-            });
-    })
-     
-  }
     }
    
 
