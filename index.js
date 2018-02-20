@@ -22,7 +22,7 @@ app.post('/',function(req,res){
         "messages": [
           {
             "type": 1,
-            "platform": "facebook",
+            "platform": "slack",
             "title": "Select Category",
             "subtitle": "",
             "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
