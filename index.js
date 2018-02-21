@@ -13,7 +13,8 @@ app.use(bodyParser.json());
 app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-    
+   
+    //Quick Replies
    
       if(req.body.result.action==='IncidentRequestAction'){
   
