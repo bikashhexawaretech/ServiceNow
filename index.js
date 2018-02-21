@@ -47,7 +47,8 @@ app.post('/',function(req,res){
         ]
        }
        */
-       return res.json(facebook.fbQuickReply());
+      // return res.json(facebook.fbQuickReply());
+      return res.json(facebook.fbCard());
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
