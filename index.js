@@ -8,7 +8,7 @@ var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
+var facebook=require('./facebook.js');
 
 app.post('/',function(req,res){
     var facebookResponse='';
@@ -17,7 +17,7 @@ app.post('/',function(req,res){
     //Quick Replies
    
       if(req.body.result.action==='IncidentRequestAction'){
-  
+  /*
         facebookResponse={
           "speech": "",
         "messages": [
@@ -46,7 +46,8 @@ app.post('/',function(req,res){
           
         ]
        }
-       return res.json(facebookResponse);
+       */
+       return res.json(facebook.fbQuickReply());
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
