@@ -271,3 +271,116 @@
 
 
   */
+
+  //Generic
+
+  /*
+
+  {
+  "facebook": {
+   "attachment": {
+
+    "type": "template",
+    "payload": {
+        "template_type": "generic",
+        "elements": [
+            {
+                "title": "Smurfs: The Lost Village (2017)",
+                "image_url": "https://www.moovrika.com/ext/makeimg.php?tbl=movies&id=15666&img=1&type=image&movie=Smurfs+The+Lost+Village&fs=400",
+                "subtitle": "Smurfette attempts to find her purpose in the village. When she encounters a creature in the Forbidden Forest who drops a mysterious map, she sets off with her friends Brainy, Clumsy, and Hefty on an adventure to find the Lost Village before the evil wizard Gargamel does.",
+                "default_action": {
+                    "type": "web_url",
+                    "url": "https://www.moovrika.com/m/15666",
+                    "webview_height_ratio": "tall"
+                },
+                "buttons": [
+                    {
+                        "title": "more info",
+                        "type": "web_url",
+                        "url": "https://www.moovrika.com/m/4082",
+                        "webview_height_ratio": "tall"
+                    },
+                   {
+                        "title": "View trailer",
+                        "type": "web_url",
+                        "url": "https://www.moovrika.com/m/4082",
+                        "webview_height_ratio": "tall"
+                    }
+                ]
+            },
+            {
+                "title": "Resident Evil: The Final Chapter (2017)",
+                "image_url": "https://www.moovrika.com/ext/makeimg.php?tbl=movies&id=4167&img=1&type=image&movie=Resident+Evil+The+Final+Chapter&fs=400",
+                "subtitle": "Resident Evil: The Final Chapter is an upcoming science fiction action horror film written and directed by Paul W. S. Anderson. It is the sequel to Resident Evil: Retribution (2012), and will be the sixth and final installment in the Resident Evil film series, which is very loosely based on the Capcom survival horror video game series Resident Evil.",
+                "default_action": {
+                    "type": "web_url",
+                    "url": "https://www.moovrika.com/m/4167",
+                    "webview_height_ratio": "tall"
+                },
+                "buttons": [
+                    {
+                        "title": "more info",
+                        "type": "web_url",
+                        "url": "https://www.moovrika.com/m/4082",
+                        "webview_height_ratio": "tall"
+                    }
+                ]
+            }
+        ]
+    }
+
+}  
+  }
+}
+
+*/
+
+
+//List -Custom payload
+
+/*
+
+{
+  "facebook": {
+          
+"attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"list",
+            "top_element_style":"large",
+            "elements":[
+              {
+                "title":"Classic White T-Shirt",
+                "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                "subtitle":"Soft white cotton t-shirt is back in style",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "url":"https://petersapparel.parseapp.com/view_item?item_id=100",
+                    "title":"View Item"
+                  }
+                ]
+              },
+              {
+                "title":"Classic Grey T-Shirt",
+                "image_url":"http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                "subtitle":"Soft gray cotton t-shirt is back in style",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "url":"https://petersapparel.parseapp.com/view_item?item_id=101",
+                    "title":"View Item"
+                  }
+                ]
+              }
+            ]
+          }
+}
+}
+}
+        
+      
+    
+  
+  
+*/
