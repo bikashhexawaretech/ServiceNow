@@ -14,7 +14,7 @@ app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
     
-   console.log( req.body.originalRequest.source);
+   
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -22,7 +22,7 @@ app.post('/',function(req,res){
         "messages": [
           {
             "type": 1,
-            "platform": "slack",
+            "platform": "facebook",
             "title": "Select Category",
             "subtitle": "",
             "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
