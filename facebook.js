@@ -108,6 +108,7 @@ var fbList=function list(){
               }
         ]
     }
+    return facebookResponse;
 }
 
   module.exports.fbQuickReply=fbQuickReply;
