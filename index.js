@@ -48,7 +48,7 @@ app.post('/',function(req,res){
        }
        */
       // return res.json(facebook.fbQuickReply());
-      return res.json(facebook.fbCard());
+      return res.json(facebook.fbList());
    //  return res.json(facebook.genTemplate());
       }
       

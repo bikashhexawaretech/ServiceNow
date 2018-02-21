@@ -61,10 +61,58 @@
      return facebookResponse;
   }
 
-
+var fbList=function list(){
+    var facebookResponse={
+        "speech":"",
+        "messages":[
+            {
+                "type": 4,
+                "platform": "facebook",
+                "payload": {
+                  "facebook": {
+                    "attachment": {
+                      "type": "template",
+                      "payload": {
+                        "template_type": "list",
+                        "top_element_style": "large",
+                        "elements": [
+                          {
+                            "title": "Classic White T-Shirt",
+                            "image_url": "http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                            "subtitle": "Soft white cotton t-shirt is back in style",
+                            "buttons": [
+                              {
+                                "type": "web_url",
+                                "url": "https://petersapparel.parseapp.com/view_item?item_id=100",
+                                "title": "View Item"
+                              }
+                            ]
+                          },
+                          {
+                            "title": "Classic Grey T-Shirt",
+                            "image_url": "http://doughnutkitten.com/PNGs/1_doughnut_kitten_Tania_Hennessy.png",
+                            "subtitle": "Soft gray cotton t-shirt is back in style",
+                            "buttons": [
+                              {
+                                "type": "web_url",
+                                "url": "https://petersapparel.parseapp.com/view_item?item_id=101",
+                                "title": "View Item"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+        ]
+    }
+}
 
   module.exports.fbQuickReply=fbQuickReply;
   module.exports.fbCard=fbCard;
+  module.exports.fbList=fbList;
  
 
   // Custom payload
