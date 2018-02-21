@@ -1,6 +1,6 @@
 
 
-  function fbQuickReply(){
+ var fbQuickReply =function fbQuick(){
     var facebookResponse={
         "speech": "",
       "messages": [
