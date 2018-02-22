@@ -111,6 +111,7 @@ var fbList=function list(){
     return facebookResponse;
 }
 
+ 
   module.exports.fbQuickReply=fbQuickReply;
   module.exports.fbCard=fbCard;
   module.exports.fbList=fbList;
@@ -432,4 +433,31 @@ var fbList=function list(){
     
   
   
+*/
+
+//Media
+
+/*
+
+
+{
+  "facebook": {
+    "attachment": {
+      "type": "template",
+      "payload": {
+         "template_type": "media",
+         "elements": [
+            {
+               "media_type": "image",
+               "url": "https://www.facebook.com/ProgrammersCreateLife/photos/a.241809332534619.55240.241806149201604/1615456278503244/?type=3"
+            }
+         ]
+      }
+    }    
+  
+  
+  }
+}
+
+
 */
