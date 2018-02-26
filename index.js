@@ -16,8 +16,8 @@ app.post('/',function(req,res){
    
     //Quick Replies
  
-   console.log(JSON.stringify(req.body.result.contexts));
-  // console.log('Data: '+JSON.stringify(req.body.originalRequest.data ));
+    
+   console.log('Data: '+JSON.stringify(req.body.originalRequest.data ));
     
       if(req.body.result.action==='IncidentRequestAction'){
   /*
