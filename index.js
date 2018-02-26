@@ -15,8 +15,10 @@ app.post('/',function(req,res){
     var googleResponse='';
    
     //Quick Replies
-   console.log('Sender: '+req.body.data.sender);
+ 
    console.log(req.body);
+   console.log('Data: '+req.body.data);
+   console.log('Sender: '+req.body.data.message.chat.first_name);
       if(req.body.result.action==='IncidentRequestAction'){
   /*
         facebookResponse={
