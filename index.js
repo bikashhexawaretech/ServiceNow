@@ -49,7 +49,7 @@ app.post('/',function(req,res){
        */
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
-     return res.json(facebook.fbGeneric());
+     return res.json(facebook.fbWebView());
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
