@@ -15,6 +15,7 @@ app.post('/',function(req,res){
     var googleResponse='';
    
     //Quick Replies
+   console.log('Sender: '+req.body.data.sender);
    console.log(req.body);
       if(req.body.result.action==='IncidentRequestAction'){
   /*
