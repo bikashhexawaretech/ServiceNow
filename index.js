@@ -53,10 +53,10 @@ app.post('/',function(req,res){
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
     // return res.json(facebook.fbWebView());
-  inc.getProfile(function (err,res){
+  inc.getProfile(function (err,rees){
     return res.json({
-      speech:res.name,
-      displayText: res.name,
+      speech:rees.name,
+      displayText: rees.name,
       source:''
          
      
