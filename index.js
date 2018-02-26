@@ -55,7 +55,7 @@ app.post('/',function(req,res){
     // return res.json(facebook.fbWebView());
   inc.getProfile(function (err,res){
     return res.json({
-      speech:output,
+      speech:res.name,
       displayText: res.name,
       source:''
          
