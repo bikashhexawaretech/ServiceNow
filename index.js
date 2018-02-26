@@ -17,8 +17,8 @@ app.post('/',function(req,res){
     //Quick Replies
  
    console.log(req.body);
-   console.log('Data: '+req.body.originalRequest.data);
-   console.log('Sender: '+req.body.originalRequest.data.message.chat.first_name);
+   console.log('Data: '+req.body.originalRequest );
+    
       if(req.body.result.action==='IncidentRequestAction'){
   /*
         facebookResponse={
