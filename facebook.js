@@ -184,19 +184,24 @@ var fbWebView=function webView(){
     "speech":"",
     "messages":[
       {
-        "type": "catalogue",
-        "msgid": "6rty",
-        "items": [{
-            "title": "Gray T Shirt",
-            "imgurl": "http://ecx.images-amazon.com/images/I/819Cirp6kPL._UL1500_.jpg",
-            "options": [{
-                "type": "url",
-                "title": "view more",
-                "url": "http://www.amazon.in/Gritstones-Hooded-T-Shirt-GS60210CWLGMEL-_Grey_Large/dp/B00OXR17OE/ref=sr_1_6",
-                "webview_height_ratio": "compact"
-            }]
-        }]
-    }
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"Try the URL button!",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://www.messenger.com/",
+                "title":"URL Button",
+                "webview_height_ratio": "full",
+                "messenger_extensions": "false",  
+                "fallback_url": "https://www.facebook.com/"
+              }
+            ]
+          }
+        }
+      }
     ]
 }
   return facebookResponse;
@@ -207,7 +212,7 @@ var fbWebView=function webView(){
   module.exports.fbCard=fbCard;
   module.exports.fbList=fbList;
   module.exports.fbGeneric=fbGeneric;
- module.exports.fbWebView=fbWebView;
+  module.exports.fbWebView=fbWebView;
 
   // Custom payload
 
