@@ -184,32 +184,30 @@ var fbWebView=function webView(){
     "speech":"",
     "messages":[
       {
-        
-        
-          "type": 4,
-          "platform": "facebook",
-          "payload": {
-            "facebook": {
-              "attachment": {
-                "type": "template",
-                "payload": {
-                  "template_type": "button",
-                  "text": "Try the URL button!",
-                  "buttons": [
-                    {
-                      "type": "web_url",
-                      "url": "https://www.messenger.com/",
-                      "title": "URL Button",
-                      "webview_height_ratio": "full",
-                      "messenger_extensions": "true",
-                      "fallback_url": "https://www.facebook.com/"
-                    }
-                  ]
-                }
+        "type": 4,
+        "platform": "facebook",
+        "payload": {
+          "facebook": {
+            "attachment": {
+              "type": "template",
+              "payload": {
+                "template_type": "button",
+                "text": "Click on the button",
+                "buttons": [
+                  {
+                    "type": "web_url",
+                    "url": "https://www.gmail.com",
+                    "title": "Open Website",
+                    "webview_height_ratio": "compact",
+                    "messenger_extensions": "true",
+                    "fallback_url": "https://www.facebook.com/"
+                  }
+                ]
               }
             }
           }
         }
+      }
       
     ]
 }

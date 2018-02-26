@@ -52,7 +52,11 @@ app.post('/',function(req,res){
        */
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
-    // return res.json(facebook.fbWebView());
+     return res.json(facebook.fbWebView());
+
+    // return facebook username(myname)
+
+    /*
   inc.getProfile(function (err,rees){
     return res.json({
       speech:rees.name,
@@ -61,8 +65,9 @@ app.post('/',function(req,res){
          
      
     });
+  
 })
-    
+      */
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
