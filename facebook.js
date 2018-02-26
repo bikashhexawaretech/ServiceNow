@@ -195,7 +195,7 @@ var fbWebView=function webView(){
                 "url":"https://www.messenger.com/",
                 "title":"URL Button",
                 "webview_height_ratio": "full",
-                "messenger_extensions": "false",  
+                "messenger_extensions": "true",  
                 "fallback_url": "https://www.facebook.com/"
               }
             ]
