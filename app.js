@@ -56,7 +56,7 @@ function getProfile (cb) {
    uri: 'https://graph.facebook.com/me',
    qs: {
     
- access_token: 'EAACEdEose0cBADjrLL4irKQ5jJJAMtqAZBpWilFTRRZCiorZC5H37wvNypUZAF5ohBCvJOaDzvCFGWPR83dhIa1aQtkHiq9yx56bLT0qfK3soRTYHqn8s99uAMWaAbgIJZCijcWpvRZBcWitadTdpBuq5GAzeKgRnKRhOZBhLuXKjrlnVjkN20GWQ97gtHXjYQZD'
+ access_token: 'EAACdyZATFKroBAEd9NSDzM4ck602h96GoEHeUrFtfKmqYMKV22T5z2n14tvHUn97WDzOBepZAhZAeVSFSdPIj8A68AmZAfTZBVwUWZAaZChmNMAkvbaJjuPrjo69q8B7CU0ME3MjEMEuDNmYDWfsabHXsYH53IJqH95KQuwdN2YR1TNd3YpBFpd4ZBOE7BkwgM0ZD'
  },
   json: true
   }, (err, res, body) => {
