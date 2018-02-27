@@ -54,7 +54,11 @@ app.post('/',function(req,res){
     //  return res.json(facebook.fbCard());
    
      return res.json(facebook.fbWebView());
-     MessengerExtensions.requestCloseBrowser();
+     MessengerExtensions.requestCloseBrowser(function success() {
+      console.log('Webview has been closed');
+    }, function error(err) {
+      console.log('Error');
+    });
     // return facebook username(myname)
 
     /*
