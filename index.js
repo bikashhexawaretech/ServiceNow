@@ -12,9 +12,8 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
-console.log('service noe get');
-res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify({ a: 1 }, null, 3));
+console.log('service now get');
+ 
   
 
   /*
