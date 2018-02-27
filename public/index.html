@@ -17,13 +17,14 @@
 window.extAsyncInit = function() {
   // the Messenger Extensions JS SDK is done loading 
   alert('hi');
-};
-
-MessengerExtensions.requestCloseBrowser(function success() {
+  MessengerExtensions.requestCloseBrowser(function success() {
     alert('Closed Success');
 }, function error(err) {
     alert('Error');
 });
+};
+
+
 </script>
 <form>
     First name: <input type="text" name="fname"><br>
