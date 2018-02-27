@@ -12,7 +12,7 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
-
+console.log('GET CALL');
   return res.json({
     speech:req.query.username,
     displayText: req.query.username,
