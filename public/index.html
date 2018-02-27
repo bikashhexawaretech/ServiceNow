@@ -7,6 +7,17 @@
     <script type="text/javascript">
         function sendMessage() {
            
+            return {
+                text: "Login Success",
+                attachments: [
+                    {
+                        email: "some@email.com",
+                        hotelName: "Hotel marriott",
+                        confirmNumber: "1234567"
+                    }
+                ]
+            }
+
             MessengerExtensions.requestCloseBrowser(function success() {
                 alert('Success');
             }, function error(err) {
