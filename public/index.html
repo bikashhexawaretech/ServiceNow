@@ -42,6 +42,15 @@
                 alert("Messenger Extension Error: " + err);
             });
         };
+
+
+        function closeBrowser(){
+            MessengerExtensions.requestCloseBrowser(function success() {
+                alert('Success');
+}, function error(err) {
+    alert('Error');
+});
+        }
     </script>
 <form>
     First name: <input type="text" name="fname"><br>
