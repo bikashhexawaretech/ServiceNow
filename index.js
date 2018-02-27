@@ -1,6 +1,6 @@
 
 'use strict';
-var request = require('http');
+var request = require('request');
 var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -13,7 +13,12 @@ app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
 console.log('GET CALL');
-return res.json(facebook.fbWebView());
+request(options, function(err, output, body) {  
+        var json = JSON.parse(body);
+        console.log(json);  
+        res.json(json)
+});  
+
   /*
   var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
   console.log('GET');
