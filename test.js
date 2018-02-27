@@ -19,3 +19,13 @@ function getProfile (cb) {
    getProfile( function abc(err,res){
        console.log(res);
    })
+
+   var json = JSON.parse({
+    speech:'hi',
+    displayText: 'hi',
+    source:''
+       
+   
+  });
+  console.log(json);  
+  res.json(json);

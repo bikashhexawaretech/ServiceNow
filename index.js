@@ -13,11 +13,17 @@ app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
 console.log('GET CALL');
-request(options, function(err, output, body) {  
-        var json = JSON.parse(body);
+  
+        var json = JSON.parse(res.json({
+          speech:'hi',
+          displayText: 'hi',
+          source:''
+             
+         
+        }));
         console.log(json);  
-        res.json(json)
-});  
+        res.json(json);
+  
 
   /*
   var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
