@@ -199,8 +199,8 @@ var fbWebView=function webView(){
                     "url": "https://www.gmail.com",
                     "title": "Open Website",
                     "webview_height_ratio": "compact",
-                    "messenger_extensions": "true"
-                    //"fallback_url": "https://www.facebook.com/"
+                    "messenger_extensions": "true",
+                    "fallback_url": "https://www.facebook.com/"
                   }
                 ]
               }
