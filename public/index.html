@@ -9,7 +9,13 @@
            
           
             MessengerExtensions.requestCloseBrowser(function success() {
-                return;
+                return res.json({
+      speech:'hi',
+      displayText: 'hi bikash',
+      source:''
+         
+     
+    });
 
             }, function error(err) {
                 console.error(
