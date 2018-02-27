@@ -192,15 +192,11 @@ var fbWebView=function webView(){
               "type": "template",
               "payload": {
                 "template_type": "button",
-                "text": "Click on the button",
+                "text": "Try the log in button!",
                 "buttons": [
                   {
                     "type": "account_link",
-                    "url": "https://www.gmail.com",
-                    "title": "Open Gmail",
-                    "webview_height_ratio": "compact",
-                    "messenger_extensions": "true",
-                    "fallback_url": "https://www.facebook.com/"
+                    "url": "https://jaspers-market.herokuapp.com/users/login?account_linking_token=ARQ_jfg2D8xb7Umsm12zFkoM8E1j_hqkJUzdKo5zPsYd7EOdCNVu878l9jkeq2dN1h7mTO7qn2hIF9Y7W_otvlcmCYqenUtgifjCuis6ozj9gA&redirect_uri=https%3A%2F%2Ffacebook.com%2Fmessenger_platform%2Faccount_linking%2F%3Faccount_linking_token%3DARQ_jfg2D8xb7Umsm12zFkoM8E1j_hqkJUzdKo5zPsYd7EOdCNVu878l9jkeq2dN1h7mTO7qn2hIF9Y7W_otvlcmCYqenUtgifjCuis6ozj9gA"
                   }
                 ]
               }
