@@ -12,6 +12,15 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
+
+  return res.json({
+    speech:req.query.username,
+    displayText: req.query.username,
+    source:''
+       
+   
+  });
+  /*
   var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
   console.log('GET');
   res.writeHead(302, {
@@ -19,6 +28,8 @@ app.get('/servicenow', function (req, res) {
     'Location': redirectUri
   });
   res.end();
+  */
+
   /*if (req.query && req.query.redirect_uri && req.query.username) {
   //  var username = req.query.username;
 
