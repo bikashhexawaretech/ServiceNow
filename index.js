@@ -1,6 +1,6 @@
 
 'use strict';
-var request = require('request');
+var request = require('http');
 var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -12,10 +12,14 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
-console.log('service now get');
- 
-  
-
+console.log('GET CALL');
+  return res.json({
+    speech:'hi',
+    displayText: 'hi',
+    source:''
+       
+   
+  });
   /*
   var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
   console.log('GET');
