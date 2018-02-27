@@ -9,9 +9,9 @@ var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
-app.use(express.static('./public'));
+app.use(express.static('public'));
 
-app.post('/',function(req,res){
+app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';
    
