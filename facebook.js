@@ -192,7 +192,7 @@ var fbWebView=function webView(){
               "type": "template",
               "payload": {
                 "template_type": "button",
-                "text": "Try the log in button!",
+                "text": "LogIn!",
                 "buttons": [
                   {
                     "type": "account_link",
