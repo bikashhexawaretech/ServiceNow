@@ -13,13 +13,7 @@ app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
 console.log('GET CALL');
-  return res.json({
-    speech:'hi',
-    displayText: 'hi',
-    source:''
-       
-   
-  });
+return res.json(facebook.fbWebView());
   /*
   var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
   console.log('GET');
