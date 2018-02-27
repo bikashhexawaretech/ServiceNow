@@ -192,11 +192,11 @@ var fbWebView=function webView(){
               "type": "template",
               "payload": {
                 "template_type": "button",
-                "text": "LogIn!",
+                "text": "Try the log in button!",
                 "buttons": [
                   {
                     "type": "account_link",
-                    "url": "https://jaspers-market.herokuapp.com/users/login?account_linking_token=ARQ_jfg2D8xb7Umsm12zFkoM8E1j_hqkJUzdKo5zPsYd7EOdCNVu878l9jkeq2dN1h7mTO7qn2hIF9Y7W_otvlcmCYqenUtgifjCuis6ozj9gA&redirect_uri=https%3A%2F%2Ffacebook.com%2Fmessenger_platform%2Faccount_linking%2F%3Faccount_linking_token%3DARQ_jfg2D8xb7Umsm12zFkoM8E1j_hqkJUzdKo5zPsYd7EOdCNVu878l9jkeq2dN1h7mTO7qn2hIF9Y7W_otvlcmCYqenUtgifjCuis6ozj9gA"
+                    "url": "https://jaspers-market.herokuapp.com/users/login?account_linking_token=ARQoGXK8uIhpN8Y860wJIx7GLdLMhpFvUhCfbQRygxURkJ8BqrD78aK1EcMbpfZt5urB16gw0ZUB0ZHxjtfrTZ7tIMnqOtnxnOifZplmCIqYgw&redirect_uri=https%3A%2F%2Ffacebook.com%2Fmessenger_platform%2Faccount_linking%2F%3Faccount_linking_token%3DARQoGXK8uIhpN8Y860wJIx7GLdLMhpFvUhCfbQRygxURkJ8BqrD78aK1EcMbpfZt5urB16gw0ZUB0ZHxjtfrTZ7tIMnqOtnxnOifZplmCIqYgw"
                   }
                 ]
               }
