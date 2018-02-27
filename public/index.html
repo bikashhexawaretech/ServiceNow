@@ -6,12 +6,11 @@
 <body>
     <script type="text/javascript">
         function sendMessage() {
-            alert('Login Success');
-            
+           
             MessengerExtensions.requestCloseBrowser(function success() {
                 alert('Success');
             }, function error(err) {
-                alert('error');
+                alert(err);
             });
             
         }
