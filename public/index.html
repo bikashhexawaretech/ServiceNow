@@ -7,14 +7,13 @@
     <script type="text/javascript">
         function sendMessage() {
             alert('Login Success');
-            MessengerExtensions.requestCloseBrowser();
-            /*
+            
             MessengerExtensions.requestCloseBrowser(function success() {
                 alert('Success');
             }, function error(err) {
                 alert('error');
             });
-            */
+            
         }
 
         (function (d, s, id) {
@@ -41,8 +40,8 @@
         
     </script>
 <form>
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br>
+   UserName: <input type="text" name="fname"><br>
+    Password: <input type="password" name="lname"><br>
     <button type="button" class="button" onclick="sendMessage();">SignIn</button>
 
 
