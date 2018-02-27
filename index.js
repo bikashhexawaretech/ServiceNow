@@ -9,7 +9,6 @@ var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
-var MessengerExtensions=require('./messenger.Extensions.js')
 
 app.post('/',function(req,res){
     var facebookResponse='';
