@@ -17,7 +17,6 @@ app.get('/servicenow', function (req, res) {
   res.writeHead(302, {
     
     'Location': redirectUri
-    //add other headers here...
   });
   res.end();
   /*if (req.query && req.query.redirect_uri && req.query.username) {
@@ -39,8 +38,7 @@ app.post('/servicenow',function(req,res){
     //Quick Replies
  
     
-   console.log('Data: '+JSON.stringify(req.body.originalRequest.data ));
-    
+  
       if(req.body.result.action==='IncidentRequestAction'){
 
         return res.json(facebook.fbWebView());
