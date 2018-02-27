@@ -7,22 +7,22 @@ var app = express();
 var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
-var bodyparser= app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
-app.get('/servicenow',bodyparser, function (req, res) {
-  if (req.query && req.query.redirect_uri && req.query.username) {
+app.get('/servicenow', function (req, res) {
+  return 'hello';
+  /*if (req.query && req.query.redirect_uri && req.query.username) {
   //  var username = req.query.username;
 
   
  //   var redirectUri = req.query.redirect_uri + '&authorization_code=' + username;
   //  return res.redirect(redirectUri);
-  return req.query.username;
+  
   } else {
     return res.send(400, 'Request did not contain redirect_uri and username in the query string');
-  }
+  }*/
 })
 
 app.post('/servicenow',function(req,res){
