@@ -12,7 +12,11 @@
                 return;
 
             }, function error(err) {
-                alert(err);
+                console.error(
+      err,
+      'Unable to close window.',
+      'You may be viewing outside of the Messenger app.'
+    );
             });
             
         }
