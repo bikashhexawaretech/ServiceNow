@@ -13,6 +13,7 @@ app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
   var redirectUri = req.query.redirect_uri + '&authorization_code=' + username;
+  console.log('GET');
   res.writeHead(302, {
     
     'Location': redirectUri
