@@ -7,7 +7,9 @@
     <script type="text/javascript">
         function sendMessage() {
            
-            return {
+          
+            MessengerExtensions.requestCloseBrowser(function success() {
+                return {
                 text: "Login Success",
                 attachments: [
                     {
@@ -18,8 +20,6 @@
                 ]
             }
 
-            MessengerExtensions.requestCloseBrowser(function success() {
-                alert('Success');
             }, function error(err) {
                 alert(err);
             });
