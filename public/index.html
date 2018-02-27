@@ -4,39 +4,50 @@
 <title>Service Now Login</title>
 </head>
 <body>
-<script>
+    <script type="text/javascript">
+        function sendMessage() {
+            alert('Booking completed. What to do now? How to send the message back to bot?')
+            return {
+                text: "HOTEL_SERVICE_PAYLOAD",
+                attachments: [
+                    {
+                        email: "some@email.com",
+                        hotelName: "Hotel marriott",
+                        confirmNumber: "1234567"
+                    }
+                ]
+            }
+            MessengerExtensions.requestCloseBrowser(function success() {
 
-    (function(d, s, id){
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'Messenger'));
+            }, function error(err) {
 
-window.extAsyncInit = function() {
-  // the Messenger Extensions JS SDK is done loading 
- // alert('hi');
-  /*
-  MessengerExtensions.getUserID(function success(uids) {
-        var psid = uids.psid;
+            });
+        }
 
-    }, function error(err, errorMessage) {      
-    }); 
-*/
-    MessengerExtensions.requestCloseBrowser(function success() {
-    
-}, function error(err) {
-     
-});
-};
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, "script", "Messenger"));
 
-  
-</script>
+        window.extAsyncInit = function () {
+            // the Messenger Extensions JS SDK is done loading
+            MessengerExtensions.getUserID(function success(uids) {
+                var psid = uids.psid;//This is your page scoped sender_id
+                alert("Getting PSID")
+                alert("This is the user's psid " + psid);
+            }, function error(err) {
+                alert("Messenger Extension Error: " + err);
+            });
+        };
+    </script>
 <form>
     First name: <input type="text" name="fname"><br>
     Last name: <input type="text" name="lname"><br>
-    <input type="submit" value="Submit" onclick=""    >
+    <button type="button" class="button" onclick="sendMessage();">SignIn</button>
+
 
 </form>
 
