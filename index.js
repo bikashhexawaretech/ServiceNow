@@ -13,16 +13,7 @@ app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
 console.log('GET CALL');
-  
-        var json = JSON.parse(res.json({
-          speech:'hi',
-          displayText: 'hi',
-          source:''
-             
-         
-        }));
-        console.log(json);  
-        res.json(json);
+res.send('hi');
   
 
   /*
