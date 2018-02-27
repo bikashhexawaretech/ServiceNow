@@ -6,19 +6,9 @@
 <body>
     <script type="text/javascript">
         function sendMessage() {
-            alert('Booking completed. What to do now? How to send the message back to bot?')
-            return {
-                text: "HOTEL_SERVICE_PAYLOAD",
-                attachments: [
-                    {
-                        email: "some@email.com",
-                        hotelName: "Hotel marriott",
-                        confirmNumber: "1234567"
-                    }
-                ]
-            }
+            alert('Login Success');
             MessengerExtensions.requestCloseBrowser(function success() {
-alert('Success');
+                alert('Success');
             }, function error(err) {
                 alert('error');
             });
@@ -44,13 +34,8 @@ alert('Success');
         };
 
 
-        function closeBrowser(){
-            MessengerExtensions.requestCloseBrowser(function success() {
-                alert('Success');
-}, function error(err) {
-    alert('Error');
-});
-        }
+      
+        
     </script>
 <form>
     First name: <input type="text" name="fname"><br>
