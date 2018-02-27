@@ -52,6 +52,7 @@ app.post('/',function(req,res){
        */
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
+  console.log(res.json(facebook.fbWebView()));
      return res.json(facebook.fbWebView());
 
     // return facebook username(myname)
