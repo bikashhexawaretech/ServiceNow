@@ -9,13 +9,14 @@
            
           
             MessengerExtensions.requestCloseBrowser(function success() {
-                return ({
-      speech:'hi',
-      displayText: 'hi bikash',
-      source:''
-         
-     
-    });
+                var username = document.getElementById('fname').value;
+  var newLocation = '/servicenow' + window.location.search;
+  if (window.location.search) {
+    newLocation += '&';
+  } else {
+    newLocation += '?';
+  }
+  window.location = newLocation + 'username=' + username;
 
             }, function error(err) {
                 console.error(
