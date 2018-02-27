@@ -12,7 +12,7 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
-  var redirectUri = req.query.redirect_uri + '&authorization_code=' + username;
+  var redirectUri = req.query.redirect_uri + '&authorization_code=' + req.query.username;
   console.log('GET');
   res.writeHead(302, {
     
