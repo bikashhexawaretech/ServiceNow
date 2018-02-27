@@ -16,26 +16,22 @@
 
 window.extAsyncInit = function() {
   // the Messenger Extensions JS SDK is done loading 
-  alert('hi');
+ // alert('hi');
+  /*
   MessengerExtensions.getUserID(function success(uids) {
-        // User ID was successfully obtained. 
         var psid = uids.psid;
-        alert(psid);
-     //   console.log("psid", psid)
-       //     $('.error').html(psid)
 
     }, function error(err, errorMessage) {      
-        // Error handling code
-      //  console.log(err, errorMessage)
-       // $('.error').html(errorMessage)
     }); 
+*/
+    MessengerExtensions.requestCloseBrowser(function success() {
+    
+}, function error(err) {
+     
+});
 };
 
- var funclose= MessengerExtensions.requestCloseBrowser(function success() {
-    alert('Closed Success');
-}, function error(err) {
-    alert('Error');
-});
+  
 </script>
 <form>
     First name: <input type="text" name="fname"><br>
