@@ -20,42 +20,9 @@ app.post('/',function(req,res){
    console.log('Data: '+JSON.stringify(req.body.originalRequest.data ));
     
       if(req.body.result.action==='IncidentRequestAction'){
-  /*
-        facebookResponse={
-          "speech": "",
-        "messages": [
-          {
-            "type": 1,
-            "platform": "facebook",
-            "title": "Select Category",
-            "subtitle": "",
-            "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
-            "buttons": [
-              {
-                "text": "Hardware",
-                "postback": "Hardware"
-              },
-              {
-                "text": "Software",
-                "postback": "Software"
-              },
-              {
-                "text": "Network",
-                "postback": "Network"
-              }
-            ]
-          }
-          
-          
-        ]
-       }
-       */
-      // return res.json(facebook.fbQuickReply());
-    //  return res.json(facebook.fbCard());
-    console.log(facebook.fbWebView());
-     return res.json(facebook.fbWebView());
+
+        return res.json(facebook.fbWebView());
       
-    // return facebook username(myname)
 
     /*
   inc.getProfile(function (err,rees){
