@@ -195,9 +195,9 @@ var fbWebView=function webView(){
                 "text": "Click on the button",
                 "buttons": [
                   {
-                    "type": "web_url",
+                    "type": "account_link",
                     "url": "https://www.gmail.com",
-                    "title": "Open Website",
+                    "title": "Open Gmail",
                     "webview_height_ratio": "compact",
                     "messenger_extensions": "true",
                     "fallback_url": "https://www.facebook.com/"

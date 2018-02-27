@@ -9,6 +9,7 @@ var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
+var MessengerExtensions=require('./messenger.Extensions.js')
 
 app.post('/',function(req,res){
     var facebookResponse='';
@@ -53,11 +54,7 @@ app.post('/',function(req,res){
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
      return res.json(facebook.fbWebView());
-     window.MessengerExtensions.requestCloseBrowser(function success() {
-      console.log('Webview has been closed');
-    }, function error(err) {
-      console.log('Error');
-    });
+      
     // return facebook username(myname)
 
     /*
