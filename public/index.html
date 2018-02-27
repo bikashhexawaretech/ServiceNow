@@ -35,7 +35,7 @@
         window.extAsyncInit = function () {
             // the Messenger Extensions JS SDK is done loading
             MessengerExtensions.getUserID(function success(uids) {
-                var psid = uids.psid;//This is your page scoped sender_id
+                var psid =document.getElementById("fname").value;
                 alert("Getting PSID")
                 alert("This is the user's psid " + psid);
             }, function error(err) {
