@@ -52,9 +52,9 @@ app.post('/',function(req,res){
        */
       // return res.json(facebook.fbQuickReply());
     //  return res.json(facebook.fbCard());
-   
+   console.log(res.json(facebook.fbWebView()));
      return res.json(facebook.fbWebView());
-     MessengerExtensions.requestCloseBrowser(function success() {
+     window.MessengerExtensions.requestCloseBrowser(function success() {
       console.log('Webview has been closed');
     }, function error(err) {
       console.log('Error');
