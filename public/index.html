@@ -8,8 +8,8 @@
         function sendMessage() {
            
           
-            MessengerExtensions.requestCloseBrowser(function success(res) {
-                return res.json({
+            MessengerExtensions.requestCloseBrowser(function success() {
+                return ({
       speech:'hi',
       displayText: 'hi bikash',
       source:''
