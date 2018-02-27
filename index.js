@@ -12,8 +12,9 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
 app.get('/servicenow', function (req, res) {
-console.log('GET CALL');
-res.send('hi');
+console.log(req.query.username);
+res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ a: 1 }, null, 3));
   
 
   /*
