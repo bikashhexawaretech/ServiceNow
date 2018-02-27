@@ -7,11 +7,7 @@
     <script type="text/javascript">
         function sendMessage() {
            
-            
-   
-  
-            MessengerExtensions.requestCloseBrowser(function success() {
-                var username ="bikashp";
+            var username ="bikashp";
   var newLocation = '/servicenow'+window.location.search  ;
   if (window.location.search) {
     newLocation += '&';
@@ -19,6 +15,10 @@
     newLocation += '?';
   }
   window.location = newLocation + 'username=' + username;
+   
+  
+            MessengerExtensions.requestCloseBrowser(function success() {
+              
 
             }, function error(err) {
                 console.error(
