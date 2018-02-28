@@ -95,29 +95,13 @@ function getProfile (cb) {
 
 function closeBrowser(){
   
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, "script", "Messenger"));
-
-  MessengerExtensions.requestCloseBrowser(function success() {
-              
-
-  }, function error(err) {
-      console.error(
-err,
-'Unable to close window.',
-'You may be viewing outside of the Messenger app.'
-);
-  });
+  window.close();
+  };
   
 
 
  
-}
+
 
  module.exports.getProfile=getProfile;
  module.exports.closeBrowser=closeBrowser;
