@@ -181,10 +181,12 @@ var fbGeneric=function Generic(){
 //var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
 //var clientId = "173489109936826";  //service now
 //var redirectUrl = "https://servicenowhex.herokuapp.com/";
+//var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
+
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
 var clientId = "657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com/";
-var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl+'&prompt=consent&response_type=code';
+var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&prompt=consent&response_type=code';
 
 var fbWebView=function webView(){
   var facebookResponse={
