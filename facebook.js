@@ -178,7 +178,10 @@ var fbGeneric=function Generic(){
   return facebookResponse;
 }
  
-
+var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
+var clientId = "173489109936826";  //service now
+var redirectUrl = "https://servicenowhex.herokuapp.com/";
+var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 var fbWebView=function webView(){
   var facebookResponse={
     "speech":"",
@@ -196,7 +199,7 @@ var fbWebView=function webView(){
                 "buttons": [
                   {
                     "type":"web_url",
-                    "url":"https://servicenowhex.herokuapp.com",
+                    "url":url,
                     "title":"LogIn",
                     "webview_height_ratio": "full",
                     "messenger_extensions": "true",  
