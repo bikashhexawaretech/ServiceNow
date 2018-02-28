@@ -95,7 +95,7 @@ function getProfile (cb) {
 
 function closeBrowser(){
   
-  window.close();
+  this.close();
   };
   
 
