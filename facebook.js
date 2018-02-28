@@ -189,7 +189,7 @@ var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 
 
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
-var clientId = "1096250870035-5preckl8jfbc8hqruske5ovrbcncmin3.apps.googleusercontent.com";  //service now
+var clientId = "1096250870035-7bdfg2fjgi3dma1p6b0ptqg39h7cq4gs.apps.googleusercontent.com";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com";
 var Accesstokenurl="https://accounts.google.com/o/oauth2/token";
 var AuthUrl="https://accounts.google.com/o/oauth2/auth";
