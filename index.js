@@ -12,7 +12,7 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
  app.get('/',function(req,res){
-   console.log(req.query, req.params);
+   console.log(req.query.code );
  res.end();
   
  })
