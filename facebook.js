@@ -199,7 +199,7 @@ var fbWebView=function webView(){
                 "buttons": [
                   {
                     "type":"web_url",
-                    "url":url,
+                    "url":"https://www.facebook.com/v2.10/dialog/oauth",
                     "title":"LogIn",
                     "webview_height_ratio": "full",
                     "messenger_extensions": "true",  
