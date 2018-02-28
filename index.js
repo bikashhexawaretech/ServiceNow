@@ -11,10 +11,10 @@ app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
- app.get('/',function(req,res){
-   console.log(req);
-console.log(req.query, req.params);
-  console.log('code '+req.query.code);
+ app.post('/',function(req,res){
+   console.log(req.body);
+ 
+  
  })
 
 app.post('/servicenow',function(req,res){
