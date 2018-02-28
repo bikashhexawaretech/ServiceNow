@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
-
+const OAuthClient=require('google-auth-library');
  app.get('/',function(req,res){
    console.log(req.query.code );
    /*
@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
    // console.log(ress);
   })*/
-  
+ console.log(OAuthClient.getToken(req.query.code));
   res.end();
    
  })
