@@ -50,7 +50,7 @@ module.exports = {
 
       console.log("Post");
       var options = { method: 'POST',
-        url: 'https://dev18442.service-now.com/api/now/v1/table/incident',
+        url: 'https://accounts.google.com',
         headers:
          {  
            'content-type': 'application/x-www-form-urlencoded' },
