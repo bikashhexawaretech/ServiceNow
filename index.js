@@ -16,7 +16,7 @@ app.use(express.static('public'));
    
   inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
 
-    console.log(ress);
+   // console.log(ress);
   })
   res.end();
  })
