@@ -12,7 +12,7 @@ var facebook=require('./facebook.js');
 app.use(express.static('public'));
  
  app.get('/',function(req,res){
-   console.log(req.query.code );
+   console.log('Code: '+req.query.code );
    /*
   inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
 
