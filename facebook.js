@@ -186,7 +186,7 @@ var fbGeneric=function Generic(){
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
 var clientId = "657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com/";
-var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&prompt=consent&response_type=code';
+var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&prompt=consent&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 
 var fbWebView=function webView(){
   var facebookResponse={
