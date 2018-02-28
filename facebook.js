@@ -191,7 +191,11 @@ var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
 var clientId = "657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com";
-var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
+var Accesstokenurl="https://accounts.google.com/o/oauth2/token";
+var AuthUrl="https://accounts.google.com/o/oauth2/auth";
+var scope="https://www.googleapis.com/auth/admin.directory.customer";
+//var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
+var url=facebookAuthEndpoint+'client_id='+clientId+'&access_token_url='+Accesstokenurl+'&auth_url='+AuthUrl+'&scope='+scope+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 
 
 var fbWebView=function webView(){
