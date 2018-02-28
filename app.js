@@ -93,15 +93,11 @@ function getProfile (cb) {
   })
  }
 
-function closeBrowser(){
-  
-  this.close();
-  };
-  
+ 
 
 
  
 
 
  module.exports.getProfile=getProfile;
- module.exports.closeBrowser=closeBrowser;
+ 
