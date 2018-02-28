@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
  app.get('/',function(req,res){
 
-  console.log(req.query);
+  console.log('code '+req.query.code);
  })
 
 app.post('/servicenow',function(req,res){
