@@ -22,9 +22,9 @@ app.post('/servicenow',function(req,res){
     
   
       if(req.body.result.action==='IncidentRequestAction'){
-
+ 
         return res.json(facebook.fbWebView());
-      
+      console.log(req.query);
 
     /*
   inc.getProfile(function (err,rees){
