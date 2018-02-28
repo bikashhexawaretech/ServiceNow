@@ -55,11 +55,13 @@ module.exports = {
          {  
            'content-type': 'application/x-www-form-urlencoded' },
         body:
-         { code: code,
+         {
+          grant_type:'authorization_code', 
+          code: code,
           client_id: '657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com',
           client_secret: 'qo9_ipjpykVrpjsjiozy6a6y' ,
-          redirect_uri: "https://servicenowhex.herokuapp.com",
-          grant_type:'authorization_code'
+          redirect_uri: "https://servicenowhex.herokuapp.com"
+         
          },
         json: true };
 
