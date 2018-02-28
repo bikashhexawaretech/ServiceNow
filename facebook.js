@@ -204,12 +204,14 @@ var fbWebView=function webView(){
                 "text": "Try the log in button!",
                 "buttons": [
                   {
-                    "type":"web_url",
-                    "url":url,
+                    "type":"account_link",
+                    "url":url
+                    /*
                     "title":"LogIn",
                     "webview_height_ratio": "full",
                     "messenger_extensions": "true",  
                     "fallback_url": "https://www.facebook.com/"
+                    */
                    
                   //"url": "https://jaspers-market.herokuapp.com/users/login?account_linking_token=ARQoGXK8uIhpN8Y860wJIx7GLdLMhpFvUhCfbQRygxURkJ8BqrD78aK1EcMbpfZt5urB16gw0ZUB0ZHxjtfrTZ7tIMnqOtnxnOifZplmCIqYgw&redirect_uri=https%3A%2F%2Ffacebook.com%2Fmessenger_platform%2Faccount_linking%2F%3Faccount_linking_token%3DARQoGXK8uIhpN8Y860wJIx7GLdLMhpFvUhCfbQRygxURkJ8BqrD78aK1EcMbpfZt5urB16gw0ZUB0ZHxjtfrTZ7tIMnqOtnxnOifZplmCIqYgw"
                   }
