@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
- app.get('/',function(req,res){
+ app.get('/?code',function(req,res){
 
   console.log('code '+req.query.code);
  })
