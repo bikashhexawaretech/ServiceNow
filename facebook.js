@@ -200,7 +200,7 @@ var fbWebView=function webView(){
                   {
                     "type":"web_url",
                     "url":url,
-                   "title":"LogIn",
+                    "title":"LogIn",
                     "webview_height_ratio": "full",
                     "messenger_extensions": "true",  
                     "fallback_url": "https://www.facebook.com/"
