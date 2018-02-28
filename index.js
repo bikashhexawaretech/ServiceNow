@@ -13,11 +13,12 @@ app.use(express.static('public'));
 
  app.get('/',function(req,res){
    console.log(req.query.code );
-    res.end();
-  inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,res){
+   
+  inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
 
-    console.log(res);
+    console.log(ress);
   })
+  res.end();
  })
 
 app.post('/servicenow',function(req,res){
