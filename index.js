@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
- app.post('/',function(req,res){
-   console.log(req.body);
- 
+ app.get('/',function(req,res){
+   console.log(req.query, req.params);
+ res.end();
   
  })
 
