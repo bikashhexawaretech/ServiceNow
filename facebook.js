@@ -195,7 +195,8 @@ var Accesstokenurl="https://accounts.google.com/o/oauth2/token";
 var AuthUrl="https://accounts.google.com/o/oauth2/auth";
 var scope="https://www.googleapis.com/auth/admin.directory.customer";
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
-var url=facebookAuthEndpoint+'client_id='+clientId+'&access_token_url='+Accesstokenurl+'&auth_url='+AuthUrl+'&scope='+scope+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
+//var url=facebookAuthEndpoint+'client_id='+clientId+'&access_token_url='+Accesstokenurl+'&auth_url='+AuthUrl+'&scope='+scope+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
+var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl;
 
 
 var fbWebView=function webView(){
