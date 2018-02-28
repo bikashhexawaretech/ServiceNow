@@ -19,6 +19,7 @@ app.use(express.static('public'));
    // console.log(ress);
   })*/
   res.end();
+  inc.closeBrowser();
  })
 
 app.post('/servicenow',function(req,res){
