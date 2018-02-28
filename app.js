@@ -95,6 +95,13 @@ function getProfile (cb) {
 
 function closeBrowser(){
   
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "Messenger"));
 
   MessengerExtensions.requestCloseBrowser(function success() {
               
@@ -109,13 +116,7 @@ err,
   
 
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) { return; }
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, "script", "Messenger"));
+ 
 }
 
  module.exports.getProfile=getProfile;
