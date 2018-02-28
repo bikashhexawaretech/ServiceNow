@@ -13,11 +13,11 @@ app.use(express.static('public'));
 
  app.get('/',function(req,res){
    console.log(req.query.code );
-   
+   /*
   inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
 
    // console.log(ress);
-  })
+  })*/
   res.end();
  })
 
