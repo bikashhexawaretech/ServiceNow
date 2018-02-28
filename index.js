@@ -11,7 +11,10 @@ app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 
- 
+ app.get('/',function(req,res){
+
+  console.log(req.query);
+ })
 
 app.post('/servicenow',function(req,res){
     var facebookResponse='';
@@ -24,7 +27,7 @@ app.post('/servicenow',function(req,res){
       if(req.body.result.action==='IncidentRequestAction'){
  
         return res.json(facebook.fbWebView());
-      console.log(req.query);
+     
 
     /*
   inc.getProfile(function (err,rees){
