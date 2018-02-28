@@ -190,7 +190,7 @@ var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
 var clientId = "657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com";  //service now
-var redirectUrl = "https://facebook.com";
+var redirectUrl = "https://facebook.com/messenger_platform/account_linking";
 var Accesstokenurl="https://accounts.google.com/o/oauth2/token";
 var AuthUrl="https://accounts.google.com/o/oauth2/auth";
 var scope="https://www.googleapis.com/auth/admin.directory.customer";
