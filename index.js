@@ -61,6 +61,70 @@ passport.deserializeUser(function (user, done) {
   scope: 'openid profile'
 }));
 
+app.get('/callback', passport.authenticate('auth0', {}), 
+	function (req, res) {
+	console.log('Inside auth');
+	console.log(req);
+	 
+    const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
+
+    request({
+        uri: config.facebookMessageUri,
+        qs: query,
+        method: 'POST',
+        json: {
+            recipient: {
+                id: senderId,
+            },
+            speech: '',
+            displayText: '',
+            messages: [
+                {
+                    "type": 0,
+                    "platform": "facebook",
+                    "speech": "Hi " + req.user.Profile.displayName + ", Please select any one of the following to continue"
+                },
+                {
+                    "type": 1,
+                    "platform": "facebook",
+                    "title": "Report It",
+                    "subtitle": "Report It - To sort it",
+                    "imageUrl": "https://mgtvwlns.files.wordpress.com/2015/05/reportit-logo5b35d.jpg",
+                    "buttons": [
+                        {
+                            "text": "Report Incident",
+                            "postback": "Report Incident"
+                        },
+                        {
+                            "text": "My Incident",
+                            "postback": "My Incident"
+                        }
+                    ]
+                }
+            ]
+        },
+
+    }, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            // Message has been successfully received by Facebook.
+            console.log(
+                `Successfully sent message to messages endpoint: `,
+                JSON.stringify(body)
+            );
+        } else {
+            // Message has not been successfully received by Facebook.
+            console.error(
+                `Failed calling Messenger API endpoint messages`,
+                response.statusCode,
+                response.statusMessage,
+                body.error,
+                queryParams
+            );
+        }
+      }
+    )
+  });
+
 app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';

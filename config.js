@@ -10,7 +10,7 @@ var config = {
     "authOClientSecretKey": "OxAMgfawOjizGe63ezqOlKQ9U7OLZna2OT0s4R2iWPEEK0Ua_Magy8PWrGZI4Y4O",
     "authODomain": "bikashpanigrahi.auth0.com",
     "authOCallbackUrl": "https://servicenowhex.herokuapp.com/callback",
-    "facebookPageAccessToken": "EAAFwXfBX3n4BAPyrwV5cq8pOHaYPu8KKOrAiyz14lDtTlBCgu3cbs5tqsFNd5HItSyng3qUZCecWMANWDorPDQvFkhsH0KZCqMiFLJEpf6l86PpKVFW0EiS40iHqi4T7F7pSVUgOSlDzonItWpSogOW7fwgzw0884PTeZBYUQZDZD",
+    "facebookPageAccessToken": "EAACdyZATFKroBAFmXBlN6aa5GzXJ0wh6sPR8t5qNJX6LGFnbauQYa30Qd1Cb8Q19AbZAzxYyZAP16Ur1UAvQvQ4lJFz0xEnCUmrPsiZCOyOV1L46ZCMy7xTUvb9yQFVCLrsTSMVLULGMas7SQFBa210h5FEbLACBX4dkIM0LbFgZDZD",
     "facebookMessageUri":"https://graph.facebook.com/v2.6/me/messages"
 };
 
