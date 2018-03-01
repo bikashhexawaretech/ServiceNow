@@ -178,16 +178,16 @@ var fbGeneric=function Generic(){
   return facebookResponse;
 }
  
-
+/*
 var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
 var clientId = "173489109936826";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com/";
 var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 
+*/
 
 
 
-/*
 var facebookAuthEndpoint="https://accounts.google.com/o/oauth2/v2/auth?";
 var clientId = "1096250870035-7bdfg2fjgi3dma1p6b0ptqg39h7cq4gs.apps.googleusercontent.com";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com";
@@ -196,8 +196,8 @@ var AuthUrl="https://accounts.google.com/o/oauth2/auth";
 var scope="https://www.googleapis.com/auth/admin.directory.customer";
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&access_token_url='+Accesstokenurl+'&auth_url='+AuthUrl+'&scope='+scope+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
-//var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&response_type=code'+'&scope='+scope+'&login_hint=jsmith@example.com&openid.realm=example.com&nonce=0394852-3190485-2490358&hd=example.com';
-*/
+var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&response_type=code'+'&scope='+scope+'&login_hint=jsmith@example.com&openid.realm=example.com&nonce=0394852-3190485-2490358&hd=example.com';
+
 
 var fbWebView=function webView(){
   var facebookResponse={
