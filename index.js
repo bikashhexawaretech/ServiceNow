@@ -64,7 +64,7 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
 	console.log('Inside auth');
-   console.log(res);
+   console.log(res.ServerResponse.user.Profile.displayName);
  
 
 	 
