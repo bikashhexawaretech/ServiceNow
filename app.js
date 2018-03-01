@@ -45,7 +45,34 @@ module.exports = {
           //console.log("Success : "+body);
           callback(null, body);
         });
-    }
+    },
+    'GOOGLEAPIPOSTCALL' : function(code, callback){
+
+      console.log("Post");
+      var options = { method: 'POST',
+        url: 'https://accounts.google.com/o/oauth2/token',
+        headers:
+         {  
+           'content-type': 'application/x-www-form-urlencoded' },
+        body:
+         {
+          grant_type:'authorization_code', 
+          code: code,
+          client_id: '657702593596-95ainiutsgmm95eipvf5f6eqe7t45rhu.apps.googleusercontent.com',
+          client_secret: 'qo9_ipjpykVrpjsjiozy6a6y' ,
+          redirect_uri: "https://servicenowhex.herokuapp.com"
+         
+         },
+        json: true };
+
+      request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+       // console.log("Success : "+body);
+        callback(null, body);
+      });
+  }
+
 
 }
 
@@ -66,4 +93,11 @@ function getProfile (cb) {
   })
  }
 
+ 
+
+
+ 
+
+
  module.exports.getProfile=getProfile;
+ 

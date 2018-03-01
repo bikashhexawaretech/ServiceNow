@@ -10,37 +10,18 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
+ 
+ app.get('/',function(req,res){
+   console.log('Code: '+req.query.code );
+   /*
+  inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
 
-app.get('/servicenow', function (req, res) {
-console.log('GET CALL');
-  return res.json({
-    speech:'hi',
-    displayText: 'hi',
-    source:''
-       
-   
-  });
-  /*
-  var redirectUri = req.query.newLocation + '&authorization_code=' + req.query.username;
-  console.log('GET');
-  res.writeHead(302, {
-    
-    'Location': redirectUri
-  });
+   // console.log(ress);
+  })*/
+ 
   res.end();
-  */
-
-  /*if (req.query && req.query.redirect_uri && req.query.username) {
-  //  var username = req.query.username;
-
-  
- //   var redirectUri = req.query.redirect_uri + '&authorization_code=' + username;
-  //  return res.redirect(redirectUri);
-  
-  } else {
-    return res.send(400, 'Request did not contain redirect_uri and username in the query string');
-  }*/
-})
+   
+ })
 
 app.post('/servicenow',function(req,res){
     var facebookResponse='';
@@ -51,9 +32,9 @@ app.post('/servicenow',function(req,res){
     
   
       if(req.body.result.action==='IncidentRequestAction'){
-
+ 
         return res.json(facebook.fbWebView());
-      
+     
 
     /*
   inc.getProfile(function (err,rees){
