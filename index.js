@@ -45,8 +45,6 @@ passport.deserializeUser(function (user, done) {
 
 
  app.get('/',function(req,res){
-   console.log('Code: '+req.query.code );
-   
    res.redirect('/authorize');
  
   res.end();
@@ -66,7 +64,9 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
 	console.log('Inside auth');
-	 
+   console.log(res);
+ 
+
 	 
   });
 
