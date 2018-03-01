@@ -193,13 +193,13 @@ var clientId = "1096250870035-7bdfg2fjgi3dma1p6b0ptqg39h7cq4gs.apps.googleuserco
 //var redirectUrl = "https://servicenowhex.herokuapp.com";
 var Accesstokenurl="accounts.google.com/o/oauth2/token";
 var AuthUrl="accounts.google.com/o/oauth2/auth";
-var scope="www.googleapis.com/auth/admin.directory.customer";
+var scope="https://www.googleapis.com/auth/userinfo.email";
 var clientSecret="qo9_ipjpykVrpjsjiozy6a6y";
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&access_token_url='+Accesstokenurl+'&auth_url='+AuthUrl+'&scope='+scope+'&redirect_uri='+redirectUrl+'&approval_prompt=force&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 //var url=facebookAuthEndpoint+'client_id='+clientId+'&redirect_uri='+redirectUrl+'&response_type=code'+'&scope='+scope+'&login_hint=jsmith@example.com&openid.realm=example.com&nonce=0394852-3190485-2490358&hd=example.com';
 //var url=facebookAuthEndpoint+'client_secret='+clientSecret+'&client_id='+clientId+'&response_type=code'+'&scope='+scope+'&grant_type=authorization_code';
-var url='https://accounts.google.com/o/oauth2/auth?auth_url=accounts.google.com/o/oauth2/auth&client_id=1096250870035-f72i9rckit64qpejr89ronu7s4m3qd9j.apps.googleusercontent.com&response_type=code&redirect_uri=https://servicenowhex.herokuapp.com&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
+var url='https://accounts.google.com/o/oauth2/auth?client_id=1096250870035-f72i9rckit64qpejr89ronu7s4m3qd9j.apps.googleusercontent.com&response_type=code&redirect_uri=https://servicenowhex.herokuapp.com&scope=https://www.googleapis.com/auth/userinfo.email&access_type=offline';
 
 var fbWebView=function webView(){
   var facebookResponse={
