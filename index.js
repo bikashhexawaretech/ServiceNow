@@ -30,7 +30,8 @@ const strategy = new Auth0Strategy(
   }
 );
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 passport.use(strategy);
 
 // you can use this section to keep a smaller payload
@@ -62,12 +63,6 @@ passport.deserializeUser(function (user, done) {
 }));
 
 app.get('/callback', passport.authenticate('auth0', {
-  clientID: config.authOClientId,
-  domain: config.authODomain,
-  redirectUri: config.authOCallbackUrl,
-  responseType: 'code',
-  audience: 'https://' + config.authODomain + '/userinfo',
-  scope: 'openid profile'
 }), 
 	function (req, res) {
 	console.log('Inside auth');
