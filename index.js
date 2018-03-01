@@ -6,22 +6,60 @@ var bodyParser = require('body-parser');
 var app = express();
 var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
+var config = require('./config');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
  
+const passport = require('passport');
+const Auth0Strategy = require('passport-auth0');
+
+const strategy = new Auth0Strategy(
+  {
+      domain: config.authODomain,
+      clientID: config.authOClientId,
+      clientSecret: config.authOClientSecretKey,
+      callbackURL:config.authOCallbackUrl
+  },
+  function (accessToken, refreshToken, extraParams, profile, done) {
+      // accessToken is the token to call Auth0 API (not needed in the most cases)
+      // extraParams.id_token has the JSON Web Token
+      // profile has all the information from the user
+      return done(null, profile);
+  }
+);
+
+
+passport.use(strategy);
+
+// you can use this section to keep a smaller payload
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
+
  app.get('/',function(req,res){
    console.log('Code: '+req.query.code );
-   /*
-  inc.GOOGLEAPIPOSTCALL(req.query.code,function (err,ress){
-
-   // console.log(ress);
-  })*/
+   
+   res.redirect('/authorize');
  
   res.end();
    
  })
+
+ app.get('/authorize', passport.authenticate('auth0', {
+  clientID: config.authOClientId,
+  domain: config.authODomain,
+  redirectUri: config.authOCallbackUrl,
+  responseType: 'code',
+  audience: 'https://' + config.authODomain + '/userinfo',
+  scope: 'openid profile'
+}));
 
 app.post('/servicenow',function(req,res){
     var facebookResponse='';
