@@ -218,7 +218,7 @@ var fbWebView=function webView(){
                 "buttons": [
                   {
                     "type":"account_link",
-                    "url":url
+                    "url":"www.gmail.com"
                     /*
                     "title":"LogIn",
                     "webview_height_ratio": "full",
