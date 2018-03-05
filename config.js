@@ -7,8 +7,8 @@ var config = {
     "authODomain": "bikashpanigrahi.auth0.com",
     "authOCallbackUrl": "https://servicenowhex.herokuapp.com/callback",
     "facebookPageAccessToken": "EAACdyZATFKroBALFJ119ZBi8Sx6IkmdKpwhZCSZBFCxn3BkxXPicxZCbTuBPv8RbfQUF1EkgOcsGUWZCRw6MZA06X1QZBvSfWlrJSQna5KhKh6V2Fn5nkyPN3uLEgghlBDvmadQKQiWvtZB0gRHWhm3EWmZBmhDCApXk9FiUCgVQnAaQZDZD",
-    "facebookMessageUri":"https://graph.facebook.com/v2.6/me/messages"
-     
+    "facebookMessageUri":"https://graph.facebook.com/v2.6/me/messages",
+    "redirectUrl" : "https://servicenowhex.herokuapp.com/"
 };
 
 module.exports = config;
