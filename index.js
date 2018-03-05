@@ -64,7 +64,7 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
 	console.log('Inside auth');
-
+  var senderId = req.body.originalRequest.data.sender.id;
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         /* eslint-enable camelcase */
         request({
@@ -72,7 +72,12 @@ app.get('/callback', passport.authenticate('auth0', {
             qs: query,
             method: 'POST',
             json: {
-                 
+                recipient: {
+                    id: senderId,
+                },
+                message: {
+                    text: "Hi " + JSON.stringify(req.user.Profile),
+                },
                 speech: '',
                 displayText: '',
                 messages: [
