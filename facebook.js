@@ -220,7 +220,7 @@ var fbWebView=function webView(){
                 "buttons": [
                   {
                     "type":"account_link",
-                    "url":'https://servicenowhex.herokuapp.com/index1.html'
+                    "url":url
                     /*
                     "title":"LogIn",
                     "webview_height_ratio": "full",
