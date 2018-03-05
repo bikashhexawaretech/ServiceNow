@@ -63,55 +63,14 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 
   
 
-app.get('/callback',  
+ app.get('/callback', passport.authenticate('facebook', {
+}), 
 	function (req, res) {
-   console.log(redirectURI);
+  console.log(req.user.displayName);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
-  /*
-	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
-        
-        request({
-            uri: config.facebookMessageUri,
-            qs: query,
-            method: 'POST',
-            json: {
-                recipient: {
-                    id: senderId,
-                },
-                message: {
-                    text: "Hi "+req.user.displayName ,
-                },
-                speech: '',
-                displayText: '',
-                messages: [
-                    {
-                        "type": 0,
-                        "platform": "facebook",
-                        "speech": "Hi " +  " Please select any one of the following to continue"
-                    }
-                ]
-            },
-
-        }, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                // Message has been successfully received by Facebook.
-                console.log(
-                    `Successfully  sent message to messages endpoint: `,
-                    JSON.stringify(body)
-                );
-            } else {
-                // Message has not been successfully received by Facebook.
-                console.error(
-                    `Failed calling Messenger API endpoint messages`,
-                    response.statusCode,
-                    response.statusMessage,
-                    body.error
-                );
-            }
-        }
-        );
-        */
+	 
     });
+
 
 
     app.post('/servicenow',function(req,res){
