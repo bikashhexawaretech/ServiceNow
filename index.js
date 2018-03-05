@@ -48,7 +48,7 @@ passport.deserializeUser(function (user, done) {
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
   console.log('Inside Get');
- //res.redirect('/callback');
+ res.redirect('/callback');
  
   res.end();
    
@@ -58,10 +58,11 @@ passport.deserializeUser(function (user, done) {
 
 app.get('/callback',  
 	function (req, res) {
-  console.log(req.user.displayName);
+   
   res.redirect(redirectURI + "&authorization_code=34s4f545");
+  /*
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
-        /* eslint-enable camelcase */
+        
         request({
             uri: config.facebookMessageUri,
             qs: query,
@@ -102,6 +103,7 @@ app.get('/callback',
             }
         }
         );
+        */
     });
 
 
