@@ -70,15 +70,11 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 
   
 
- app.get('/callback', passport.authenticate('facebook', {
-}), 
-	function (req, res) {
-     
-  console.log(req.user.displayName);
-  res.redirect('https://servicenowhex.herokuapp.com/callback' + "&authorization_code=34s4f545");
-	 
-    });
-
+ app.get('/callback',
+ passport.authenticate('facebook', {
+     successRedirect : '/profile',
+     failureRedirect : '/'
+ }));
 
 
     app.post('/servicenow',function(req,res){
