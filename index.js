@@ -57,7 +57,7 @@ app.get('/login',function(req,res){
   console.log(req.query);
  res.sendfile('public/index1.html');
  
-  res.end();
+ 
    
  });
 
