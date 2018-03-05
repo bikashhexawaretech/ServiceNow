@@ -58,6 +58,14 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
  })
 );
 
+app.get('/login',function(req,res){
+  redirectURI = req.query.redirect_uri;
+  console.log(req.query);
+ res.render('/index1.html');
+ 
+  res.end();
+   
+ })
 
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
@@ -70,11 +78,15 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 
   
 
- app.get('/callback',
- passport.authenticate('facebook', {
-     successRedirect : '/profile',
-     failureRedirect : '/'
- }));
+ app.get('/callback', passport.authenticate('facebook', {
+}), 
+	function (req, res) {
+     
+  console.log(req.user.displayName);
+  res.redirect(redirectURI + "&authorization_code=34s4f545");
+	 
+    });
+
 
 
     app.post('/servicenow',function(req,res){
