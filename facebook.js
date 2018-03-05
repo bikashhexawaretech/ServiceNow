@@ -181,7 +181,7 @@ var fbGeneric=function Generic(){
 
 var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
 var clientId = "173489109936826";  //service now
-var redirectUrl = "https://servicenowhex.herokuapp.com/Index1.html";
+var redirectUrl = "https://servicenowhex.herokuapp.com/callback";
 var url=facebookAuthEndpoint+'app_id='+clientId+'&redirect_uri='+redirectUrl;
 
 
@@ -220,7 +220,7 @@ var fbWebView=function webView(){
                 "buttons": [
                   {
                     "type":"account_link",
-                    "url":url
+                    "url":'https://servicenowhex.herokuapp.com/index1.html'
                     /*
                     "title":"LogIn",
                     "webview_height_ratio": "full",
