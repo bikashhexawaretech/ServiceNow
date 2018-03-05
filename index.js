@@ -47,23 +47,15 @@ passport.deserializeUser(function (user, done) {
 
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
-   res.redirect('/authorize');
+  // res.redirect('/authorize');
  
   res.end();
    
  })
 
- app.get('/authorize', passport.authenticate('auth0', {
-  clientID: config.authOClientId,
-  domain: config.authODomain,
-  redirectUri: config.authOCallbackUrl,
-  responseType: 'code',
-  audience: 'https://' + config.authODomain + '/userinfo',
-  scope: 'openid profile'
-}));
+  
 
-app.get('/callback', passport.authenticate('auth0', {
-}), 
+app.get('/callback',  
 	function (req, res) {
   console.log(req.user.displayName);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
