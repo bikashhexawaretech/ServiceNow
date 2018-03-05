@@ -99,5 +99,4 @@ function getProfile (cb) {
  
 
  module.exports.getProfile=getProfile;
- module.exports.close=close;
  
