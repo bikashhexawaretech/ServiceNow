@@ -277,7 +277,7 @@ var fbWebView=function webView(){
   module.exports.fbList=fbList;
   module.exports.fbGeneric=fbGeneric;
   module.exports.fbWebView=fbWebView;
-moudle.exports.logout=logout;
+  module.exports.logout=logout;
   // Custom payload
 
   //List
