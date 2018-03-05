@@ -93,7 +93,7 @@ app.get('/callback', passport.authenticate('auth0', {
             if (!error && response.statusCode === 200) {
                 // Message has been successfully received by Facebook.
                 console.log(
-                    `Successfully sent message to messages endpoint: `,
+                    `Successfully  sent message to messages endpoint: `,
                     JSON.stringify(body)
                 );
             } else {
