@@ -20,7 +20,8 @@ console.log('GET CALL');
        
    
   });
-   
+  
+})
 
 app.post('/servicenow',function(req,res){
     var facebookResponse='';
@@ -34,19 +35,7 @@ app.post('/servicenow',function(req,res){
 
         return res.json(facebook.fbWebView());
       
-
-    /*
-  inc.getProfile(function (err,rees){
-    return res.json({
-      speech:rees.name,
-      displayText: rees.name,
-      source:''
-         
-     
-    });
-  
-})
-      */
+ 
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
