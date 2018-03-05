@@ -60,7 +60,7 @@ passport.deserializeUser(function (user, done) {
 app.get('/callback',  
 	function (req, res) {
   
-  res.redirect(config.redirectURI + "&authorization_code=34s4f545");
+  res.redirect(config.redirectUrl + "&authorization_code=34s4f545");
   /*
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         
