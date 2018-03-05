@@ -44,6 +44,10 @@ passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
+app.get('/auth/facebook', passport.authenticate('facebook', { 
+  scope : ['public_profile', 'email']
+}));
+
 
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
