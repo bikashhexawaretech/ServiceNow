@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
 var  senderId ='';
+var redirectURI='';
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
@@ -45,6 +46,7 @@ passport.deserializeUser(function (user, done) {
 
 
  app.get('/',function(req,res){
+  redirectURI = req.query.redirect_uri;
    res.redirect('/authorize');
  
   res.end();
