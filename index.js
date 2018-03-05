@@ -61,7 +61,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
   console.log(req.query);
- res.render('/index1.html');
+ res.sendFile('/index1.html');
  
   res.end();
    
