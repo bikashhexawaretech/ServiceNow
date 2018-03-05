@@ -64,7 +64,7 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
 	console.log('Inside auth');
-  
+  console.log(req);
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         /* eslint-enable camelcase */
         request({
