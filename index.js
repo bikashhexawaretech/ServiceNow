@@ -15,13 +15,14 @@ var  senderId ='';
 var redirectURI='';
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
+const facebookStrategy=require('passport-facebook');
+var configAuth=require('./auth.js');
 
-const strategy = new Auth0Strategy(
+const strategy = new facebookStrategy(
   {
-      domain: config.authODomain,
-      clientID: config.authOClientId,
-      clientSecret: config.authOClientSecretKey,
-      callbackURL:config.authOCallbackUrl
+    clientID        : configAuth.facebookAuth.clientID,
+        clientSecret    : configAuth.facebookAuth.clientSecret,
+        callbackURL     : configAuth.facebookAuth.callbackURL
   },
   function (accessToken, refreshToken, extraParams, profile, done) {
       // accessToken is the token to call Auth0 API (not needed in the most cases)
