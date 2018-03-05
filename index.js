@@ -63,8 +63,7 @@ passport.deserializeUser(function (user, done) {
 app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
-	console.log('Inside auth');
-  console.log(req.user);
+  console.log(req.user.Profile.displayName);
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         /* eslint-enable camelcase */
         request({
