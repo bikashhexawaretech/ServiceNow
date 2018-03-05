@@ -218,6 +218,7 @@ function logout() {
                   }
               }
           ]
+        }
       }
 
 var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
