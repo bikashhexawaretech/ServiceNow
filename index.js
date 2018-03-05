@@ -48,24 +48,18 @@ passport.deserializeUser(function (user, done) {
 app.get('/auth/facebook', passport.authenticate('facebook', { 
   scope : ['public_profile', 'email']
    
-},function(req,res){
-  redirectURI = req.query.redirect_uri;
-  console.log(req.query);
- res.redirect('/callback');
- 
-  res.end();
-   
+
  })
 );
 
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
   console.log(req.query);
- res.sendFile('/index1.html');
+ res.sendfile('public/index1.html');
  
   res.end();
    
- })
+ });
 
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
@@ -81,7 +75,6 @@ app.get('/login',function(req,res){
  app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
-     
   console.log(req.user.displayName);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
 	 
