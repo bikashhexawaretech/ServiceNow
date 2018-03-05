@@ -1,123 +1,39 @@
 
 'use strict';
-var request = require('request');
+var request = require('http');
 var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
-var config = require('./config');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
-var  senderId ='';
-var redirectURI='';
-const passport = require('passport');
-const Auth0Strategy = require('passport-auth0');
 
-const strategy = new Auth0Strategy(
-  {
-      domain: config.authODomain,
-      clientID: config.authOClientId,
-      clientSecret: config.authOClientSecretKey,
-      callbackURL:config.authOCallbackUrl
-  },
-  function (accessToken, refreshToken, extraParams, profile, done) {
-      // accessToken is the token to call Auth0 API (not needed in the most cases)
-      // extraParams.id_token has the JSON Web Token
-      // profile has all the information from the user
-      return done(null, profile);
-  }
-);
-
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(strategy);
-
-// you can use this section to keep a smaller payload
-passport.serializeUser(function (user, done) {
-    done(null, user);
-});
-
-passport.deserializeUser(function (user, done) {
-    done(null, user);
-});
-
-
- app.get('/',function(req,res){
-  //redirectURI = req.query.redirect_uri;
-   console.log('Inside Get /');
- //res.redirect('/callback');
- 
+app.get('/', function (req, res) {
+console.log('GET CALL');
+  return res.json({
+    speech:'hi',
+    displayText: 'hi',
+    source:''
+       
    
- })
+  });
+   
 
-  
-
-app.get('/callback',  
-	function (req, res) {
-    
-//  res.redirect(redirectURI + "&authorization_code=34s4f545");
-  /*
-	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
-        
-        request({
-            uri: config.facebookMessageUri,
-            qs: query,
-            method: 'POST',
-            json: {
-                recipient: {
-                    id: senderId,
-                },
-                message: {
-                    text: "Hi "+req.user.displayName ,
-                },
-                speech: '',
-                displayText: '',
-                messages: [
-                    {
-                        "type": 0,
-                        "platform": "facebook",
-                        "speech": "Hi " +  " Please select any one of the following to continue"
-                    }
-                ]
-            },
-
-        }, (error, response, body) => {
-            if (!error && response.statusCode === 200) {
-                // Message has been successfully received by Facebook.
-                console.log(
-                    `Successfully  sent message to messages endpoint: `,
-                    JSON.stringify(body)
-                );
-            } else {
-                // Message has not been successfully received by Facebook.
-                console.error(
-                    `Failed calling Messenger API endpoint messages`,
-                    response.statusCode,
-                    response.statusMessage,
-                    body.error
-                );
-            }
-        }
-        );
-        */
-    });
-
-
-    app.post('/servicenow',function(req,res){
+app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-  senderId = req.body.originalRequest.data.sender.id;
+   
     //Quick Replies
  
     
   
       if(req.body.result.action==='IncidentRequestAction'){
- 
+
         return res.json(facebook.fbWebView());
-     
+      
 
     /*
   inc.getProfile(function (err,rees){
