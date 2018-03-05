@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var facebook=require('./facebook.js');
 app.use(express.static('public'));
- 
+var  senderId ='';
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 
@@ -64,7 +64,7 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
 	console.log('Inside auth');
-  var senderId = req.body.originalRequest.data.sender.id;
+  
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         /* eslint-enable camelcase */
         request({
@@ -113,7 +113,7 @@ app.get('/callback', passport.authenticate('auth0', {
     app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-   
+  senderId = req.body.originalRequest.data.sender.id;
     //Quick Replies
  
     
