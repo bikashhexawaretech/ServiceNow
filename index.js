@@ -64,6 +64,7 @@ app.get('/callback', passport.authenticate('auth0', {
 }), 
 	function (req, res) {
   console.log(req.user.displayName);
+  res.redirect(redirectURI + "&authorization_code=34s4f545");
 	const query = Object.assign({ access_token: config.facebookPageAccessToken }, {});
         /* eslint-enable camelcase */
         request({
