@@ -73,6 +73,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
  app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
+    console.log( req.query.redirect_uri);
   console.log(req.user.displayName);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
 	 
