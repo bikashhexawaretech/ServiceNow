@@ -63,7 +63,7 @@ app.get('/login',function(req,res){
 
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
-  console.log(req.query);
+  
  res.redirect('/callback');
  
   res.end();
@@ -75,7 +75,7 @@ app.get('/login',function(req,res){
  app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
-  console.log(req.user.displayName);
+  console.log(redirectURI);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
 	 
     });
