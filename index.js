@@ -45,7 +45,7 @@ passport.deserializeUser(function (user, done) {
 });
 
 
- app.get('/',function(req,res){
+ app.get('/servicenow',function(req,res){
   redirectURI = req.query.redirect_uri;
   console.log('Inside Get');
  res.redirect('/callback');
