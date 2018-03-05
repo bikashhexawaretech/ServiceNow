@@ -72,12 +72,7 @@ app.get('/callback', passport.authenticate('auth0', {
             qs: query,
             method: 'POST',
             json: {
-                recipient: {
-                    id: senderId,
-                },
-                message: {
-                    text: "Hi " + JSON.stringify(req.user.Profile),
-                },
+                 
                 speech: '',
                 displayText: '',
                 messages: [
