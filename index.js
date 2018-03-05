@@ -48,7 +48,7 @@ passport.deserializeUser(function (user, done) {
  app.get('/',function(req,res){
   //redirectURI = req.query.redirect_uri;
    
- res.redirect('/callback');
+ //res.redirect('/callback');
  
   res.end();
    
