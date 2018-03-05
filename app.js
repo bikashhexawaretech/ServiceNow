@@ -96,10 +96,7 @@ function getProfile (cb) {
  
 
 
- function close(){
-  this.close(); 
- }
-
+ 
 
  module.exports.getProfile=getProfile;
  module.exports.close=close;
