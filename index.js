@@ -75,7 +75,7 @@ app.get('/callback', passport.authenticate('auth0', {
                     id: senderId,
                 },
                 message: {
-                    text: "Hi Bikash " ,
+                    text: "Hi "+req.user.displayName ,
                 },
                 speech: '',
                 displayText: '',
