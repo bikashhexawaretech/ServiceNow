@@ -77,10 +77,13 @@ app.get('/login',function(req,res){
 	function (req, res) {
   console.log(redirectURI);
   res.redirect(redirectURI + "&authorization_code=34s4f545");
-	 
+	 facebook.logout();
     });
 
-
+    app.get('/logout', function(req, res) {
+      req.logout();
+      res.redirect('/');
+  });
 
     app.post('/servicenow',function(req,res){
     var facebookResponse='';

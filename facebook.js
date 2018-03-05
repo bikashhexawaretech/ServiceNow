@@ -179,6 +179,47 @@ var fbGeneric=function Generic(){
 }
  
 
+function logout() {
+  return {
+          speech: '',
+          displayText: '',
+          messages: [
+              {
+                  "type": 0,
+                  "platform": "facebook",
+                  "speech": "Hi"},
+              {
+                  "type": 4,
+                  "platform": "facebook",
+                  "payload": {
+                      "facebook": {
+                          "attachment": {
+                              "type": "template",
+                              "payload": {
+                                  "template_type": "generic",
+                                  "elements": [
+                                      {
+                                          "title": "Google",
+                                          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Google-plus-circle-icon-png.png",
+                                          "buttons": [
+                                              {
+                                                  "type": "account_link",
+                                                  "url": "https://servicenowhex.herokuapp.com/login"
+                                              },
+                                              {
+                                                  "type": "account_unlink"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          }
+                      }
+                  }
+              }
+          ]
+      }
+
 var facebookAuthEndpoint = "https://www.facebook.com/v2.10/dialog/oauth?";
 var clientId = "173489109936826";  //service now
 var redirectUrl = "https://servicenowhex.herokuapp.com/callback";
@@ -248,7 +289,7 @@ var fbWebView=function webView(){
   module.exports.fbList=fbList;
   module.exports.fbGeneric=fbGeneric;
   module.exports.fbWebView=fbWebView;
-
+moudle.exports.logout=logout;
   // Custom payload
 
   //List
