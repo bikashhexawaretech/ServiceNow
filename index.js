@@ -17,6 +17,7 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const facebookStrategy=require('passport-facebook');
 var configAuth=require('./auth.js');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
 const strategy = new facebookStrategy(
@@ -53,33 +54,40 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
  })
 );
 
+app.get('/connect/google', passport.authorize('google', { scope : ['profile', 'email'] }));
+
+
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
-  console.log(req.query);
+  
  res.sendfile('public/index1.html');
  
  
    
  });
 
- app.get('/',function(req,res){
-  redirectURI = req.query.redirect_uri;
-  
- res.redirect('/callback');
  
-  res.end();
-   
- })
 
   
 
- app.get('/callback', passport.authenticate('facebook', {
+  
+
+ app.get('fb/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
      
   res.redirect(redirectURI + "&authorization_code=abcdef");
  
     });
+
+    app.get('go/callback', passport.authenticate('google', {
+    }), 
+      function (req, res) {
+         
+      res.redirect(redirectURI + "&authorization_code=abcdef");
+     
+        });
+    
 
     
     app.post('/servicenow',function(req,res){
