@@ -54,7 +54,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
  })
 );
 
-app.get('/connect/google', passport.authorize('google', { scope : ['profile', 'email'] }));
+app.get('/auth/google', passport.authorize('google', { scope : ['profile', 'email'] }));
 
 
 app.get('/login',function(req,res){
