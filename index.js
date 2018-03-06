@@ -19,6 +19,7 @@ const facebookStrategy=require('passport-facebook');
 var configAuth=require('./auth.js');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var TwitterStrategy  = require('passport-twitter').Strategy;
+var session=require('express-session');
 
 
 
@@ -63,7 +64,11 @@ function (accessToken, refreshToken, extraParams, profile, done) {
   return done(null, profile);
 }
 );
-
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: configAuth.twitterAuth.consumerSecret 
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
@@ -119,7 +124,7 @@ app.get('/login',function(req,res){
       res.redirect(redirectURI + "&authorization_code=abcdef");
      
         });
-        
+
         app.get('/tw/callback', passport.authenticate('google', {
         }), 
           function (req, res) {
