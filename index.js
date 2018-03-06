@@ -1,58 +1,173 @@
 
 'use strict';
-var request = require('http');
+var request = require('request');
 var express=require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
+var config = require('./config');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+var facebook=require('./facebook.js');
+app.use(express.static('public'));
+var  senderId ='';
+var redirectURI='';
+const passport = require('passport');
+const Auth0Strategy = require('passport-auth0');
+const facebookStrategy=require('passport-facebook');
+var configAuth=require('./auth.js');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var TwitterStrategy  = require('passport-twitter').Strategy;
+var session=require('express-session');
 
-console.log('hi');
-app.post('/',function(req,res){
+
+
+const strategy = new facebookStrategy(
+  {
+    clientID        : configAuth.facebookAuth.clientID,
+        clientSecret    : configAuth.facebookAuth.clientSecret,
+        callbackURL     : configAuth.facebookAuth.callbackURL
+  },
+  function (accessToken, refreshToken, extraParams, profile, done) {
+      // accessToken is the token to call Auth0 API (not needed in the most cases)
+      // extraParams.id_token has the JSON Web Token
+      // profile has all the information from the user
+      return done(null, profile);
+  }
+);
+const Gstrategy = new GoogleStrategy(
+  {
+    clientID        : configAuth.googleAuth.clientID,
+        clientSecret    : configAuth.googleAuth.clientSecret,
+        callbackURL     : configAuth.googleAuth.callbackURL
+  },
+  function (accessToken, refreshToken, extraParams, profile, done) {
+      // accessToken is the token to call Auth0 API (not needed in the most cases)
+      // extraParams.id_token has the JSON Web Token
+      // profile has all the information from the user
+      return done(null, profile);
+  }
+);
+
+const Tstrategy=new TwitterStrategy({
+
+  consumerKey     : configAuth.twitterAuth.consumerKey,
+  consumerSecret  : configAuth.twitterAuth.consumerSecret,
+  callbackURL     : configAuth.twitterAuth.callbackURL
+
+},
+function (accessToken, refreshToken, extraParams, profile, done) {
+  // accessToken is the token to call Auth0 API (not needed in the most cases)
+  // extraParams.id_token has the JSON Web Token
+  // profile has all the information from the user
+  return done(null, profile);
+}
+);
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: configAuth.twitterAuth.consumerSecret 
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(strategy);
+passport.use(Gstrategy);
+passport.use(Tstrategy);
+// you can use this section to keep a smaller payload
+passport.serializeUser(function (user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+    done(null, user);
+});
+
+app.get('/auth/facebook', passport.authenticate('facebook', { 
+  scope : ['public_profile', 'email']
+   
+
+ })
+);
+
+app.get('/auth/google', passport.authorize('google', { scope : ['profile', 'email'] }));
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+
+app.get('/login',function(req,res){
+  redirectURI = req.query.redirect_uri;
+  console.log(redirectURI);
+ res.sendfile('public/index1.html');
+ 
+ 
+   
+ });
+
+ 
+
+  
+
+  
+
+ app.get('/fb/callback', passport.authenticate('facebook', {
+}), 
+	function (req, res) {
+     
+  res.redirect(redirectURI + "&authorization_code=abcdef");
+ 
+    });
+
+    app.get('/go/callback', passport.authenticate('google', {
+    }), 
+      function (req, res) {
+         
+      res.redirect(redirectURI + "&authorization_code=abcdef");
+     
+        });
+
+        app.get('/tw/callback', passport.authenticate('twitter', {
+        }), 
+          function (req, res) {
+             
+          res.redirect(redirectURI + "&authorization_code=abcdef");
+         
+            });
+
+    
+    app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-    
-    if(req.body.originalRequest.source=='facebook')
-    {
-      if(req.body.result.action==='IncidentRequestAction'){
+  senderId = req.body.originalRequest.data.sender.id;
+    //Quick Replies
+ 
+    console.log(senderId);
   
-        facebookResponse={
-          "speech": "",
-        "messages": [
-          {
-            "type": 1,
-            "platform": "facebook",
-            "title": "Select Category",
-            "subtitle": "",
-            "imageUrl": "http://www.cromacampus.com/wp-content/uploads/2017/05/servicenow-tool-training.png",
-            "buttons": [
-              {
-                "text": "Hardware",
-                "postback": "Hardware"
-              },
-              {
-                "text": "Software",
-                "postback": "Software"
-              },
-              {
-                "text": "Network",
-                "postback": "Network"
-              }
-            ]
-          }
-          
-          
-        ]
-       }
-       return res.json(facebookResponse);
+      if(req.body.result.action==='IncidentRequestAction'){
+ 
+
+        return res.json(facebook.fbWebView());
+         
+     
+
+    /*
+  inc.getProfile(function (err,rees){
+    return res.json({
+      speech:rees.name,
+      displayText: rees.name,
+      source:''
+         
+     
+    });
+  
+})
+      */
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
       
+        console.log('Inside Web call');
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log("Severity :"+req.body.result.parameters.severity);
+          console.log('Outside');
             var resagent=resu["result"].number+" logged Successfully.";
             
             return res.json({
@@ -71,68 +186,10 @@ app.post('/',function(req,res){
             });
     })
      
-  }
+  
   
   
    
-    }
-    else  if(req.body.originalRequest.source=='google'){
-      if(req.body.result.action==='IncidentRequestAction'){
-  
-        googleResponse={
-          "speech": "",
-        "messages": [
-          
-          {
-            "type": "simple_response",
-            "platform": "google",
-            "textToSpeech": "Please select one of the following options"
-          },
-          {
-            "type": "suggestion_chips",
-            "platform": "google",
-            "suggestions": [
-              {
-                "title": "Hardware"
-              },
-              {
-                "title": "Software"
-              },
-              {
-                "title": "Network"
-              }
-            ]
-          },
-        ]
-       }
-       return res.json(googleResponse);
-      }
-
-      if( req.body.result.action=== "IncidentWebCall"){
-      
-        
-        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-          console.log(req.body.result.parameters.desc);
-            var resagent=resu["result"].number+" logged Successfully.";
-            
-            return res.json({
-              speech:resagent,
-              displayText: resagent,
-              source:'',
-              followupEvent: {
-                "name": "eventSuccessProceed",
-                "data": {
-                    "Incident":resu["result"].number,
-                    "Description":req.body.result.parameters.desc,
-                    "Category":req.body.result.parameters.category,
-                    "Urgency":req.body.result.parameters.urgency
-                }
-             }
-             
-            });
-    })
-     
-  }
     }
    
 
