@@ -37,7 +37,7 @@ const strategy = new facebookStrategy(
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
-
+passport.use(GoogleStrategy);
 // you can use this section to keep a smaller payload
 passport.serializeUser(function (user, done) {
     done(null, user);
