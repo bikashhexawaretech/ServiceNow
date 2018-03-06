@@ -80,9 +80,14 @@ app.get('/login',function(req,res){
 
     });
 
-     
+    function isLoggedIn(req, res, next) {
 
-    app.post('/servicenow',function(req,res){
+      if (req.isAuthenticated())
+          return next();
+  
+      res.redirect('/');
+  }
+    app.post('/servicenow',isLoggedIn,function(req,res){
     var facebookResponse='';
     var googleResponse='';
   senderId = req.body.originalRequest.data.sender.id;
