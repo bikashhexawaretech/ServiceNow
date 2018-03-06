@@ -47,3 +47,16 @@ module.exports = {
     }
 
 }
+
+
+function logChatHistory( message) {
+  
+  var log = "User" + ": " + message + "\n";
+  log += "Bot: " + reply + "\n\n";
+
+  fs.appendFile("logs.txt", log, function(err) {});
+
+  
+} 
+
+module.exports.logChatHistory=logChatHistory;

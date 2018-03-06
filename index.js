@@ -8,14 +8,15 @@ var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-console.log('hi');
+var fs = import("fs");
 
 app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
-    console.log(req.body.originalRequest.source);
+   
     if(req.body.originalRequest.source=='facebook')
     {
+      console.log(req);
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -217,6 +218,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 
 }
+ 
 });
 
 
