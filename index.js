@@ -17,7 +17,8 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const facebookStrategy=require('passport-facebook');
 var configAuth=require('./auth.js');
-console.log(config);
+
+
 const strategy = new facebookStrategy(
   {
     clientID        : configAuth.facebookAuth.clientID,
