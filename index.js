@@ -76,15 +76,11 @@ app.get('/login',function(req,res){
  app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
-  console.log(redirectURI);
   res.redirect(redirectURI + "&authorization_code=abcdef");
-	 facebook.logout();
+ 
     });
 
-    app.get('/logout', function(req, res) {
-      req.logout();
-      res.redirect('/');
-  });
+     
 
     app.post('/servicenow',function(req,res){
     var facebookResponse='';
