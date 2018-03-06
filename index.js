@@ -79,9 +79,15 @@ app.get('/login',function(req,res){
  
     });
 
-     
+    function isLoggedIn(req, res) {
 
-    app.post('/servicenow',function(req,res){
+      if (req.isAuthenticated())
+      return res.json(facebook.logout());
+  else
+      res.redirect('/');
+  }
+
+    app.post('/servicenow',isLoggedIn,function(req,res){
     var facebookResponse='';
     var googleResponse='';
   senderId = req.body.originalRequest.data.sender.id;
@@ -90,11 +96,7 @@ app.get('/login',function(req,res){
     
   
       if(req.body.result.action==='IncidentRequestAction'){
-        console.log(req.isAuthenticated());
-        if (req.isAuthenticated())
-        return res.json(facebook.logout());
-        else
-        return res.json(facebook.logout());
+         
      
 
     /*
