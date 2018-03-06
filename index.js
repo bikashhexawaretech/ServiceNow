@@ -55,8 +55,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
-  console.log(req.query);
- res.sendfile('public/index1.html');
+ res.sendFile('public/index1.html');
  
  
    
@@ -95,7 +94,7 @@ app.get('/login',function(req,res){
         if (req.isAuthenticated())
         return res.json(facebook.logout());
         else
-        return res.json(facebook.fbWebView());
+        return res.json(facebook.logout());
      
 
     /*
