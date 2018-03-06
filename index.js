@@ -76,7 +76,7 @@ app.get('/login',function(req,res){
  app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
-    return res.json(facebook.logout());
+     
   res.redirect(redirectURI + "&authorization_code=abcdef");
  
     });
@@ -94,7 +94,7 @@ app.get('/login',function(req,res){
  
 
         return res.json(facebook.fbWebView());
-        return res.json(facebook.logout());
+         
      
 
     /*
