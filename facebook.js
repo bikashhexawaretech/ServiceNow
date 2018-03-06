@@ -209,12 +209,7 @@ var fbGenericLogOut=function fbGenericLogOut(){
                         "url": "https://www.moovrika.com/m/4082",
                         "webview_height_ratio": "tall"
                       },
-                      {
-                        "title": "View trailer",
-                        "type": "web_url",
-                        "url": "https://www.moovrika.com/m/4082",
-                        "webview_height_ratio": "tall"
-                      },
+                      
                       
                         {
                           "title": "Log Out",
