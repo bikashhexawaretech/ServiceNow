@@ -14,7 +14,7 @@ app.get('/log',function(req,res){
 
   fs.readFile('logs.txt',function(err,data){
 if(err)
-console.log('error')
+console.log('error');
 else
     res.end(data);
   })
@@ -57,7 +57,7 @@ app.post('/',function(req,res){
           
         ]
        }
-       inc.logChatHistory(req.body.result.resolvedQuery,facebookResponse.messages.title);
+       inc.logChatHistory(req.body.result.resolvedQuery,facebookResponse.messages[0].title);
        return res.json(facebookResponse);
       }
       
