@@ -33,11 +33,23 @@ const strategy = new facebookStrategy(
       return done(null, profile);
   }
 );
-
+const Gstrategy = new GoogleStrategy(
+  {
+    clientID        : configAuth.googleAuth.clientID,
+        clientSecret    : configAuth.googleAuth.clientSecret,
+        callbackURL     : configAuth.googleAuth.callbackURL
+  },
+  function (accessToken, refreshToken, extraParams, profile, done) {
+      // accessToken is the token to call Auth0 API (not needed in the most cases)
+      // extraParams.id_token has the JSON Web Token
+      // profile has all the information from the user
+      return done(null, profile);
+  }
+);
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
-passport.use(GoogleStrategy);
+passport.use(Gstrategy);
 // you can use this section to keep a smaller payload
 passport.serializeUser(function (user, done) {
     done(null, user);
