@@ -59,7 +59,7 @@ app.get('/auth/google', passport.authorize('google', { scope : ['profile', 'emai
 
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
-  
+  console.log(redirectURI);
  res.sendfile('public/index1.html');
  
  
