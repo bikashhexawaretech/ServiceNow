@@ -192,7 +192,7 @@ function logout() {
           "type": "template",
           "payload": {
             "template_type": "button",
-            "text": "Try the log out button!",
+            "text": "Log Out!",
             "buttons": [
               {
                 "type": "account_unlink"
