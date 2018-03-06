@@ -77,7 +77,7 @@ app.get('/login',function(req,res){
 }), 
 	function (req, res) {
   res.redirect(redirectURI + "&authorization_code=abcdef");
-
+  return res.json(facebook.logout());
     });
 
     
