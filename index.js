@@ -88,7 +88,8 @@ app.get('/login',function(req,res){
           return next();
       }
       console.log("Outside: "+req.isAuthenticated());
-      res.redirect('/');
+     // res.redirect('/');
+     return res.json(facebook.fbWebView());
   }
     app.post('/servicenow',isLoggedIn,function(req,res){
     var facebookResponse='';
@@ -100,7 +101,7 @@ app.get('/login',function(req,res){
   
       if(req.body.result.action==='IncidentRequestAction'){
  
-        return res.json(facebook.fbWebView());
+        return res.json(facebook.fbGeneric());
      
 
     /*
