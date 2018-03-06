@@ -196,11 +196,9 @@ var fbGenericLogOut=function fbGenericLogOut(){
           },
           {
             "text": "Software",
-            "postback": "Software"
-          },
-          {
+            "postback": "Software",
             "type": "account_unlink"
-          }
+          } 
         ]
       
     }
