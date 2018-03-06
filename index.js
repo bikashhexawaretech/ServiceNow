@@ -18,6 +18,8 @@ const Auth0Strategy = require('passport-auth0');
 const facebookStrategy=require('passport-facebook');
 var configAuth=require('./auth.js');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var TwitterStrategy  = require('passport-twitter').Strategy;
+
 
 
 const strategy = new facebookStrategy(
@@ -46,10 +48,27 @@ const Gstrategy = new GoogleStrategy(
       return done(null, profile);
   }
 );
+
+const Tstrategy=new TwitterStrategy({
+
+  consumerKey     : configAuth.twitterAuth.consumerKey,
+  consumerSecret  : configAuth.twitterAuth.consumerSecret,
+  callbackURL     : configAuth.twitterAuth.callbackURL
+
+},
+function (accessToken, refreshToken, extraParams, profile, done) {
+  // accessToken is the token to call Auth0 API (not needed in the most cases)
+  // extraParams.id_token has the JSON Web Token
+  // profile has all the information from the user
+  return done(null, profile);
+}
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
 passport.use(Gstrategy);
+passport.use(Tstrategy);
 // you can use this section to keep a smaller payload
 passport.serializeUser(function (user, done) {
     done(null, user);
@@ -68,6 +87,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 
 app.get('/auth/google', passport.authorize('google', { scope : ['profile', 'email'] }));
 
+app.get('/auth/twitter', passport.authenticate('twitter'));
 
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
@@ -99,7 +119,14 @@ app.get('/login',function(req,res){
       res.redirect(redirectURI + "&authorization_code=abcdef");
      
         });
-    
+        
+        app.get('/tw/callback', passport.authenticate('google', {
+        }), 
+          function (req, res) {
+             
+          res.redirect(redirectURI + "&authorization_code=abcdef");
+         
+            });
 
     
     app.post('/servicenow',function(req,res){

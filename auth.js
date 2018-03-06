@@ -9,8 +9,8 @@ module.exports = {
     },
 
     'twitterAuth' : {
-        'consumerKey'       : 'your-consumer-key-here',
-        'consumerSecret'    : 'your-client-secret-here',
+        'consumerKey'       : 'UQv3D3lLvTcfg6UtmX8DAkMEx',
+        'consumerSecret'    : 'CC234I55MYFnWY6wGKpB6LmCMIzaEhnzpVij9dzqBMtV6YquZs',
         'callbackURL'       : 'https://servicenowhex.herokuapp.com/tw/callback'
     },
 
