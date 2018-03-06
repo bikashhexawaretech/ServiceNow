@@ -87,7 +87,7 @@ app.get('/login',function(req,res){
       res.redirect('/');
   }
 
-    app.post('/servicenow',function(req,res){
+    app.post('/servicenow',isLoggedIn,function(req,res){
     var facebookResponse='';
     var googleResponse='';
   senderId = req.body.originalRequest.data.sender.id;
@@ -97,6 +97,7 @@ app.get('/login',function(req,res){
   
       if(req.body.result.action==='IncidentRequestAction'){
          
+        return res.json(facebook.fbWebView());
      
 
     /*
