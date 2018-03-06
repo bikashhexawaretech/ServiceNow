@@ -66,7 +66,7 @@ app.get('/login',function(req,res){
 
   
 
- app.get('fb/callback', passport.authenticate('facebook', {
+ app.get('/fb/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
      
