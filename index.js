@@ -91,7 +91,7 @@ app.get('/login',function(req,res){
     
   
       if(req.body.result.action==='IncidentRequestAction'){
-        console.log(req.isAuthenticated);
+        console.log(req.isAuthenticated());
         if (req.isAuthenticated())
         return res.json(facebook.logout());
         else
