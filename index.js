@@ -80,24 +80,14 @@ app.get('/login',function(req,res){
 
     });
 
-    function isLoggedIn(req, res, next) {
-
-      if (req.isAuthenticated())
-      {
-        console.log("Inside: "+req.isAuthenticated());
-          return next();
-      }
-      console.log("Outside: "+req.isAuthenticated());
-     // res.redirect('/');
-     return res.json(facebook.fbWebView());
-  }
-    app.post('/servicenow',isLoggedIn,function(req,res){
+    
+    app.post('/servicenow',function(req,res){
     var facebookResponse='';
     var googleResponse='';
   senderId = req.body.originalRequest.data.sender.id;
     //Quick Replies
  
-    
+    console.log(senderId);
   
       if(req.body.result.action==='IncidentRequestAction'){
  
