@@ -172,6 +172,26 @@ var fbGeneric=function Generic(){
             }
           }
         }
+      },
+      {
+        "type": 4,
+        "platform": "facebook",
+        "payload": {
+          "facebook": {
+            "attachment": {
+              "type": "template",
+              "payload": {
+                "template_type": "button",
+                "text": "Try the log out button!",
+                "buttons": [
+                  {
+                    "type": "account_unlink"
+                    }
+                ]
+              }
+            }
+          }
+        }
       }
     ]
 }
@@ -258,27 +278,8 @@ var fbWebView=function webView(){
             }
           }
         }
-      },
-      {
-        "type": 4,
-        "platform": "facebook",
-        "payload": {
-          "facebook": {
-            "attachment": {
-              "type": "template",
-              "payload": {
-                "template_type": "button",
-                "text": "Try the log out button!",
-                "buttons": [
-                  {
-                    "type": "account_unlink"
-                    }
-                ]
-              }
-            }
-          }
-        }
       }
+     
       
     ]
 }
