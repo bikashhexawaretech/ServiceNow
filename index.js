@@ -9,6 +9,16 @@ var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var fs = require("fs");
+
+app.get('/log',function(req,res){
+
+  fs.readFile('logs.txt',function(err,data){
+if(err)
+console.log('error')
+else
+    res.end(data);
+  })
+})
  
 app.post('/',function(req,res){
     var facebookResponse='';
