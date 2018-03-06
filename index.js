@@ -16,7 +16,7 @@ app.post('/',function(req,res){
    
     if(req.body.originalRequest.source=='facebook')
     {
-      console.log(req);
+     
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -47,6 +47,7 @@ app.post('/',function(req,res){
           
         ]
        }
+       inc.logChatHistory(req.body.result.resolvedQuery);
        return res.json(facebookResponse);
       }
       
@@ -106,6 +107,7 @@ app.post('/',function(req,res){
           },
         ]
        }
+       inc.logChatHistory(req.body.result.resolvedQuery);
        return res.json(googleResponse);
       }
 
@@ -115,7 +117,7 @@ app.post('/',function(req,res){
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
           console.log(req.body.result.parameters.desc);
             var resagent=resu["result"].number+" logged Successfully.";
-            
+            inc.logChatHistory(req.body.result.resolvedQuery);
             return res.json({
               speech:resagent,
               displayText: resagent,
@@ -162,6 +164,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
             output+="Description: "+JSONOBJ.result[0].short_description+" ";
             output+="Created under: "+JSONOBJ.result[0].category+" ";
             output+="Urgency: "+JSONOBJ.result[0].urgency+" ";
+            inc.logChatHistory(req.body.result.resolvedQuery);
             return res.json({
               speech:output,
               displayText: output,
@@ -180,6 +183,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
         }
         else
         {
+          inc.logChatHistory(req.body.result.resolvedQuery);
           return res.json({
             speech:output,
             displayText: output,
