@@ -83,8 +83,11 @@ app.get('/login',function(req,res){
     function isLoggedIn(req, res, next) {
 
       if (req.isAuthenticated())
+      {
+        console.log("Inside: "+req.isAuthenticated());
           return next();
-  
+      }
+      console.log("Outside: "+req.isAuthenticated());
       res.redirect('/');
   }
     app.post('/servicenow',isLoggedIn,function(req,res){
