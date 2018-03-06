@@ -208,7 +208,13 @@ var fbGenericLogOut=function fbGenericLogOut(){
                         "type": "web_url",
                         "url": "https://www.moovrika.com/m/4082",
                         "webview_height_ratio": "tall"
-                      } ,
+                      },
+                      {
+                        "title": "View trailer",
+                        "type": "web_url",
+                        "url": "https://www.moovrika.com/m/4082",
+                        "webview_height_ratio": "tall"
+                      },
                       
                         {
                           "title": "Log Out",
@@ -340,6 +346,7 @@ var fbWebView=function webView(){
   module.exports.fbGeneric=fbGeneric;
   module.exports.fbWebView=fbWebView;
   module.exports.logout=logout;
+  module.exports.fbGenericLogOut=fbGenericLogOut;
   // Custom payload
 
   //List
