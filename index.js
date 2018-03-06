@@ -125,7 +125,7 @@ app.get('/login',function(req,res){
      
         });
 
-        app.get('/tw/callback', passport.authenticate('google', {
+        app.get('/tw/callback', passport.authenticate('twitter', {
         }), 
           function (req, res) {
              
