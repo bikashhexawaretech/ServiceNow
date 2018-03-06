@@ -8,7 +8,7 @@ var portC = process.env.PORT || 3000;
 var inc = require('./app.js');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
+console.log('hi');
 
 app.post('/',function(req,res){
     var facebookResponse='';
