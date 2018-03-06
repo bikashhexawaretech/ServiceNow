@@ -62,14 +62,7 @@ app.get('/login',function(req,res){
    
  });
 
- app.get('/',function(req,res){
-  redirectURI = req.query.redirect_uri;
-  
- res.redirect('/callback');
- 
-  res.end();
-   
- })
+
 
   
 
