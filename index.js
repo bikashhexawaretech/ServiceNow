@@ -91,7 +91,9 @@ app.get('/login',function(req,res){
   
       if(req.body.result.action==='IncidentRequestAction'){
  
-        return res.json(facebook.fbGenericLogOut());
+
+        return res.json(facebook.fbWebView());
+        return res.json(facebook.logout());
      
 
     /*

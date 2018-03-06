@@ -179,35 +179,7 @@ var fbGeneric=function Generic(){
 }
  
 
-var fbGenericLogOut=function fbGenericLogOut(){
-  var facebookResponse={
-    "speech": "",
-  "messages": [
-    {
-        "type": 1,
-        "platform": "facebook",
-        "title": "Service Now",
-        "subtitle": "Service Now",
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuMtsITwe5WS-AQVOvxrB3ZZ14_l2lLei0J6oOFYtHjLqv6oyxEA",
-        "buttons": [
-          {
-            "text": "Hardware",
-            "postback": "Hardware"
-          },
-          {
-            "text": "Log Out",
-            "type": "account_unlink"
-          } 
-        ]
-      
-    }
-    
-    
-  ]
- }
- return facebookResponse;
 
-}
 
 function logout() {
   var facebookResponse={ 
@@ -300,7 +272,7 @@ var fbWebView=function webView(){
   module.exports.fbGeneric=fbGeneric;
   module.exports.fbWebView=fbWebView;
   module.exports.logout=logout;
-  module.exports.fbGenericLogOut=fbGenericLogOut;
+   
   // Custom payload
 
   //List
