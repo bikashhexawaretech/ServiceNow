@@ -56,7 +56,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', {
 app.get('/login',function(req,res){
   redirectURI = req.query.redirect_uri;
   console.log(req.query);
- res.sendFile('public/index1.html');
+ res.sendfile('public/index1.html');
  
  
    
@@ -77,7 +77,7 @@ app.get('/login',function(req,res){
 }), 
 	function (req, res) {
   res.redirect(redirectURI + "&authorization_code=abcdef");
- 
+
     });
 
      
@@ -91,10 +91,7 @@ app.get('/login',function(req,res){
     
   
       if(req.body.result.action==='IncidentRequestAction'){
-        console.log(req.isAuthenticated());
-        if (req.isAuthenticated())
-        return res.json(facebook.logout());
-        else
+ 
         return res.json(facebook.fbWebView());
      
 
