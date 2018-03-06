@@ -195,8 +195,7 @@ var fbGenericLogOut=function fbGenericLogOut(){
             "postback": "Hardware"
           },
           {
-            "text": "Software",
-            "postback": "Software",
+            "text": "Log Out",
             "type": "account_unlink"
           } 
         ]
