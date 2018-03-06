@@ -55,7 +55,10 @@ function logChatHistory( message,botResponse) {
   var log = "User" + ": " + message + "\n";
   log += "Bot: " + botResponse + "\n\n";
 
-  fs.appendFile("logs.txt", log, function(err) {});
+  fs.appendFile("logs.txt", log, function(err) {
+
+    console.log(err);
+  });
 
   
 } 
