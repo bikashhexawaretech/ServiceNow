@@ -65,7 +65,7 @@ app.get('/login',function(req,res){
  app.get('/',function(req,res){
   redirectURI = req.query.redirect_uri;
   
- res.redirect('fb/callback');
+ res.redirect('/callback');
  
   res.end();
    
@@ -73,7 +73,7 @@ app.get('/login',function(req,res){
 
   
 
- app.get('fb/callback', passport.authenticate('facebook', {
+ app.get('/callback', passport.authenticate('facebook', {
 }), 
 	function (req, res) {
      
