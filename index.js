@@ -25,6 +25,8 @@ app.post('/',function(req,res){
     var googleResponse='';
    
      console.log(req.body.result.action);
+     console.log(req.body.result.resolvedQuery);
+     console.log(req.body.result.fulfillment.speech);
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -169,7 +171,9 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 
 }
- 
+if( req.body.result.action=== "input.welcome"){
+  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+}
 });
 
 
