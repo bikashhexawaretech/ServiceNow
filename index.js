@@ -66,7 +66,7 @@ app.post('/',function(req,res){
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
           console.log("Severity :"+req.body.result.parameters.severity);
             var resagent=resu["result"].number+" logged Successfully.";
-            inc.logChatHistory(req.body.result.resolvedQuery,resu["result"].number+" logged Successfully.");
+            
             return res.json({
               speech:resagent,
               displayText: resagent,
@@ -190,11 +190,10 @@ if( req.body.result.action=== "Incident_Status_Check"){
                 }
              
             });
-             
         }
         else
         {
-         
+          
           return res.json({
             speech:output,
             displayText: output,
@@ -208,7 +207,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
            
           });
         }
-        inc.logChatHistory(req.body.result.resolvedQuery,output);
+        
       
     })
   }
