@@ -24,9 +24,7 @@ app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
    
-     console.log(req.body.result.action);
-     console.log(req.body.result.resolvedQuery);
-     console.log(req.body.result.fulfillment.speech);
+
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
@@ -62,7 +60,10 @@ app.post('/',function(req,res){
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
-      
+        console.log('Entry');
+        console.log(req.body.result.action);
+        console.log(req.body.result.resolvedQuery);
+        console.log(req.body.result.fulfillment.speech);
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
           console.log("Severity :"+req.body.result.parameters.severity);
             var resagent=resu["result"].number+" logged Successfully.";
