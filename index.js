@@ -65,10 +65,19 @@ app.post('/',function(req,res){
 inc.logChatHistory(req.body.result.parameters.desc,req.body.result.fulfillment.speech); 
 inc.logChatHistory(req.body.result.parameters.severity,'Incident Created Successfully'); 
 
-     //   inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
-         // console.log("Severity :"+req.body.result.parameters.severity);
-           // var resagent=resu["result"].number+" logged Successfully.";
-           var resagent="Incident logged Successfully.";
+
+var resagent=resu["result"].number+" logged Successfully.";
+            
+return res.json({
+  speech:resagent,
+  displayText: resagent,
+  source:''
+});
+
+/*
+        inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
+          console.log("Severity :"+req.body.result.parameters.severity);
+            var resagent=resu["result"].number+" logged Successfully.";
             
             return res.json({
               speech:resagent,
@@ -84,8 +93,9 @@ inc.logChatHistory(req.body.result.parameters.severity,'Incident Created Success
                 }
              }
             });
+            
     })
-   
+   */
     }
   
    
