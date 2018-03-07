@@ -55,7 +55,7 @@ app.post('/',function(req,res){
           
         ]
        }
-       inc.logChatHistory(req.body.result.resolvedQuery,facebookResponse.messages[0].title);
+       
        return res.json(facebookResponse);
       }
       
@@ -82,9 +82,7 @@ app.post('/',function(req,res){
     })
         
     }
-  if(req.body.result.action==='input.welcome'){
-    inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
-  }
+  
    
 
 // Simple text sent to FB
@@ -170,7 +168,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 
 }
- 
+inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 });
 
 
