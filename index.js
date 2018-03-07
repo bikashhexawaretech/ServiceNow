@@ -24,7 +24,7 @@ app.post('/',function(req,res){
     var facebookResponse='';
     var googleResponse='';
    
-     
+     console.log(req.body.result.action);
       if(req.body.result.action==='IncidentRequestAction'){
   
         facebookResponse={
