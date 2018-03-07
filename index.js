@@ -172,11 +172,11 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 }
 if( req.body.result.action=== "input.welcome"){
-  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.messages[0].title); 
+  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
 if( req.body.result.action=== "Action1"){
   if(req.body.result.fulfillment.speech=="")
-  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.messages[0].title); 
   else
   inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
