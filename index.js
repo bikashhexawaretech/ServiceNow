@@ -66,7 +66,7 @@ inc.logChatHistory(req.body.result.parameters.desc,'Enter Severity');
 inc.logChatHistory(req.body.result.parameters.severity,'Incident Created Successfully'); 
 
 
-var resagent=resu["result"].number+" logged Successfully.";
+var resagent="Incident logged Successfully.";
             
 return res.json({
   speech:resagent,
