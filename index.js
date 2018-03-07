@@ -55,7 +55,7 @@ app.post('/',function(req,res){
           
         ]
        }
-       
+       inc.logChatHistory(req.body.result.resolvedQuery,facebookResponse.messages[0].title);
        return res.json(facebookResponse);
       }
       
@@ -80,7 +80,7 @@ app.post('/',function(req,res){
              }
             });
     })
-        
+    inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
     }
   
    
@@ -165,10 +165,11 @@ if( req.body.result.action=== "Incident_Status_Check"){
      
       
      
+  inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 
 
 }
-inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+ 
 });
 
 
