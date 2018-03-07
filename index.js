@@ -60,10 +60,11 @@ app.post('/',function(req,res){
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
-        console.log('Entry');
-        console.log(req.body.result.action);
-        console.log(req.body.result.resolvedQuery);
-        console.log(req.body.result.fulfillment.speech);
+        inc.logChatHistory(req.body.result.parameters.entityContactType,req.body.result.parameters.desc); 
+
+//inc.logChatHistory(req.body.result.parameters.entityContactType,req.body.result.parameters.desc); 
+        
+
         inc.logIncident(req.body.result.parameters.desc,req.body.result.parameters.severity,req.body.result.parameters.entityCategory,function(err,resu){
           console.log("Severity :"+req.body.result.parameters.severity);
             var resagent=resu["result"].number+" logged Successfully.";
@@ -83,7 +84,7 @@ app.post('/',function(req,res){
              }
             });
     })
-    inc.logChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+   
     }
   
    
