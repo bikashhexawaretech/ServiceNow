@@ -60,9 +60,9 @@ app.post('/',function(req,res){
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
-        inc.logChatHistory(req.body.result.parameters.entityContactType,req.body.result.fulfillment.speech); 
+        inc.logChatHistory(req.body.result.parameters.entityContactType,'Enter Description'); 
 
-inc.logChatHistory(req.body.result.parameters.desc,req.body.result.fulfillment.speech); 
+inc.logChatHistory(req.body.result.parameters.desc,'Enter Severity'); 
 inc.logChatHistory(req.body.result.parameters.severity,'Incident Created Successfully'); 
 
 
