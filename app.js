@@ -50,9 +50,9 @@ module.exports = {
 }
 
 
-function logChatHistory( message,botResponse) {
+function logChatHistory(user, message,botResponse) {
   
-  var log = "User" + ": " + message + "\n";
+  var log = "User "+user + ": " + message + "\n";
   log += "Bot: " + botResponse + "\n\n";
 
   fs.appendFile("logs.txt", log, function(err) {
