@@ -195,8 +195,12 @@ if( req.body.result.action=== "Action1"){
 }
 });
 
-
+app.get('/',function(req,res){
+  res.sendFile('public/success.html' , { root : __dirname});
+})
 
 app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
 });
+
+
