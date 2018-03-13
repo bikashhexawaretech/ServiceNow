@@ -185,7 +185,8 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 }
 if( req.body.result.action=== "input.welcome"){
-  inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+  inc.InsChatHistory(req.body.result.resolvedQuery,req.body.result.fulfillment.speech,req.body.sessionId);
+  //inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
 if( req.body.result.action=== "Action1"){
   if(req.body.result.fulfillment.speech=="")
