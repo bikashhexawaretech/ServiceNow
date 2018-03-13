@@ -68,4 +68,29 @@ stream.write(log, function() {
   
 } 
 
+function InsChatHistory(user,botResponse,session){
+  
+  sql.execute( {
+   procedure: "sp_INSChatHistory",
+          params: {
+            UserCon: {
+                  type: sql.NVARCHAR,
+                  val: user,
+              },
+              Bot: {
+               type: sql.NVARCHAR,
+               val: botResponse,
+           },
+           SessionID:{
+            type: sql.NVARCHAR,
+            val: session,
+           }
+          }
+      } ).then( function( results ) {
+       res.send( results );
+      }, function( err ) {
+          console.log( "Something bad happened:", err );
+      } );
+}
 module.exports.logChatHistory=logChatHistory;
+module.exports.InsChatHistory=InsChatHistory;
