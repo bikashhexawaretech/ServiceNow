@@ -64,13 +64,6 @@ function logChatHistory(user, message,botResponse) {
 stream.write(log, function() {
    
 });
-
-
-
-
-
-
-  
 } 
 
 function logMongoChatHistory(user, message,botResponse) {

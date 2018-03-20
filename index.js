@@ -185,6 +185,7 @@ if( req.body.result.action=== "Incident_Status_Check"){
 
 }
 if( req.body.result.action=== "input.welcome"){
+  inc.logMongoChatHistory('15','15','15');
   inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
 if( req.body.result.action=== "Action1"){
@@ -202,5 +203,7 @@ app.get('/',function(req,res){
 app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
 });
+
+inc.logMongoChatHistory('5','5','5');
 
 
