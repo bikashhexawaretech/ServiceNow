@@ -204,6 +204,5 @@ app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
 });
 
-inc.logMongoChatHistory('5','5','5');
 
 
