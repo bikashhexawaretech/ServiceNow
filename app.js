@@ -1,5 +1,10 @@
 var request = require("request");
 var fs = require("fs");
+const mongoose = require('mongoose');
+let uri = 'mongodb://bikash:12345@ds117469.mlab.com:17469/servicenow';
+mongoose.connect(uri);
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
 module.exports = {
     'logIncident' : function(desc, severity,category, callback){
@@ -54,18 +59,41 @@ function logChatHistory(user, message,botResponse) {
   
   var log = "User "+user + ": " + message + "\n";
   log += "Bot: " + botResponse + "\n\n";
-/*
-  fs.appendFile("logs.txt", log, function(err) {
-
-    console.log(err);
-  });
-  */
+ 
  var stream = fs.createWriteStream('logs.txt', {flags: 'a'});
 stream.write(log, function() {
-  // Now the data has been written.
+   
 });
+
+
+
+
+
 
   
 } 
 
+function logMongoChatHistory(user, message,botResponse) {
+  db.once('open', function callback() {
+      let ChatHistorySchema = mongoose.Schema({
+        User: String,
+        message: String,
+        botResponse: String
+      });
+       
+      let Chat = mongoose.model('chats', ChatHistorySchema);
+      let chat1 = new Chat({
+        User: user,
+        message: message,
+        botResponse: botResponse
+   
+      });
+    
+    
+      Chat.insertMany(chat1).
+      catch(err => {
+        console.log(err)});
+    })
+}
 module.exports.logChatHistory=logChatHistory;
+module.exports.logMongoChatHistory=logMongoChatHistory;

@@ -55,15 +55,15 @@ app.post('/',function(req,res){
           
         ]
        }
-       inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,facebookResponse.messages[0].title);
+       inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,facebookResponse.messages[0].title);
        return res.json(facebookResponse);
       }
       
       if( req.body.result.action=== "IncidentWebCall"){
-        inc.logChatHistory(req.body.sessionId,req.body.result.parameters.entityContactType,'Enter Description'); 
+        inc.logMongoChatHistory(req.body.sessionId,req.body.result.parameters.entityContactType,'Enter Description'); 
 
-inc.logChatHistory(req.body.sessionId,req.body.result.parameters.desc,'Enter Severity'); 
-inc.logChatHistory(req.body.sessionId,req.body.result.parameters.severity,'Incident Created Successfully'); 
+inc.logMongoChatHistory(req.body.sessionId,req.body.result.parameters.desc,'Enter Severity'); 
+inc.logMongoChatHistory(req.body.sessionId,req.body.result.parameters.severity,'Incident Created Successfully'); 
 
 
 var resagent="Incident logged Successfully.";
@@ -180,18 +180,18 @@ if( req.body.result.action=== "Incident_Status_Check"){
      
       
      
-  inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+  inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 
 
 }
 if( req.body.result.action=== "input.welcome"){
-  inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+  inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
 if( req.body.result.action=== "Action1"){
   if(req.body.result.fulfillment.speech=="")
-  inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.messages[0].title); 
+  inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.messages[0].title); 
   else
-  inc.logChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
+  inc.logMongoChatHistory(req.body.sessionId,req.body.result.resolvedQuery,req.body.result.fulfillment.speech); 
 }
 });
 
