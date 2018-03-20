@@ -97,3 +97,5 @@ function logMongoChatHistory(user, message,botResponse) {
 }
 module.exports.logChatHistory=logChatHistory;
 module.exports.logMongoChatHistory=logMongoChatHistory;
+
+ 
