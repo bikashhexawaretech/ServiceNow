@@ -1,9 +1,9 @@
 var request = require("request");
 var fs = require("fs");
 const mongoose = require('mongoose');
-let uri = 'mongodb://bikash:12345@ds119969.mlab.com:19969/servicenow';
+let uri = 'mongodb://heroku_2002vd2v:1aq1f3meb0qkl4nmrai8ca3fph@ds121189.mlab.com:21189/heroku_2002vd2v';
 
-mongoose.connect(process.env.MONGOLAB_RED_URI);
+mongoose.connect(process.env.MONGODB_URI);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
