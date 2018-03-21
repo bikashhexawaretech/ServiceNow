@@ -1,7 +1,8 @@
 var request = require("request");
 var fs = require("fs");
 const mongoose = require('mongoose');
-let uri = 'mongodb://bikash:12345@ds117469.mlab.com:17469/servicenow';
+let uri = 'mongodb://bikash:12345@ds119969.mlab.com:19969/servicenow';
+
 mongoose.connect(uri);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
