@@ -70,7 +70,6 @@ stream.write(log, function() {
 function logMongoChatHistory(user, message,botResponse) {
   
   db.once('open', function callback() {
-    console.log('Entry to open');
       let ChatHistorySchema = mongoose.Schema({
         User: String,
         message: String,
@@ -78,7 +77,6 @@ function logMongoChatHistory(user, message,botResponse) {
       });
        
       let Chat = mongoose.model('chats', ChatHistorySchema);
-      console.log('Entry to chat');
       let chat1 = new Chat({
         User: user,
         message: message,
@@ -91,7 +89,6 @@ function logMongoChatHistory(user, message,botResponse) {
       catch(err => {
         console.log(err)});
     })
-    console.log('Insert');
 }
 module.exports.logChatHistory=logChatHistory;
 module.exports.logMongoChatHistory=logMongoChatHistory;
