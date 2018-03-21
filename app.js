@@ -71,7 +71,7 @@ function logMongoChatHistory(user, message,botResponse) {
     if (err) {
       return console.log(err);
     }
-    const myAwesomeDB = database.db('servicenow');
+    const myAwesomeDB = db.db('servicenow');
     // Do something with db here, like inserting a record
     myAwesomeDB.collection('chat').insertOne(
       {
