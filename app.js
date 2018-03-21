@@ -1,6 +1,6 @@
 var request = require("request");
 var fs = require("fs");
-const MongoClient  = require('mongodb').MongoClient;;
+const MongoClient  = require('mongodb').MongoClient;
 let uri = process.env.MONGODB_URI;
 
  
