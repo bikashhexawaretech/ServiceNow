@@ -1,11 +1,9 @@
 var request = require("request");
 var fs = require("fs");
-const mongoose = require('mongoose');
+const MongoClient  = require('mongodb').MongoClient;;
 let uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri);
-let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+ 
 
 module.exports = {
     'logIncident' : function(desc, severity,category, callback){
@@ -68,27 +66,33 @@ stream.write(log, function() {
 } 
 
 function logMongoChatHistory(user, message,botResponse) {
-  console.log(uri);
-  db.once('open', function callback() {
-      let ChatHistorySchema = mongoose.Schema({
-        User: String,
-        message: String,
-        botResponse: String
-      });
-       
-      let Chat = mongoose.model('chats', ChatHistorySchema);
-      let chat1 = new Chat({
+
+  MongoClient.connect(uri, (err, db) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    // Do something with db here, like inserting a record
+    db.collection('chat').insertOne(
+      {
         User: user,
         message: message,
         botResponse: botResponse
-   
-      });
-    
-    
-      Chat.insertMany(chat1).
-      catch(err => {
-        console.log(err)});
-    })
+      },
+      function (err, res) {
+
+        if (err) {
+          db.close();
+          return console.log(err);
+        }
+        // Success
+        db.close();
+      }
+    )
+
+
+  });
+  
 }
 module.exports.logChatHistory=logChatHistory;
 module.exports.logMongoChatHistory=logMongoChatHistory;
