@@ -68,7 +68,7 @@ stream.write(log, function() {
 } 
 
 function logMongoChatHistory(user, message,botResponse) {
-  console.log(process.env.MONGOLAB_RED_URI);
+  console.log(process.env.MONGODB_URI);
   db.once('open', function callback() {
       let ChatHistorySchema = mongoose.Schema({
         User: String,
